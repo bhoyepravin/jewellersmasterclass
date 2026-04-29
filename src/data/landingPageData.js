@@ -266,3 +266,54 @@ export const statsBar = [
   { value: '5', label: 'Countries' },
   { value: '11K+', label: 'Social Following' },
 ];
+
+export const proofData = {
+  headline: 'Trusted by Jewellers Across India',
+  subheadline: 'Numbers that speak for themselves',
+  stats: [
+    { icon: 'FaUsers',     value: '1000+', label: 'Jewellers Trained' },
+    { icon: 'FaClock',     value: '10+',   label: 'Years of Experience' },
+    { icon: 'FaGlobe',     value: '5',     label: 'Countries' },
+    { icon: 'FaInstagram', value: '11K+',  label: 'Social Following' },
+  ],
+  cities: ['Mumbai', 'Pune', 'Nagpur', 'Thane', 'Nashik', 'Aurangabad', 'Solapur', 'Kolhapur'],
+};
+
+export const videoTestimonialsData = {
+  headline: 'Real Jewellers. Real Results.',
+  subheadline: 'Watch what they have to say',
+  items: [
+    {
+      name: 'Mr. Aakash Maid',
+      location: 'Mumbai',
+      quote:
+        'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
+      quoteEn:
+        'The changes expected with time, which we should make in ourselves and business, I understood from this masterclass.',
+      gradientFrom: '#480A62',
+      gradientTo: '#6B1A8A',
+      videoUrl: '#',   // Replace with actual YouTube / Vimeo embed URL
+    },
+    {
+      name: 'Ms. Divya Choudhari',
+      location: '',
+      quote:
+        "Connecting with Arnav Sir was the best decision of my life. I am soo excited to launch my new jewellery brand after attending Arnav sir's Masterclass. Thank You Arnav Sir!",
+      quoteEn: '',
+      gradientFrom: '#F97316',
+      gradientTo: '#EA6C0A',
+      videoUrl: '#',
+    },
+    {
+      name: 'Mr. Akshay Shahane',
+      location: 'Thane',
+      quote:
+        'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला. One of the best investments of time and money.',
+      quoteEn:
+        "I've attended many programs, but this is the first specific jewelry business program. One of the best investments of time and money.",
+      gradientFrom: '#2E063E',
+      gradientTo: '#480A62',
+      videoUrl: '#',
+    },
+  ],
+};

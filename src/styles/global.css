@@ -205,6 +205,44 @@
   @screen md {
     .mobile-sticky-cta { @apply hidden; }
   }
+
+  /* ── Section Divider ── */
+  .section-divider {
+    @apply flex items-center justify-center py-1 px-4;
+  }
+  .section-divider::before {
+    content: '';
+    @apply block h-px w-full max-w-xs rounded-full;
+    background: linear-gradient(90deg, transparent, rgba(249,115,22,0.35), transparent);
+  }
+
+  /* ── Floating Blur Orbs ── */
+  .blur-orb-orange {
+    @apply absolute rounded-full pointer-events-none;
+    background: rgba(249, 115, 22, 0.14);
+    filter: blur(80px);
+  }
+  .blur-orb-purple {
+    @apply absolute rounded-full pointer-events-none;
+    background: rgba(72, 10, 98, 0.12);
+    filter: blur(80px);
+  }
+
+  /* ── Video Card ── */
+  .video-card {
+    @apply relative rounded-2xl overflow-hidden cursor-pointer;
+    aspect-ratio: 16 / 9;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+  }
+
+  /* ── Modal Backdrop ── */
+  .modal-backdrop {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  }
 }
 
 /* ── Tailwind Utilities ─────────────────────────────────────── */

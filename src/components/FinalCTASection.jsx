@@ -133,13 +133,6 @@ export default function FinalCTASection({ offerData }) {
         </div>
       </section>
 
-      {/* ══ Footer ═══════════════════════════════════════════ */}
-      <footer className="bg-[#1A1A1A] py-6 px-4 text-center">
-        <p className="font-body text-gray-500 text-sm">
-          © 2026 Arnav Patil. All rights reserved.
-        </p>
-      </footer>
-
       {/* ══ Sticky Mobile CTA ════════════════════════════════ */}
       <div className="mobile-sticky-cta">
         <motion.a

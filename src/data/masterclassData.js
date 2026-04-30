@@ -191,7 +191,7 @@ export const masterclassTestimonialsData = {
 /* ── Mentor ─────────────────────────────────────────────── */
 export const mentorSectionData = {
   title:       'Meet your Mentor',
-  image:       '/images/mentor.jpg',
+  image:       '/arnav_patil_sir.JPG',
   name:        'Mr. Arnav Patil',
   designation: 'International Business Coach, Strategist, Consultant and a Key-Note Speaker',
   content:     'Mr. Arnav Patil is an Entrepreneur, Business Coach and Trainer helping Business Owners grow and scale their business.',

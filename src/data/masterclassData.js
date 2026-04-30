@@ -55,7 +55,7 @@ export const whatYouLearnData = {
 /* ── Who Is This For ────────────────────────────────────── */
 export const whoIsThisForData = {
   title: 'हा Masterclass कोणासाठी आहे ?',
-  image: '/images/target-audience.jpg',
+  image: 'training_session_01.jpg',
   items: [
     'All types of Jewellery Business Owners',
     'Retail Jewellery Shop owners',
@@ -207,9 +207,9 @@ export const mentorSectionData = {
 /* ── Mission ────────────────────────────────────────────── */
 export const missionData = {
   images: [
-    '/images/mission-1.jpg',
-    '/images/mission-2.jpg',
-    '/images/mission-3.jpg',
+    '/training_session_01.jpg',
+    '/training_session_02.jpg',
+    '/training_session.jpeg',
   ],
   content: 'I am on a MISSION to Help 10 Lakh+ Jewellery Business Owners to upscale their Jewellery Business into a POWERFUL BRAND',
 };

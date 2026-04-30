@@ -304,21 +304,21 @@ export default function HeroSection({ data, statsBar }) {
             </motion.div>
 
             {/* Single Square Image */}
-            <motion.div 
-              variants={fadeUp}
-              className="flex justify-center mb-10 px-4"
-            >
-              <div className="relative w-full max-w-[90vw] h-auto aspect-square md:max-w-md lg:max-w-lg overflow-hidden shadow-xl rounded-lg">
-                <Image
-                  src="/jewellers_masterclass.jpeg"
-                  alt="Jewellery Business Showcase"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 28rem, 32rem"
-                  priority
-                />
-              </div>
-            </motion.div>
+            <motion.div
+  variants={fadeUp}
+  className="flex justify-center mb-10"
+>
+  <div className="relative w-full max-w-5xl aspect-video overflow-hidden rounded-lg shadow-xl">
+    <Image
+      src="/jewellers_masterclass.jpeg"
+      alt="Jewellery Business Showcase"
+      fill
+      className="object-cover"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+      priority
+    />
+  </div>
+</motion.div>
 
             {/* Instructor */}
             <motion.p

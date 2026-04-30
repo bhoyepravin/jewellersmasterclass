@@ -160,7 +160,7 @@ export default function BonusSection({ data }) {
                 backgroundClip: 'text',
               }}
             >
-              Today's Price : ₹99/-
+              Today&apos;s Price : ₹99/-
             </motion.p>
 
             {/* CTA button */}

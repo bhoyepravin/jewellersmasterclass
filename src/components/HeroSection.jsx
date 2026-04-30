@@ -102,7 +102,7 @@ export default function HeroSection({ data, statsBar }) {
 
                 {/* Sub Text */}
                 <p className="mt-6 text-lg md:text-xl font-semibold text-[#F97316]">
-                  Before it's too late
+                  Before it&apos;s too late
                 </p>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function HeroSection({ data, statsBar }) {
 
       {/* Subtitle */}
       <p className="text-base md:text-2xl mt-2 leading-snug text-[#480A62]">
-        India's Jewellery <br /> Business Coach
+        India&apos;s Jewellery <br /> Business Coach
       </p>
 
       {/* Divider */}

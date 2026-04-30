@@ -26,25 +26,25 @@ export const whatYouLearnData = {
   subtitle: 'Learn the proven systems that grows your Jewellery shop into a Jewellery Showroom.',
   cards: [
     {
-      image:       '/images/learning-1.jpg',
+      image:       '/what_we_learn.jpg',
       icon:        'FaCog',
       title:       'ज्वेलरी बिझनेस मध्ये Systems कश्या लावायच्या ?',
       description: 'Learn the proven systems that grows your Jewellery shop into a Jewellery Showroom.',
     },
     {
-      image:       '/images/learning-2.jpg',
+      image:       '/people_footfalls.jpg',
       icon:        'FaStore',
       title:       'ग्राहकांचा footfall कसा वाढवायचा ?',
       description: 'Learn how to attract new customers and increase customer footfall in the showroom.',
     },
     {
-      image:       '/images/learning-3.jpg',
+      image:       '/team_conducting_training.jpg',
       icon:        'FaUserGraduate',
       title:       'स्टाफ ला कसे ट्रेन करायचे ?',
       description: 'Learn how to train your staff to handle customers and work effeciantly.',
     },
     {
-      image:       '/images/learning-4.jpg',
+      image:       '/team_conducting_training.jpg',
       icon:        'FaChartLine',
       title:       'Sale कसा वाढवायचा ?',
       description: "Learn Arnav's Proven Sales Mastery Formula to increase your monthly sales.",

@@ -75,7 +75,7 @@ export default function WhoIsThisForSection({ data }) {
             <img
               src={data.image}
               alt="Who is this masterclass for"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-contain"
               loading="lazy"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />

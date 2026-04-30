@@ -1,252 +1,198 @@
 'use client';
+
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaUsers, FaToolbox, FaGift } from 'react-icons/fa';
-
-const ICON_MAP = {
-  FaUsers: <FaUsers />,
-  FaToolbox: <FaToolbox />,
-};
-
-const GRADIENTS = [
-  ['#F97316', '#EA6C0A'],
-  ['#480A62', '#6B1A8A'],
-  ['#F97316', '#480A62'],
-  ['#2E063E', '#480A62'],
-  ['#6B1A8A', '#F97316'],
-];
+import { siteConfig } from '../data/landingPageData';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: 'easeOut' },
-  },
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+const stagger = {
+  hidden:  {},
+  visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.11 },
-  },
-};
+/* ── Evergreen 15-min countdown ── */
+function Countdown({ minutes = 15 }) {
+  const total = minutes * 60;
+  const [left, setLeft] = useState(total);
+
+  useEffect(() => {
+    const id = setInterval(() => setLeft(t => (t <= 1 ? total : t - 1)), 1000);
+    return () => clearInterval(id);
+  }, [total]);
+
+  const mm = String(Math.floor(left / 60)).padStart(2, '0');
+  const ss = String(left % 60).padStart(2, '0');
+
+  return (
+    <div className="flex items-center justify-center gap-4">
+      {[{ val: mm, label: 'Minutes' }, { val: ss, label: 'Seconds' }].map(({ val, label }, i) => (
+        <div key={label} className="flex items-center gap-4">
+          <div
+            className="flex flex-col items-center justify-center w-20 h-20 rounded-2xl"
+            style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.20)' }}
+          >
+            <span className="font-heading font-black text-white text-3xl leading-none">{val}</span>
+            <span className="text-white/60 text-[10px] font-semibold mt-1 uppercase tracking-wide">{label}</span>
+          </div>
+          {i === 0 && (
+            <span className="font-heading font-black text-[#F97316] text-3xl leading-none">:</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function BonusSection({ data }) {
+  const cards = data.cards;
+
+  /* Split into 2-col rows; if odd count, last card is centered */
+  const rows = [];
+  for (let i = 0; i < cards.length; i += 2) {
+    rows.push(cards.slice(i, i + 2));
+  }
+  const lastRowCentered = rows.length > 0 && rows[rows.length - 1].length === 1;
+
   return (
     <section
-      className="section-padding"
-      style={{
-        background: 'linear-gradient(135deg, #480A62, #6B1A8A)',
-      }}
+      className="relative overflow-hidden py-20 md:py-28"
+      style={{ background: 'linear-gradient(135deg, #480A62 0%, #6B1A8A 100%)' }}
     >
-      <div className="container-max">
-        {/* Heading */}
-        <motion.div
-          className="text-center mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-        >
-          <motion.span
-            variants={fadeUp}
-            className="section-label"
-            style={{
-              background: 'rgba(255,255,255,0.10)',
-              color: '#fff',
-              borderColor: 'rgba(255,255,255,0.20)',
-            }}
-          >
-            Exclusive Bonuses
-          </motion.span>
+      {/* Subtle orbs */}
+      <div className="pointer-events-none absolute top-[-60px] left-[-60px] w-[300px] h-[300px] rounded-full bg-[#F97316]/10 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-[-60px] right-[-60px] w-[280px] h-[280px] rounded-full bg-[#2E063E]/60 blur-[80px]" />
 
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-white leading-tight flex items-center justify-center gap-3"
-          >
-            <FaGift className="text-[#F97316]" />
-            {data.title}
-          </motion.h2>
-        </motion.div>
+      <div className="container-max relative z-10 px-4">
 
-        {/* Book Style Cards */}
-        <motion.div
-          className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.12 }}
-          variants={stagger}
+        {/* ── HEADING ── */}
+        <motion.h2
+          initial="hidden" whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="text-center font-heading font-black text-white text-[2.2rem] md:text-[4rem] leading-[1.1] tracking-[-0.02em] mb-14"
         >
-          {data.cards.map((card, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              whileHover={{
-                y: -6,
-                scale: 1.02,
-              }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg"
+          Bonuses If You Register{' '}
+          <span style={{
+            background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            Before Timer Hits 0
+          </span>
+        </motion.h2>
+
+        {/* ── BONUS IMAGE GRID ── */}
+        <motion.div
+          initial="hidden" whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={stagger}
+          className="flex flex-col gap-4 max-w-2xl mx-auto"
+        >
+          {rows.map((row, ri) => (
+            <div
+              key={ri}
+              className={
+                ri === rows.length - 1 && lastRowCentered
+                  ? 'flex justify-center'
+                  : 'grid grid-cols-2 gap-4'
+              }
             >
-              {/* Compact Book Cover */}
-              <div
-                className="relative w-full h-28 sm:h-36 md:h-44"
-                style={{
-                  background: `linear-gradient(
-                    135deg,
-                    ${GRADIENTS[i][0]},
-                    ${GRADIENTS[i][1]}
-                  )`,
-                }}
-              >
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-
-                {/* Icon */}
-                <div className="absolute top-2 right-2">
-                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white text-sm">
-                    {ICON_MAP[card.icon] ?? <FaGift />}
-                  </div>
-                </div>
-              </div>
-
-              {/* Card Content */}
-              <div className="p-3 md:p-4">
-                <h3 className="font-heading font-bold text-[#1A1A1A] text-sm md:text-base mb-2 line-clamp-2">
-                  {card.title}
-                </h3>
-
-                <p className="font-body text-gray-500 text-xs md:text-sm leading-relaxed mb-3 line-clamp-2">
-                  {card.description}
-                </p>
-
-                <span
-                  className="inline-block text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full"
-                  style={{ background: '#F97316' }}
+              {row.map((card, ci) => (
+                <motion.div
+                  key={ci}
+                  variants={fadeUp}
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className={`rounded-2xl overflow-hidden shadow-xl ${lastRowCentered && ri === rows.length - 1 ? 'w-1/2' : 'w-full'}`}
+                  style={{ aspectRatio: '806 / 1024' }}
                 >
-                  Worth {card.worth}
-                </span>
-              </div>
-            </motion.div>
+                  <div
+                    className="w-full h-full"
+                    style={{ background: 'linear-gradient(135deg, #2E063E, #480A62)' }}
+                  >
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={e => { e.currentTarget.style.display = 'none'; }}
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           ))}
         </motion.div>
+
+        {/* ── PRICING STRIP ── */}
+        <motion.div
+          initial="hidden" whileInView="visible"
+          viewport={{ once: true }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+          className="mt-14 max-w-xl mx-auto rounded-3xl overflow-hidden"
+          style={{ background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.15)' }}
+        >
+          <div className="px-6 py-8 flex flex-col items-center gap-3 text-center">
+
+            {/* Total value */}
+            <motion.p variants={fadeUp} className="text-white/70 font-heading font-semibold text-sm uppercase tracking-widest">
+              Total Value :&nbsp;
+              <span className="line-through text-white/50">₹7,486/-</span>
+            </motion.p>
+
+            {/* Regular price */}
+            <motion.p variants={fadeUp} className="text-white/70 font-heading font-semibold text-base">
+              Regular Price :&nbsp;
+              <span className="line-through">₹999/-</span>
+            </motion.p>
+
+            {/* Today's price */}
+            <motion.p
+              variants={fadeUp}
+              className="font-heading font-black text-[2rem] md:text-[2.5rem] leading-tight"
+              style={{
+                background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Today's Price : ₹99/-
+            </motion.p>
+
+            {/* CTA button */}
+            <motion.a
+              variants={fadeUp}
+              href={siteConfig.checkoutLink}
+              whileHover={{ scale: 1.03 }}
+              className="mt-2 w-full relative rounded-[18px] px-6 py-4 text-center transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
+                boxShadow: '0 0 36px rgba(249,115,22,0.55), 0 6px 32px rgba(249,115,22,0.40)',
+              }}
+            >
+              <span className="relative block text-white font-heading font-black uppercase text-[1.4rem] md:text-[1.75rem] leading-tight">
+                Register Now at ₹99/-&nbsp;Only
+              </span>
+            </motion.a>
+
+            {/* Subtext */}
+            <motion.p variants={fadeUp} className="text-white/60 font-body text-sm leading-snug mt-1 max-w-sm">
+              Reserve your seat before the timer ends to unlock bonuses worth ₹6,487/-
+            </motion.p>
+
+            {/* Countdown */}
+            <motion.div variants={fadeUp} className="mt-4 w-full">
+              <Countdown minutes={15} />
+            </motion.div>
+
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-// 'use client';
-// import { motion } from 'framer-motion';
-// import { FaUsers, FaToolbox, FaGift } from 'react-icons/fa';
-
-// const ICON_MAP = { FaUsers: <FaUsers />, FaToolbox: <FaToolbox /> };
-
-// const GRADIENTS = [
-//   ['#F97316', '#EA6C0A'],
-//   ['#480A62', '#6B1A8A'],
-//   ['#F97316', '#480A62'],
-//   ['#2E063E', '#480A62'],
-//   ['#6B1A8A', '#F97316'],
-// ];
-
-// const fadeUp = {
-//   hidden:  { opacity: 0, y: 28 },
-//   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
-// };
-// const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.11 } } };
-
-// export default function BonusSection({ data }) {
-//   return (
-//     <section className="section-padding" style={{ background: 'linear-gradient(135deg, #480A62, #6B1A8A)' }}>
-//       <div className="container-max">
-
-//         {/* Heading */}
-//         <motion.div
-//           className="text-center mb-12"
-//           initial="hidden" whileInView="visible"
-//           viewport={{ once: true, amount: 0.3 }}
-//           variants={stagger}
-//         >
-//           <motion.span
-//             variants={fadeUp}
-//             className="section-label"
-//             style={{ background: 'rgba(255,255,255,0.10)', color: '#fff', borderColor: 'rgba(255,255,255,0.20)' }}
-//           >
-//             Exclusive Bonuses
-//           </motion.span>
-//           <motion.h2
-//             variants={fadeUp}
-//             className="font-heading font-black text-3xl md:text-5xl text-white leading-tight flex items-center justify-center gap-3"
-//           >
-//             <FaGift className="text-[#F97316]" />
-//             {data.title}
-//           </motion.h2>
-//         </motion.div>
-
-//         {/* Cards Grid */}
-//         <motion.div
-//           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto"
-//           initial="hidden" whileInView="visible"
-//           viewport={{ once: true, amount: 0.12 }}
-//           variants={stagger}
-//         >
-//           {data.cards.map((card, i) => (
-//             <motion.div
-//               key={i}
-//               variants={fadeUp}
-//               whileHover={{ y: -6 }}
-//               className="bg-white rounded-2xl overflow-hidden shadow-lg"
-//             >
-//               {/* Card image */}
-//               <div
-//                 className="relative h-36 w-full"
-//                 style={{ background: `linear-gradient(135deg, ${GRADIENTS[i][0]}, ${GRADIENTS[i][1]})` }}
-//               >
-//                 <img
-//                   src={card.image}
-//                   alt={card.title}
-//                   className="absolute inset-0 w-full h-full object-cover"
-//                   loading="lazy"
-//                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
-//                 />
-//                 {/* Icon overlay */}
-//                 <div className="absolute inset-0 flex items-center justify-center">
-//                   <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white text-2xl">
-//                     {ICON_MAP[card.icon] ?? <FaGift />}
-//                   </div>
-//                 </div>
-//               </div>
-
-//               {/* Card body */}
-//               <div className="p-5">
-//                 <h3 className="font-heading font-bold text-[#1A1A1A] text-base mb-1">{card.title}</h3>
-//                 <p className="font-body text-gray-500 text-sm leading-relaxed mb-3">{card.description}</p>
-//                 <span
-//                   className="inline-block text-white text-xs font-bold px-3 py-1 rounded-full"
-//                   style={{ background: '#F97316' }}
-//                 >
-//                   Worth {card.worth}
-//                 </span>
-//               </div>
-//             </motion.div>
-//           ))}
-//         </motion.div>
-
-//       </div>
-//     </section>
-//   );
-// }

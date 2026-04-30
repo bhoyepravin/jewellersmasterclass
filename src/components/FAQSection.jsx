@@ -1,51 +1,63 @@
 'use client';
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronDown } from 'react-icons/fa';
-import CountdownTimer from './CountdownTimer';
-import { CHECKOUT_LINK, PRICE, EVENT_INFO } from '../data/masterclassData';
+import { siteConfig } from '../data/landingPageData';
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
-const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.10 } } };
+const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.08 } } };
 
-function FAQItem({ q, a, isOpen, onToggle }) {
+function FAQItem({ q, a, isOpen, onToggle, index }) {
   return (
-    <motion.div variants={fadeUp} className="faq-item">
+    <motion.div
+      variants={fadeUp}
+      className="overflow-hidden"
+      style={{
+        background: 'rgba(255,255,255,0.07)',
+        border: '1px solid rgba(255,255,255,0.15)',
+        borderRadius: '12px',
+      }}
+    >
+      {/* ── Title row ── */}
       <button
-        className="w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer"
+        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left cursor-pointer"
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="font-heading font-semibold text-[#1A1A1A] text-base md:text-lg leading-snug">
+        <span className="font-heading font-semibold text-white text-base md:text-lg leading-snug">
           {q}
         </span>
-        <motion.span
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.30, ease: 'easeInOut' }}
-          className="flex-shrink-0"
-          style={{ color: '#F97316' }}
+
+        {/* +/− toggle icon */}
+        <span
+          className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white font-black text-xl leading-none transition-colors duration-200"
+          style={{ background: isOpen ? 'linear-gradient(135deg,#F97316,#EA6C0A)' : 'rgba(255,255,255,0.15)' }}
+          aria-hidden="true"
         >
-          <FaChevronDown />
-        </motion.span>
+          {isOpen ? '−' : '+'}
+        </span>
       </button>
 
+      {/* ── Divider ── */}
+      {isOpen && <div className="mx-5 h-px" style={{ background: 'rgba(255,255,255,0.15)' }} />}
+
+      {/* ── Answer ── */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            key="faq-answer"
+            key="answer"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.32, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <div className="px-5 pb-5">
-              <div className="h-px bg-gray-100 mb-4" />
-              <p className="font-body text-gray-600 text-sm md:text-base leading-relaxed">{a}</p>
-            </div>
+            <p className="px-5 py-4 font-body text-white/75 text-sm md:text-base leading-relaxed">
+              {a}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -57,41 +69,48 @@ export default function FAQSection({ data }) {
   const [open, setOpen] = useState(null);
   const toggle = (i) => setOpen((prev) => (prev === i ? null : i));
 
-  /* support both old (headline) and new (title) data shapes */
-  const heading      = data.title ?? data.headline;
-  const closingText  = data.closingText ?? null;
-  const urgencyText  = data.urgencyText ?? null;
-
   return (
-    <section className="section-padding bg-white">
-      <div className="container-max">
+    <section
+      className="relative overflow-hidden py-20 md:py-28"
+      style={{ background: 'linear-gradient(135deg, #480A62 0%, #6B1A8A 100%)' }}
+    >
+      {/* Orbs */}
+      <div className="pointer-events-none absolute top-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-[#F97316]/10 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-[-60px] left-[-60px] w-[280px] h-[280px] rounded-full bg-[#2E063E]/60 blur-[80px]" />
 
-        {/* Heading */}
-        <motion.div
-          className="text-center mb-12"
+      <div className="container-max relative z-10 px-4 max-w-3xl">
+
+        {/* ── HEADING ── */}
+        <motion.h3
           initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="font-heading font-black text-white text-[1.8rem] md:text-[2.8rem] leading-tight mb-5"
         >
-          <motion.span variants={fadeUp} className="section-label">Got Questions?</motion.span>
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight"
-          >
-            {heading}
-          </motion.h2>
-        </motion.div>
+          Frequently Asked Questions:
+        </motion.h3>
 
-        {/* Accordion */}
+        {/* ── DIVIDER ── */}
         <motion.div
-          className="max-w-3xl mx-auto space-y-3"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="origin-left h-[2px] w-full rounded-full mb-10"
+          style={{ background: 'linear-gradient(90deg, #F97316, #EA6C0A, rgba(249,115,22,0.2))' }}
+        />
+
+        {/* ── ACCORDION ── */}
+        <motion.div
           initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={stagger}
+          className="space-y-3"
         >
           {data.items.map((item, i) => (
             <FAQItem
               key={i}
+              index={i}
               q={item.q}
               a={item.a}
               isOpen={open === i}
@@ -100,51 +119,31 @@ export default function FAQSection({ data }) {
           ))}
         </motion.div>
 
-        {/* Closing block */}
+        {/* ── CTA BUTTON ── */}
         <motion.div
-          className="max-w-2xl mx-auto mt-14 text-center space-y-6"
           initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={stagger}
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="mt-12 flex justify-center"
         >
-          {closingText && (
-            <motion.p
-              variants={fadeUp}
-              className="font-body text-gray-700 text-base md:text-lg leading-relaxed"
-            >
-              {closingText}
-            </motion.p>
-          )}
-
-          {/* Timer */}
-          <motion.div variants={fadeUp}>
-            <CountdownTimer label={`📅 ${EVENT_INFO.dateLabel} ${EVENT_INFO.timeLabel}`} />
-          </motion.div>
-
-          {/* Price */}
-          <motion.div variants={fadeUp} className="flex items-center justify-center gap-3">
-            <span className="font-heading font-black text-4xl text-[#F97316]">{PRICE.offer}</span>
-            <span className="font-body text-xl text-gray-400 line-through">{PRICE.original}</span>
-          </motion.div>
-
-          {urgencyText && (
-            <motion.p
-              variants={fadeUp}
-              className="font-body text-sm font-semibold text-[#F97316] uppercase tracking-wide"
-            >
-              {urgencyText}
-            </motion.p>
-          )}
-
-          {/* CTA */}
-          <motion.a
-            variants={fadeUp}
-            href={CHECKOUT_LINK}
-            className="primary-btn orange-glow inline-flex"
-            whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
+          <a
+            href={siteConfig.checkoutLink}
+            className="
+              relative inline-block
+              w-full max-w-[420px]
+              rounded-[18px] px-6 py-5
+              text-center
+              transition-all duration-300 hover:scale-[1.02]
+            "
+            style={{
+              background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
+              boxShadow: '0 0 36px rgba(249,115,22,0.55), 0 6px 32px rgba(249,115,22,0.40)',
+            }}
           >
-            JOIN NOW for {PRICE.offer}
-          </motion.a>
+            <span className="block text-white font-heading font-black uppercase text-[1.4rem] md:text-[1.75rem] leading-tight">
+              Register Now at ₹99/-&nbsp;Only
+            </span>
+          </a>
         </motion.div>
 
       </div>

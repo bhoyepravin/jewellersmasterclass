@@ -216,29 +216,59 @@ export const missionData = {
 
 /* ── FAQ ────────────────────────────────────────────────── */
 export const faqSectionData = {
-  title: 'FAQs',
+  title: 'Frequently Asked Questions:',
   items: [
     {
-      q: 'Do I have lifetime access to this masterclass ?',
-      a: 'No, this is a live-only session. So make sure you attend it live exclusively.',
+      q: "How I'll get the link to attend the program?",
+      a: 'You will get an email right after you register. Do check the spam and promotions tab just in case it landed there.',
     },
     {
-      q: 'What do I do if I have questions/doubts?',
-      a: 'You will get a chance to ask your questions directly during the session.',
+      q: "How I'll get the bonus items?",
+      a: 'Bonuses will be distributed exclusively to participants who attend and successfully complete the workshop.',
     },
     {
-      q: 'Can I join from multiple devices ?',
-      a: 'No, One registration is allowed for one device only.',
+      q: 'Why does this program cost only ₹99?',
+      a: 'The fee is just to make sure to get a commitment from you that you will be there. It is not the value of the program. Attend the program and understand the value yourself.',
     },
     {
-      q: 'Is this Masterclass useful for beginners?',
-      a: 'Yes, this Masterclass is useful for both beginners as well as existing jewelers.',
+      q: 'Will I get the recording of the program?',
+      a: 'This is a live online workshop. So no recording will be provided.',
     },
     {
-      q: 'I am still not sure - should I join ?',
-      a: "If you are serious about growing your jewellery business, this Masterclass will give you clarity, direction and proved strategies. So, Don't miss this opportunity.",
+      q: 'Why is the training during business hours?',
+      a: 'This is an investment in your business — when you learn, you grow. I strongly believe every entrepreneur has a personal life and would want to make sure you are learning during business hours so you can implement what you learn directly in your business.',
+    },
+    {
+      q: 'Who is this masterclass ideal for?',
+      a: 'All types of Jewellery Business Owners — retail shop owners, family run businesses, wholesellers, manufacturers, franchise owners, showroom managers, and those who wish to start a jewellery business.',
+    },
+    {
+      q: 'Is this applicable to my type of jewellery business?',
+      a: 'Yes. Whether you run a retail shop, a wholesale unit, or a manufacturing unit — the systems and strategies taught here are applicable across all formats of jewellery businesses.',
+    },
+    {
+      q: `Can I attend this if I want to start a jewellery business but don't have one yet?`,
+      a: 'Yes, you are welcome to attend. This Masterclass will give you clarity on the right foundation to build your jewellery business from day one.',
+    },
+    {
+      q: 'What if I have questions about registration or attending?',
+      a: 'You can drop us a DM on Instagram or WhatsApp. We will be happy to help you.',
+    },
+    {
+      q: 'If I miss attending this time, can I attend again?',
+      a: 'Yes, you may attend a future batch. However, the ₹99 offer and the bonuses are only for this batch, so it is best to attend now.',
+    },
+    {
+      q: 'What do I need to keep handy during the masterclass?',
+      a: 'Just an open mind and a notebook to make lots of notes.',
+    },
+    {
+      q: 'Can I attend this program along with my business partner(s)?',
+      a: 'Yes you can. It is preferred you attend with your partners so that you can learn and implement together.',
+    },
+    {
+      q: 'Is it a LIVE masterclass?',
+      a: 'Yes, this is a fully LIVE Zoom session with Arnav Patil Sir. He will be live throughout the session to answer your questions.',
     },
   ],
-  closingText: 'If you are serious about growing your jewellery business, this Masterclass will give you clarity, direction and proven strategies. So, Don\'t miss this opportunity.',
-  urgencyText: 'Limited spots! Grab yours now!',
 };

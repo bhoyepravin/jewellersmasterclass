@@ -1,194 +1,12 @@
-// 'use client';
-// import Image from 'next/image';
-// import { motion } from 'framer-motion';
-// import { FaCalendarAlt, FaClock, FaVideo, FaLanguage, FaCheckCircle } from 'react-icons/fa';
-// import { siteConfig } from '../data/landingPageData';
-
-// const fadeUp = {
-//   hidden: { opacity: 0, y: 32 },
-//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-// };
-
-// const stagger = {
-//   hidden: {},
-//   visible: { transition: { staggerChildren: 0.12 } },
-// };
-
-// export default function HeroSection({ data, statsBar }) {
-//   const eventDetails = [
-//     { icon: <FaCalendarAlt />, label: 'Date',     value: data.eventDate },
-//     { icon: <FaClock />,       label: 'Time',     value: data.eventTime },
-//     { icon: <FaVideo />,       label: 'Platform', value: data.platform },
-//     { icon: <FaLanguage />,    label: 'Language', value: data.language },
-//   ];
-
-//   return (
-//     <>
-//       {/* ── Sticky Header ─────────────────────────────────── */}
-//       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-//         <div className="container-max px-4 py-3 flex items-center justify-between">
-//           <Image
-//             src="/arnav_patil_logo.png"
-//             alt="Arnav Patil"
-//             width={120}
-//             height={40}
-//             style={{ height: '40px', width: '120px', objectFit: 'contain' }}
-//             priority
-//           />
-//           <a href={siteConfig.checkoutLink} className="primary-btn !px-5 !py-2.5 !text-sm">
-//             {siteConfig.ctaPrimary}
-//           </a>
-//         </div>
-//       </header>
-
-//       {/* ── Hero Body ─────────────────────────────────────── */}
-//       <section
-//         className="relative overflow-hidden section-padding"
-//         style={{ background: 'linear-gradient(160deg, #ffffff 0%, #FFF7ED 100%)' }}
-//       >
-//         {/* Floating blur orbs */}
-//         <div
-//           className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none"
-//           style={{ background: 'rgba(249,115,22,0.12)', filter: 'blur(90px)' }}
-//         />
-//         <div
-//           className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none"
-//           style={{ background: 'rgba(72,10,98,0.10)', filter: 'blur(90px)' }}
-//         />
-//         <div className="container-max">
-//           <motion.div
-//             className="text-center max-w-4xl mx-auto"
-//             initial="hidden"
-//             animate="visible"
-//             variants={stagger}
-//           >
-//             {/* Label */}
-//             <motion.span variants={fadeUp} className="section-label">
-//               Live Masterclass
-//             </motion.span>
-
-//             {/* Headline */}
-//             <motion.h1
-//               variants={fadeUp}
-//               className="font-heading font-black text-4xl md:text-6xl lg:text-7xl text-[#1A1A1A] leading-tight mb-5"
-//             >
-//               Jeweller&apos;s{' '}
-//               <span className="gradient-text">Masterclass</span>
-//             </motion.h1>
-
-//             {/* Subheadline */}
-//             <motion.div variants={fadeUp} className="mb-8">
-//               <p className="font-body text-gray-600 text-lg md:text-2xl leading-relaxed mb-1">
-//                 Unlock proven{' '}
-//                 <span className="font-bold text-[#F97316]">Systems</span>{' '}
-//                 and{' '}
-//                 <span className="font-bold text-[#F97316]">Strategies</span>{' '}
-//                 to
-//               </p>
-//               <p className="font-heading font-extrabold text-2xl md:text-3xl text-[#480A62]">
-//                 Autopilot / Grow your Jewellery Business
-//               </p>
-//             </motion.div>
-
-//             {/* Instructor */}
-//             <motion.p
-//               variants={fadeUp}
-//               className="font-body text-gray-500 text-base md:text-lg mb-10"
-//             >
-//               By{' '}
-//               <span className="font-bold text-[#1A1A1A]">Business Coach - Arnav Patil</span>
-//             </motion.p>
-
-//             {/* Event Details Card */}
-//             <motion.div
-//               variants={fadeUp}
-//               className="glass-card max-w-2xl mx-auto p-5 md:p-6 mb-8 grid grid-cols-2 md:grid-cols-4 gap-4"
-//             >
-//               {eventDetails.map((item) => (
-//                 <div key={item.label} className="flex flex-col items-center gap-1.5">
-//                   <span className="text-[#F97316] text-xl">{item.icon}</span>
-//                   <span className="font-body text-xs text-gray-400 uppercase tracking-wider">
-//                     {item.label}
-//                   </span>
-//                   <span className="font-heading font-bold text-sm text-[#1A1A1A] text-center leading-snug">
-//                     {item.value}
-//                   </span>
-//                 </div>
-//               ))}
-//             </motion.div>
-
-//             {/* Trust Badge */}
-//             <motion.div
-//               variants={fadeUp}
-//               className="flex items-start md:items-center justify-center gap-3 max-w-xl mx-auto mb-10"
-//             >
-//               <FaCheckCircle className="text-green-500 text-xl md:text-2xl flex-shrink-0 mt-0.5 md:mt-0" />
-//               <p className="font-body text-gray-600 text-sm md:text-base text-left">
-//                 {data.trustBadge}
-//               </p>
-//             </motion.div>
-
-//             {/* Primary CTA */}
-//             <motion.div variants={fadeUp} className="flex flex-col items-center gap-3">
-//               <motion.a
-//                 href={siteConfig.checkoutLink}
-//                 className="primary-btn orange-glow text-xl px-10 py-5"
-//                 animate={{
-//                   boxShadow: [
-//                     '0 0 15px rgba(249,115,22,0.35)',
-//                     '0 0 40px rgba(249,115,22,0.75)',
-//                     '0 0 15px rgba(249,115,22,0.35)',
-//                   ],
-//                 }}
-//                 transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-//               >
-//                 {siteConfig.ctaPrimary}&nbsp;
-//                 <span className="line-through opacity-60 text-base">
-//                   {siteConfig.ctaOriginalPrice}
-//                 </span>
-//               </motion.a>
-//               <p className="font-body text-[#480A62] font-semibold text-sm">
-//                 🎁 {siteConfig.ctaSecondary}
-//               </p>
-//             </motion.div>
-//           </motion.div>
-//         </div>
-
-//         {/* ── Stats Bar ───────────────────────────────────── */}
-//         <div className="container-max mt-16 px-4">
-//           <motion.div
-//             className="rounded-2xl overflow-hidden grid grid-cols-2 md:grid-cols-4"
-//             style={{ background: 'linear-gradient(135deg, #480A62, #6B1A8A)' }}
-//             initial={{ opacity: 0, y: 24 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.7, delay: 0.8 }}
-//           >
-//             {statsBar.map((stat, i) => (
-//               <div key={i} className="stat-card">
-//                 <p className="font-heading font-black text-3xl md:text-4xl text-[#F97316]">
-//                   {stat.value}
-//                 </p>
-//                 <p className="font-body text-xs md:text-sm mt-1" style={{ color: 'rgba(255,255,255,0.70)' }}>
-//                   {stat.label}
-//                 </p>
-//               </div>
-//             ))}
-//           </motion.div>
-//         </div>
-//       </section>
-//     </>
-//   );
-// }
-
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaCalendarAlt, FaClock, FaVideo, FaLanguage, FaCheckCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaStar } from 'react-icons/fa';
 import { siteConfig } from '../data/landingPageData';
 import { useState, useEffect } from 'react';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
@@ -228,231 +46,213 @@ export default function HeroSection({ data, statsBar }) {
     return () => clearInterval(timer);
   }, []);
 
-  const eventDetails = [
-    { icon: <FaCalendarAlt />, label: 'Date',     value: data.eventDate },
-    { icon: <FaClock />,       label: 'Time',     value: data.eventTime },
-    { icon: <FaVideo />,       label: 'Platform', value: data.platform },
-    { icon: <FaLanguage />,    label: 'Language', value: data.language },
-  ];
-
   return (
     <>
-      {/* ── Sticky Header ─────────────────────────────────── */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <div className="container-max px-4 py-3 flex items-center justify-between">
+      {/* ── 1. Top Center Logo (Larger) ───────────────────────── */}
+      <header className="pt-10 pb-6">
+        <div className="container-max px-4 flex justify-center">
           <Image
             src="/arnav_patil_logo.png"
             alt="Arnav Patil"
-            width={120}
-            height={40}
-            style={{ height: '40px', width: '120px', objectFit: 'contain' }}
+            width={200}
+            height={60}
+            className="h-40 w-40"
             priority
           />
-          <a href={siteConfig.checkoutLink} className="primary-btn !px-5 !py-2.5 !text-sm">
-            {siteConfig.ctaPrimary}
-          </a>
         </div>
       </header>
 
-      {/* ── Hero Body ─────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden section-padding"
-        style={{ background: 'linear-gradient(160deg, #ffffff 0%, #FFF7ED 100%)' }}
-      >
-        {/* Floating blur orbs */}
-        <div
-          className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: 'rgba(249,115,22,0.12)', filter: 'blur(90px)' }}
-        />
-        <div
-          className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none"
-          style={{ background: 'rgba(72,10,98,0.10)', filter: 'blur(90px)' }}
-        />
-        <div className="container-max">
+      <section className="relative overflow-hidden pb-20 md:pb-28 bg-white">
+        {/* Floating blur orbs - your brand colors */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none blur-orb-orange" />
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
+        
+        <div className="container-max px-4">
           <motion.div
-            className="text-center max-w-4xl mx-auto"
             initial="hidden"
             animate="visible"
             variants={stagger}
+            className="flex flex-col items-center"
           >
-            {/* Label */}
-            <motion.span variants={fadeUp} className="section-label">
-              Live Masterclass
-            </motion.span>
+            {/* ── 2. Floating Workshop Badge overlapping the box halfway ── */}
+            <div className="relative flex flex-col items-center w-full max-w-4xl">
+              
+              {/* Floating Orange Workshop Badge - positioned to overlap halfway down */}
+              <div className="relative z-20 -mb-8">
+                <div className="rounded-2xl px-8 py-5 text-center shadow-xl orange-gradient-bg min-w-[250px] md:min-w-[420px]">
+                  <p className="text-white font-bold text-base md:text-xl uppercase leading-tight">
+                    4 Hour Online Workshop
+                  </p>
+                  <p className="text-white font-bold text-base md:text-xl uppercase leading-tight mt-1">
+                    On {data.eventDate}
+                  </p>
+                  <p className="text-white font-bold text-base md:text-xl uppercase leading-tight mt-1">
+                    ({data.eventTime} IST)
+                  </p>
+                </div>
+              </div>
 
-            {/* Headline */}
-            <motion.h1
-              variants={fadeUp}
-              className="font-heading font-black text-4xl md:text-6xl lg:text-7xl text-[#1A1A1A] leading-tight mb-5"
-            >
-              Jeweller&apos;s{' '}
-              <span className="gradient-text">Masterclass</span>
-            </motion.h1>
+              {/* Main Border Box - badge overlaps this box halfway */}
+              <div className="w-full mt-0 rounded-[24px] border-2 border-[#F97316] px-6 md:px-14 py-4 md:py-20 text-center bg-white shadow-xl pt-24 md:pt-28">
+                
+                {/* Heading */}
+                <h1 className="text-xl md:text-5xl font-heading font-black leading-tight text-[#1A1A1A] max-w-3xl mx-auto">
+                  Join and Become Like The Top 1% Successful Business Owners & Entrepreneurs
+                </h1>
 
-            {/* Subheadline with Images */}
-            <motion.div variants={fadeUp} className="mb-8">
-              <p className="font-body text-gray-600 text-lg md:text-2xl leading-relaxed mb-1">
-                Unlock proven{' '}
-                <span className="font-bold text-[#F97316]">Systems</span>{' '}
-                and{' '}
-                <span className="font-bold text-[#F97316]">Strategies</span>{' '}
-                to
-              </p>
-              <p className="font-heading font-extrabold text-2xl md:text-3xl text-[#480A62]">
-                Autopilot / Grow your Jewellery Business
-              </p>
-            </motion.div>
+                {/* Sub Text */}
+                <p className="mt-6 text-lg md:text-xl font-semibold text-[#F97316]">
+                  Before it's too late
+                </p>
+              </div>
+            </div>
 
-            {/* Single Square Image */}
-            <motion.div
-  variants={fadeUp}
-  className="flex justify-center mb-10"
->
-  <div className="relative w-full max-w-5xl aspect-video overflow-hidden rounded-lg shadow-xl">
-    <Image
-      src="/jewellers_masterclass.jpeg"
-      alt="Jewellery Business Showcase"
-      fill
-      className="object-cover"
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-      priority
-    />
+            {/* ── 3. Coach Section ────────────────────────────────── */}
+           <div className="w-full max-w-4xl mx-auto mt-2">
+  
+  {/* Coach Content - 2 Column Layout */}
+ <div className="w-full max-w-4xl mx-auto mt-8">
+
+  {/* Main Coach Section */}
+  <div className="grid grid-cols-2 items-end gap-3 md:gap-8">
+
+    {/* Left Image */}
+    <div className="flex justify-center md:justify-end">
+      <div className="relative w-[150px] h-[190px] md:w-[260px] md:h-[320px]">
+        <Image
+          src="/arnav_patil_sir.JPG"
+          alt="Coach Arnav Patil"
+          fill
+          className="object-contain object-bottom"
+          priority
+        />
+      </div>
+    </div>
+
+    {/* Right Content */}
+    <div className="text-left pb-3">
+
+      {/* Intro */}
+      <p className="text-sm md:text-xl leading-tight text-[#1A1A1A]">
+        I will be your <br /> coach for 4 hours
+      </p>
+
+      {/* Name */}
+      <h2 className="text-3xl md:text-5xl font-heading font-bold mt-2 leading-tight text-[#1A1A1A]">
+        Arnav Patil
+      </h2>
+
+      {/* Subtitle */}
+      <p className="text-base md:text-2xl mt-2 leading-snug text-[#480A62]">
+        India's Jewellery <br /> Business Coach
+      </p>
+
+      {/* Divider */}
+      <div className="w-16 md:w-20 h-[2px] bg-[#F97316] mt-3 mb-3"></div>
+
+      {/* Achievement */}
+      <p className="text-lg md:text-3xl font-semibold leading-tight text-[#1A1A1A]">
+        Trained over <br />
+        1000+ Jewellery <br />
+        Business Owners
+      </p>
+
+    </div>
   </div>
-</motion.div>
 
-            {/* Instructor */}
-            <motion.p
-              variants={fadeUp}
-              className="font-body text-gray-500 text-base md:text-lg mb-10"
-            >
-              By{' '}
-              <span className="font-bold text-[#1A1A1A]">Business Coach - Arnav Patil</span>
-            </motion.p>
+ 
 
-            {/* Event Details Card */}
+</div>
+
+  {/* Rating Card */}
+  <div className="mt-8 flex justify-center">
+    <div className="rounded-3xl px-6 py-4 md:px-8 md:py-6 w-full max-w-xl flex items-center gap-4 md:gap-6 bg-[#FFF7ED] border border-[#F97316]/20 shadow-md">
+      {/* Stars */}
+      <div className="text-2xl md:text-3xl tracking-wide text-[#F97316]">
+        ⭐⭐⭐⭐⭐
+      </div>
+
+      {/* Rating Text */}
+      <div>
+        <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#1A1A1A]">
+          1000+ People
+        </h3>
+        <p className="text-base md:text-lg leading-snug mt-1 text-[#6B7280]">
+          Rated <br />
+          My Program with <br />
+          4.96 Stars
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+            {/* ── 4. CTA Button ────────────────────────────────── */}
             <motion.div
               variants={fadeUp}
-              className="glass-card max-w-2xl mx-auto p-5 md:p-6 mb-8 grid grid-cols-2 md:grid-cols-4 gap-4"
+              className="w-full mt-12 flex flex-col items-center"
             >
-              {eventDetails.map((item) => (
-                <div key={item.label} className="flex flex-col items-center gap-1.5">
-                  <span className="text-[#F97316] text-xl">{item.icon}</span>
-                  <span className="font-body text-xs text-gray-400 uppercase tracking-wider">
-                    {item.label}
-                  </span>
-                  <span className="font-heading font-bold text-sm text-[#1A1A1A] text-center leading-snug">
-                    {item.value}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* Trust Badge */}
-            <motion.div
-              variants={fadeUp}
-              className="flex items-start md:items-center justify-center gap-3 max-w-xl mx-auto mb-10"
-            >
-              <FaCheckCircle className="text-green-500 text-xl md:text-2xl flex-shrink-0 mt-0.5 md:mt-0" />
-              <p className="font-body text-gray-600 text-base md:text-lg text-left">
-                1000+ Jeweller's experienced the transformative benefits of this masterclass. Now,{' '}
-                <span className="text-[#F97316] font-bold text-lg md:text-xl">
-                  it's YOUR TURN!
-                </span>
-              </p>
-            </motion.div>
-
-            {/* Primary CTA with Timer */}
-            <motion.div variants={fadeUp} className="flex flex-col items-center gap-3">
-              {/* Timer Section */}
-              <div className="bg-gradient-to-r from-[#480A62] to-[#6B1A8A] rounded-xl p-4 mb-2 w-full max-w-md">
-                <p className="text-white text-center font-body text-sm mb-2">⏰ Event Starts In:</p>
-                <div className="flex justify-center gap-4 md:gap-6">
-                  <div className="text-center">
-                    <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 md:px-4 md:py-3">
-                      <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
-                        {String(timeLeft.days).padStart(2, '0')}
-                      </span>
-                    </div>
-                    <p className="text-white/80 text-xs mt-1">Days</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 md:px-4 md:py-3">
-                      <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
-                        {String(timeLeft.hours).padStart(2, '0')}
-                      </span>
-                    </div>
-                    <p className="text-white/80 text-xs mt-1">Hours</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 md:px-4 md:py-3">
-                      <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
-                        {String(timeLeft.minutes).padStart(2, '0')}
-                      </span>
-                    </div>
-                    <p className="text-white/80 text-xs mt-1">Mins</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-white/20 backdrop-blur rounded-lg px-3 py-2 md:px-4 md:py-3">
-                      <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
-                        {String(timeLeft.seconds).padStart(2, '0')}
-                      </span>
-                    </div>
-                    <p className="text-white/80 text-xs mt-1">Secs</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Details */}
-              <div className="text-center mb-2">
-                <p className="font-body text-gray-700 text-base md:text-lg">
-                  <span className="font-bold text-[#F97316]">Register for ₹99</span>
-                </p>
-                <p className="font-body text-gray-600 text-sm md:text-base mt-1">
-                  Starts on <span className="font-semibold">26th April 2026</span>
-                </p>
-                <p className="font-body text-gray-600 text-sm md:text-base">
-                  (11:00 am to 2:00 pm)
-                </p>
-              </div>
-
-              {/* Register Now Button */}
               <motion.a
                 href={siteConfig.checkoutLink}
-                className="primary-btn orange-glow text-xl px-10 py-5"
+                className="primary-btn orange-glow text-lg md:text-xl px-10 md:px-14 py-4 md:py-5 w-full md:w-auto text-center"
                 animate={{
-                  boxShadow: [
-                    '0 0 15px rgba(249,115,22,0.35)',
-                    '0 0 40px rgba(249,115,22,0.75)',
-                    '0 0 15px rgba(249,115,22,0.35)',
-                  ],
+                  scale: [1, 1.02, 1],
                 }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               >
                 Register Now for ₹99
               </motion.a>
-              
-              <p className="font-body text-[#480A62] font-semibold text-sm">
-                🎁 {siteConfig.ctaSecondary}
+              <p className="text-[#480A62] font-semibold text-sm mt-4 flex items-center gap-2">
+                <FaCheckCircle className="text-green-500" /> 
+                {siteConfig.ctaSecondary}
               </p>
+            </motion.div>
+
+            {/* ── 5. Countdown Timer (Compact Blocks) ───────────── */}
+            <motion.div
+              variants={fadeUp}
+              className="w-full mt-10"
+            >
+              <div className="bg-[#FFF7ED] rounded-2xl p-5 border border-[#F97316]/20">
+                <p className="text-center text-[#480A62] text-sm font-semibold mb-4">
+                  ⏰ Event Starts In:
+                </p>
+                <div className="flex justify-center gap-3 md:gap-6">
+                  {[
+                    { label: 'Days', value: timeLeft.days },
+                    { label: 'Hours', value: timeLeft.hours },
+                    { label: 'Mins', value: timeLeft.minutes },
+                    { label: 'Secs', value: timeLeft.seconds },
+                  ].map((item) => (
+                    <div key={item.label} className="text-center">
+                      <div className="bg-white rounded-xl shadow-md px-3 py-2 md:px-5 md:py-3 min-w-[70px] md:min-w-[90px] border border-[#F97316]/30">
+                        <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
+                          {String(item.value).padStart(2, '0')}
+                        </span>
+                      </div>
+                      <p className="text-[#6B7280] text-xs mt-2 font-medium">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* ── Stats Bar ───────────────────────────────────── */}
+        {/* ── 6. Stats Bar (Preserved) ──────────────────────────────── */}
         <div className="container-max mt-16 px-4">
           <motion.div
-            className="rounded-2xl overflow-hidden grid grid-cols-2 md:grid-cols-4"
-            style={{ background: 'linear-gradient(135deg, #480A62, #6B1A8A)' }}
-            initial={{ opacity: 0, y: 24 }}
+            className="rounded-2xl overflow-hidden grid grid-cols-2 md:grid-cols-4 gradient-bg"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
           >
             {statsBar.map((stat, i) => (
-              <div key={i} className="stat-card">
-                <p className="font-heading font-black text-3xl md:text-4xl text-[#F97316]">
+              <div key={i} className="stat-card !bg-transparent !border-0">
+                <p className="font-heading font-black text-2xl md:text-3xl text-[#F97316]">
                   {stat.value}
                 </p>
-                <p className="font-body text-xs md:text-sm mt-1" style={{ color: 'rgba(255,255,255,0.70)' }}>
+                <p className="font-body text-xs md:text-sm text-white/80 mt-1">
                   {stat.label}
                 </p>
               </div>

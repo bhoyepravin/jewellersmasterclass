@@ -26,6 +26,8 @@ import {
   missionData,
   faqSectionData,
 } from '../data/masterclassData';
+import BusinessBreakthroughSection from '../components/BusinessBreakthroughSection';
+import WhoHelpsSection             from '../components/WhoHelpsSection';
 
 export default function Home() {
   return (
@@ -33,6 +35,10 @@ export default function Home() {
 
       {/* 1. Hero */}
       <HeroSection data={heroData} statsBar={statsBar} />
+
+      <BusinessBreakthroughSection/>
+
+      <WhoHelpsSection />
 
       {/* 2. What You Will Learn */}
       <WhatYouLearnSection data={whatYouLearnData} />

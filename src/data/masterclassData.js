@@ -44,7 +44,7 @@ export const whatYouLearnData = {
       description: 'Learn how to train your staff to handle customers and work effeciantly.',
     },
     {
-      image:       '/team_conducting_training.jpg',
+      image:       '/how_to_grow_sales.jpg',
       icon:        'FaChartLine',
       title:       'Sale कसा वाढवायचा ?',
       description: "Learn Arnav's Proven Sales Mastery Formula to increase your monthly sales.",
@@ -145,7 +145,7 @@ export const masterclassTestimonialsData = {
       location: 'Mumbai',
       text:     'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
       image:    '/images/testimonial-1.jpg',
-      video:    '/videos/testimonial-video-1.mp4',
+      video:    '/testimonials/testimonials_01.mp4',
       gradientFrom: '#480A62',
       gradientTo:   '#6B1A8A',
     },

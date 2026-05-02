@@ -150,7 +150,7 @@ export default function PricingCard({
       </div>
 
       {/* Fixed Button - Always Visible at Bottom */}
-      {showFixedButton && <FixedRegisterButton text={`Register Now at ${offerPrice}&nbsp;Only`} href={checkoutLink} />}
+      {showFixedButton && <FixedRegisterButton text={`Register Now at ${offerPrice} Only`} href={checkoutLink} />}
     </>
   );
 }

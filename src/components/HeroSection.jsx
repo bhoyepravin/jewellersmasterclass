@@ -158,7 +158,7 @@ export default function HeroSection({ data, statsBar }) {
     <div className="flex justify-center md:justify-end">
       <div className="relative w-[150px] h-[190px] md:w-[260px] md:h-[320px]">
         <Image
-          src="/arnav_patil_sir.JPG"
+          src="/arnav_patil_sir.webp"
           alt="Coach Arnav Patil"
           fill
           className="object-contain object-bottom"

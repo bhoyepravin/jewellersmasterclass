@@ -184,14 +184,6 @@ function DesktopGridView({ items }) {
 /* ── Main Export ── */
 export default function TextTestimonialsSection({ data }) {
   const [isMobile, setIsMobile] = useState(false);
-  
-  // Add fallback for undefined data
-  if (!data) {
-    return null;
-  }
-  
-  const title = data.title ?? data.headlineMr ?? 'Success Stories';
-  const items = data.items ?? [];
 
   useEffect(() => {
     const checkMobile = () => {
@@ -201,6 +193,13 @@ export default function TextTestimonialsSection({ data }) {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  if (!data) {
+    return null;
+  }
+
+  const title = data.title ?? data.headlineMr ?? 'Success Stories';
+  const items = data.items ?? [];
 
   if (items.length === 0) {
     return null;

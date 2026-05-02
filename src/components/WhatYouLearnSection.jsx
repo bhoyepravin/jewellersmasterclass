@@ -20,7 +20,7 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.12 } }
 function CardImage({ src, alt, gradient }) {
   return (
     <div
-      className="relative w-full h-44 overflow-hidden"
+      className="relative w-full h-32 md:h-36 overflow-hidden"
       style={{ background: `linear-gradient(135deg, ${gradient[0]}, ${gradient[1]})` }}
     >
       <img
@@ -28,7 +28,9 @@ function CardImage({ src, alt, gradient }) {
         alt={alt}
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
-        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+        onError={(e) => {
+          e.currentTarget.style.display = 'none';
+        }}
       />
     </div>
   );
@@ -48,55 +50,95 @@ export default function WhatYouLearnSection({ data }) {
 
         {/* Heading */}
         <motion.div
-          className="text-center mb-12"
-          initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-        >
-          <motion.span variants={fadeUp} className="section-label">What You Will Learn</motion.span>
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#480A62] mb-3 leading-tight"
-          >
-            {data.title}
-          </motion.h2>
-          <motion.p variants={fadeUp} className="font-body text-gray-500 text-base md:text-lg max-w-2xl mx-auto">
-            {data.subtitle}
-          </motion.p>
-        </motion.div>
+  className="text-center mb-12"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={stagger}
+>
+  <motion.span
+    variants={fadeUp}
+    className="section-label"
+  >
+    What You Will Learn
+  </motion.span>
+
+  <motion.h2
+    variants={fadeUp}
+    className="font-heading font-black text-[2.2rem] md:text-[4rem] leading-[1.1] tracking-[-0.02em]"
+  >
+    <span className="gradient-text">
+      {data.title}
+    </span>
+  </motion.h2>
+
+  <motion.p
+    variants={fadeUp}
+    className=" font-heading text-base md:text-lg max-w-2xl mx-auto font-medium mt-4"
+  >
+    {data.subtitle}
+  </motion.p>
+</motion.div>
 
         {/* Cards Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          variants={stagger}
-        >
-          {data.cards.map((card, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              whileHover={{ y: -6, boxShadow: '0 14px 44px rgba(0,0,0,0.12)' }}
-              className="glass-card overflow-hidden cursor-default"
+       {/* Cards Grid */}
+{/* Cards Grid */}
+<motion.div
+  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.15 }}
+  variants={stagger}
+>
+  {data.cards.map((card, i) => (
+    <motion.div
+      key={i}
+      variants={fadeUp}
+      whileHover={{
+        y: -6,
+      }}
+      className="cursor-default"
+    >
+      {/* Shadow Box (editable) */}
+      <div className="glass-card overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+        
+        {/* Card Image */}
+        <CardImage
+          src={card.image}
+          alt={card.title}
+          gradient={GRADIENTS[i]}
+        />
+
+        {/* Card Content */}
+        <div className="p-5">
+          
+          {/* Icon + Heading */}
+          <div className="flex items-center gap-3 mb-3">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-sm text-white shrink-0"
+              style={{
+                background: `linear-gradient(135deg, ${GRADIENTS[i][0]}, ${GRADIENTS[i][1]})`,
+              }}
             >
-              <CardImage src={card.image} alt={card.title} gradient={GRADIENTS[i]} />
-              <div className="p-5">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-lg text-white mb-3"
-                  style={{ background: `linear-gradient(135deg, ${GRADIENTS[i][0]}, ${GRADIENTS[i][1]})` }}
-                >
-                  {ICON_MAP[card.icon]}
-                </div>
-                <h3 className="font-heading font-bold text-[#1A1A1A] text-sm md:text-base leading-snug mb-2">
-                  {card.title}
-                </h3>
-                {card.description && (
-                  <p className="font-body text-gray-500 text-sm leading-relaxed">{card.description}</p>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              {ICON_MAP[card.icon]}
+            </div>
+
+            <h3 className="font-heading font-extrabold text-[#1A1A1A] text-base leading-snug">
+              {card.title}
+            </h3>
+          </div>
+
+          {/* Description */}
+          {card.description && (
+            <p className="font-body font-bold text-gray-800 text-sm leading-relaxed">
+              {card.description}
+            </p>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
 
       </div>
     </section>

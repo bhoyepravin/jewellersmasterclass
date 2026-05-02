@@ -17,7 +17,7 @@ export const heroData = {
   subheadlineHighlight3: 'Autopilot / Grow your Jewellery Business',
   instructor: 'By Business Coach - Arnav Patil',
   eventDate: '26th April, 2026',
-  eventTime: '11 am to 2 pm',
+  eventTime: '11:00 AM - 2:00 PM',
   platform: 'Live on Zoom',
   language: 'Marathi',
   trustBadge:

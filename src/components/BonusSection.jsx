@@ -32,10 +32,10 @@ function Countdown({ minutes = 15 }) {
         <div key={label} className="flex items-center gap-4">
           <div
             className="flex flex-col items-center justify-center w-20 h-20 rounded-2xl"
-            style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.20)' }}
+            style={{ background: '#FFF7ED', border: '1px solid rgba(249,115,22,0.3)' }}
           >
-            <span className="font-heading font-black text-white text-3xl leading-none">{val}</span>
-            <span className="text-white/60 text-[10px] font-semibold mt-1 uppercase tracking-wide">{label}</span>
+            <span className="font-heading font-black text-[#480A62] text-3xl leading-none">{val}</span>
+            <span className="text-[#480A62]/60 text-[10px] font-semibold mt-1 uppercase tracking-wide">{label}</span>
           </div>
           {i === 0 && (
             <span className="font-heading font-black text-[#F97316] text-3xl leading-none">:</span>
@@ -59,11 +59,11 @@ export default function BonusSection({ data }) {
   return (
     <section
       className="relative overflow-hidden py-20 md:py-28"
-      style={{ background: 'linear-gradient(135deg, #480A62 0%, #6B1A8A 100%)' }}
+      style={{ background: '#FFF7ED' }}
     >
       {/* Subtle orbs */}
-      <div className="pointer-events-none absolute top-[-60px] left-[-60px] w-[300px] h-[300px] rounded-full bg-[#F97316]/10 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-[-60px] right-[-60px] w-[280px] h-[280px] rounded-full bg-[#2E063E]/60 blur-[80px]" />
+      <div className="pointer-events-none absolute top-[-60px] left-[-60px] w-[300px] h-[300px] rounded-full bg-[#F97316]/20 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-[-60px] right-[-60px] w-[280px] h-[280px] rounded-full bg-[#F97316]/10 blur-[80px]" />
 
       <div className="container-max relative z-10 px-4">
 
@@ -72,7 +72,7 @@ export default function BonusSection({ data }) {
           initial="hidden" whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="text-center font-heading font-black text-white text-[2.2rem] md:text-[4rem] leading-[1.1] tracking-[-0.02em] mb-14"
+          className="text-center font-heading font-black text-[#1A1A1A] text-[2.2rem] md:text-[4rem] leading-[1.1] tracking-[-0.02em] mb-14"
         >
           Bonuses If You Register{' '}
           <span style={{
@@ -111,7 +111,7 @@ export default function BonusSection({ data }) {
                 >
                   <div
                     className="w-full h-full"
-                    style={{ background: 'linear-gradient(135deg, #2E063E, #480A62)' }}
+                    style={{ background: '#FFF7ED' }}
                   >
                     <img
                       src={card.image}
@@ -133,18 +133,18 @@ export default function BonusSection({ data }) {
           viewport={{ once: true }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           className="mt-14 max-w-xl mx-auto rounded-3xl overflow-hidden"
-          style={{ background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.15)' }}
+          style={{ background: 'white', border: '1px solid rgba(249,115,22,0.2)', boxShadow: '0 4px 24px rgba(0,0,0,0.05)' }}
         >
           <div className="px-6 py-8 flex flex-col items-center gap-3 text-center">
 
             {/* Total value */}
-            <motion.p variants={fadeUp} className="text-white/70 font-heading font-semibold text-sm uppercase tracking-widest">
+            <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-sm uppercase tracking-widest">
               Total Value :&nbsp;
-              <span className="line-through text-white/50">₹7,486/-</span>
+              <span className="line-through text-gray-400">₹7,486/-</span>
             </motion.p>
 
             {/* Regular price */}
-            <motion.p variants={fadeUp} className="text-white/70 font-heading font-semibold text-base">
+            <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-base">
               Regular Price :&nbsp;
               <span className="line-through">₹999/-</span>
             </motion.p>
@@ -152,7 +152,7 @@ export default function BonusSection({ data }) {
             {/* Today's price */}
             <motion.p
               variants={fadeUp}
-              className="font-heading font-black text-[2rem] md:text-[2.5rem] leading-tight"
+              className="font-heading font-black text-2xl md:text-[2.5rem] leading-tight"
               style={{
                 background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
                 WebkitBackgroundClip: 'text',
@@ -180,7 +180,7 @@ export default function BonusSection({ data }) {
             </motion.a>
 
             {/* Subtext */}
-            <motion.p variants={fadeUp} className="text-white/60 font-body text-sm leading-snug mt-1 max-w-sm">
+            <motion.p variants={fadeUp} className="text-gray-800 font-body text-base leading-snug mt-1 max-w-sm">
               Reserve your seat before the timer ends to unlock bonuses worth ₹6,487/-
             </motion.p>
 

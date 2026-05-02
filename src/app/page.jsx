@@ -28,6 +28,7 @@ import {
 } from '../data/masterclassData';
 import BusinessBreakthroughSection from '../components/BusinessBreakthroughSection';
 import WhoHelpsSection             from '../components/WhoHelpsSection';
+import TextTestimonialsSection from '../components/TextTestimonialsSection';
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
       <WhatYouLearnSection data={whatYouLearnData} />
 
       {/* 3. Who Is This For */}
-      <WhoIsThisForSection data={whoIsThisForData} />
+      {/* <WhoIsThisForSection data={whoIsThisForData} /> */}
 
       {/* 4. Registration / Countdown */}
       <RegistrationSection />
@@ -59,10 +60,12 @@ export default function Home() {
       <BonusSection data={bonusSectionData} />
 
       {/* 8. Ready To Join */}
-      <ReadyToJoinSection />
+      {/* <ReadyToJoinSection /> */}
 
       {/* 9. Testimonials */}
       <TestimonialsSection data={masterclassTestimonialsData} />
+
+      <TextTestimonialsSection/>
 
       {/* 10. Mentor */}
       <MentorSection data={mentorSectionData} />

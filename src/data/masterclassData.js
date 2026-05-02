@@ -78,7 +78,8 @@ export const challengesData = {
     'Team आहे पण पण त्यांना proper ट्रेनिंग नाही',
     'Business ची growth कुठेतरी stuck झालीय',
   ],
-  closingText: 'जर या प्रश्नांचे उत्तर हो असतील, तर हा मास्टर क्लास तुमच्यासाठी आहे',
+  closingText:
+  'जर या प्रश्नांचे उत्तर हो <span class="text-mangocolor font-extrabold">असतील</span>, तर हा मास्टर क्लास तुमच्यासाठी आहे',
 };
 
 /* ── Masterclass Benefits ───────────────────────────────── */
@@ -141,29 +142,29 @@ export const masterclassTestimonialsData = {
   title: 'ज्यांनी अनुभवले, त्यांनी सांगितले',
   items: [
     {
-      name:     'Mr. Aakash Maid',
+      name:     'Mr. Divya Chaudhari',
       location: 'Mumbai',
       text:     'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
       image:    '/images/testimonial-1.jpg',
-      video:    '/testimonials/testimonials_01.mp4',
+      video:    '/testimonials/miss_divya_chaudhari.mp4',
       gradientFrom: '#480A62',
       gradientTo:   '#6B1A8A',
     },
     {
-      name:     'Ms. Divya Choudhari',
+      name:     'Mr. Rahul Dindorkar',
       location: '',
       text:     "Connecting with Arnav Sir was the best decision of my life. I am soo excited to launch my new jewellery brand after attending Arnav sir's Masterclass. Thank You Arnav Sir!",
       image:    '/images/testimonial-2.jpg',
-      video:    '/videos/testimonial-video-2.mp4',
+      video:    '/testimonials/mr_rahul_dindorkar.mp4',
       gradientFrom: '#F97316',
       gradientTo:   '#EA6C0A',
     },
     {
-      name:     'Mr. Akshay Shahane',
+      name:     'Mr. Avinash Kharote',
       location: 'Thane',
       text:     'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला आणि आत्तापर्यंतचा सगळ्यात बेस्ट अनुभव होता हा माझा. सरांनी जे पॉईंट सांगितले हे खूप प्रॅक्टिकल आणि रियालिटीला धरून होते. One of the best investments of time and money.',
       image:    '/images/testimonial-3.jpg',
-      video:    '/videos/testimonial-video-3.mp4',
+      video:    '/testimonials/mr_avinash_kharote.mp4',
       gradientFrom: '#2E063E',
       gradientTo:   '#480A62',
     },
@@ -193,7 +194,7 @@ export const mentorSectionData = {
   title:       'Meet your Mentor',
   image:       '/arnav_patil_sir.JPG',
   name:        'Mr. Arnav Patil',
-  designation: 'International Business Coach, Strategist, Consultant and a Key-Note Speaker',
+  designation: `India's Leading International Business Coach, Strategist, Consultant and a Key-Note Speaker`,
   content:     'Mr. Arnav Patil is an Entrepreneur, Business Coach and Trainer helping Business Owners grow and scale their business.',
   points: [
     '10+ years of experience in helping Jewellers automate their Jewellery Business',

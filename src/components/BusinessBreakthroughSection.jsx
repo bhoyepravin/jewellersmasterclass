@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { siteConfig } from '../data/landingPageData';
+import CTAButton from './CTAButton';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -35,7 +36,7 @@ export default function BusinessBreakthroughSection() {
             className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
           >
             What Will Change{' '}
-            <span className="gradient-text">In Your Business?</span>
+            <span className="text-[var(--mangocolor)]">In Your Business?</span>
           </motion.h2>
 
           {/* ── DIAGRAM SVG ── */}
@@ -85,7 +86,7 @@ export default function BusinessBreakthroughSection() {
 
               {/* ── Centre circle — orange gradient ── */}
               <defs>
-                <radialGradient id="orangeCircle" cx="50%" cy="50%" r="50%">
+                <radialGradient id="orangeCircle" cx="60%" cy="60%" r="60%">
                   <stop offset="0%"   stopColor="#F97316" />
                   <stop offset="100%" stopColor="#EA6C0A" />
                 </radialGradient>
@@ -100,26 +101,11 @@ export default function BusinessBreakthroughSection() {
                 fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="9.5">Breakthrough</text>
             </svg>
           </motion.div>
-
-          {/* ── CTA BUTTON ── */}
-          <motion.div variants={fadeUp} className="mt-14 w-full flex justify-center">
-            <a
-              href={siteConfig.checkoutLink}
-              className="
-                relative inline-block
-                w-full max-w-[420px]
-                rounded-[22px] px-6 py-5
-                text-center
-                orange-gradient-bg orange-glow-lg
-                transition-all duration-300 hover:scale-[1.02]
-              "
-            >
-              <div className="absolute inset-0 rounded-[22px] bg-[#F97316]/20 blur-xl pointer-events-none" />
-              <span className="relative block text-white font-heading font-black uppercase leading-tight text-[1.5rem] md:text-[2rem]">
-                Register Now at ₹99/-<br />Only
-              </span>
-            </a>
-          </motion.div>
+        <br />
+          <CTAButton 
+  href={siteConfig.checkoutLink}
+  text="Register Now for ₹99/- Only"
+/>
 
         </motion.div>
       </div>

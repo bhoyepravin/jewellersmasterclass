@@ -4,7 +4,8 @@
 
 /* ── Root Design Tokens ────────────────────────────────────── */
 :root {
-  --orange:        #F97316;
+  --orange:        #F97316; 
+  --mangocolor: #FF8040; 
   --orange-dark:   #EA6C0A;
   --orange-light:  #FFF7ED;
   --purple:        #480A62;

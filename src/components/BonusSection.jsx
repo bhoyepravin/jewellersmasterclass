@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '../data/landingPageData';
+import CTAButton from './CTAButton';
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 24 },
@@ -127,70 +128,7 @@ export default function BonusSection({ data }) {
           ))}
         </motion.div>
 
-        {/* ── PRICING STRIP ── */}
-        {/* <motion.div
-          initial="hidden" whileInView="visible"
-          viewport={{ once: true }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-          className="mt-14 max-w-xl mx-auto rounded-3xl overflow-hidden"
-          style={{ background: 'white', border: '1px solid rgba(249,115,22,0.2)', boxShadow: '0 4px 24px rgba(0,0,0,0.05)' }}
-        >
-          <div className="px-6 py-8 flex flex-col items-center gap-3 text-center">
-
-            
-            <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-sm uppercase tracking-widest">
-              Total Value :&nbsp;
-              <span className="line-through text-gray-400">₹7,486/-</span>
-            </motion.p>
-
-            
-            <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-base">
-              Regular Price :&nbsp;
-              <span className="line-through">₹999/-</span>
-            </motion.p>
-
-           
-            <motion.p
-              variants={fadeUp}
-              className="font-heading font-black text-2xl md:text-[2.5rem] leading-tight"
-              style={{
-                background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              Today&apos;s Price : ₹99/-
-            </motion.p>
-
-           
-            <motion.a
-              variants={fadeUp}
-              href={siteConfig.checkoutLink}
-              whileHover={{ scale: 1.03 }}
-              className="mt-2 w-full relative rounded-[18px] px-6 py-4 text-center transition-all duration-300"
-              style={{
-                background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
-                boxShadow: '0 0 36px rgba(249,115,22,0.55), 0 6px 32px rgba(249,115,22,0.40)',
-              }}
-            >
-              <span className="relative block text-white font-heading font-black uppercase text-[1.4rem] md:text-[1.75rem] leading-tight">
-                Register Now at ₹99/-&nbsp;Only
-              </span>
-            </motion.a>
-
-            
-            <motion.p variants={fadeUp} className="text-gray-800 font-body text-base leading-snug mt-1 max-w-sm">
-              Reserve your seat before the timer ends to unlock bonuses worth ₹6,487/-
-            </motion.p>
-
-            
-            <motion.div variants={fadeUp} className="mt-4 w-full">
-              <Countdown minutes={15} />
-            </motion.div>
-
-          </div>
-        </motion.div> */}
+       
 
       </div>
     </section>

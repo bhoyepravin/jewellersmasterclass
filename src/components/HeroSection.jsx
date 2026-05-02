@@ -5,6 +5,7 @@ import { FaCheckCircle, FaStar } from 'react-icons/fa';
 import { siteConfig } from '../data/landingPageData';
 import { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaClock } from 'react-icons/fa';
+import CTAButton from './CTAButton';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -63,7 +64,7 @@ export default function HeroSection({ data, statsBar }) {
         </div>
       </header>
 
-      <section className="relative overflow-hidden pb-20 md:pb-28 bg-white">
+      <section className="relative overflow-hidden pb-10 md:pb-28 bg-white">
         {/* Floating blur orbs - your brand colors */}
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none blur-orb-orange" />
         <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
@@ -100,7 +101,7 @@ export default function HeroSection({ data, statsBar }) {
       />
 
       {/* Orange Box */}
-      <div className="bg-gradient-to-b from-[#FF8040] to-[#FF8A65] rounded-b-[18px] px-8 py-4 text-center min-w-[280px] md:min-w-[420px] shadow-lg">
+      <div className="bg-[#EA6C0A] rounded-b-[18px] px-6 py-4 text-center min-w-[275px] md:min-w-[420px] shadow-lg">
         <p className="text-white font-extrabold text-sm md:text-xl uppercase leading-tight">
           4 Hour Online Workshop
         </p>
@@ -133,7 +134,7 @@ export default function HeroSection({ data, statsBar }) {
   </span>
 </h2>
 
-  <div className="w-24 h-[2px] bg-gray-200 mx-auto my-10" />
+  <div className="w-24 h-[2px] bg-gray-200 mx-auto my-6" />
 
   <p className="text-xl text-gray-800">
     Before its too late...
@@ -155,17 +156,15 @@ export default function HeroSection({ data, statsBar }) {
   <div className="grid grid-cols-2 items-end gap-3 md:gap-8">
 
     {/* Left Image */}
-    <div className="flex justify-center md:justify-end">
-      <div className="relative w-[150px] h-[190px] md:w-[260px] md:h-[320px]">
-        <Image
-          src="/arnav_patil_sir.webp"
-          alt="Coach Arnav Patil"
-          fill
-          className="object-contain object-bottom"
-          priority
-        />
-      </div>
-    </div>
+    <div className="relative w-[150px] h-[300px] md:w-[260px] md:h-[320px] orange-glow rounded-2xl mb-4">
+  <Image
+    src="/arnav_patil_sir_stretch_img.png"
+    alt="Coach Arnav Patil"
+    fill
+    className="object-fit object-top rounded-2xl"
+    priority
+  />
+</div>
 
     {/* Right Content */}
     <div className="text-left pb-3 font-heading">
@@ -176,7 +175,7 @@ export default function HeroSection({ data, statsBar }) {
       </p>
 
       {/* Name */}
-      <h2 className="text-3xl md:text-5xl font-heading font-bold mt-2 leading-tight text-[var(--mangocolor)]">
+      <h2 className="text-3xl md:text-5xl font-heading font-bold mt-2 leading-tight text-[var(--orange-dark)]">
         Arnav Patil
       </h2>
 
@@ -193,8 +192,8 @@ export default function HeroSection({ data, statsBar }) {
   Trained over <br />
 
   <span className="text-[var(--mangocolor)] font-bold">
-    1000+
-  </span>{" "}
+    10,000+
+  </span>{""}
   Jewellery <br />
 
   Business Owners in{" "}
@@ -281,13 +280,14 @@ export default function HeroSection({ data, statsBar }) {
   </h3>
 </motion.div>
             
+              <CTAButton className='mt-6'/>
 
             {/* ── 4. CTA Button ────────────────────────────────── */}
            <motion.div
   variants={fadeUp}
-  className="w-full mt-12 flex flex-col items-center"
+  className="w-full mt-0 flex flex-col items-center"
 >
-  <motion.a
+  {/* <motion.a
     href={siteConfig.checkoutLink}
     className="primary-btn font-heading orange-glow text-xl md:text-xl px-10 md:px-14 py-4 md:py-5 w-full md:w-auto text-center relative overflow-hidden group"
     animate={{
@@ -295,16 +295,16 @@ export default function HeroSection({ data, statsBar }) {
     }}
     transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
   >
-    {/* Mirror Shine Effect */}
+    
     <span className="absolute inset-0 overflow-hidden rounded-inherit">
       <span className="absolute top-0 -left-[120%] h-full w-[40%] bg-white/30 skew-x-[-20deg] group-hover:left-[120%] transition-all duration-700 ease-in-out"></span>
     </span>
 
-    {/* Button Text */}
+    
     <span className="relative z-10">
       Register Now for ₹99/- Only
     </span>
-  </motion.a>
+  </motion.a> */}
 
   {/* <p className="text-[#480A62] font-semibold text-xl mt-4 flex items-center gap-2">
     <FaCheckCircle className="text-green-500" />
@@ -316,23 +316,23 @@ export default function HeroSection({ data, statsBar }) {
   variants={fadeUp}
   className="w-full mt-10"
 >
-  <div className=" rounded-2xl p-5">
+  <div className=" rounded-2xl pt-0">
 
     {/* Register Text */}
-    <h4 className="text-center text-[#480A62] text-xl md:text-2xl font-semibold mb-2">
+    <h4 className="text-center text-[#111827] text-xl md:text-2xl font-extrabold mb-2">
       Register In Next 👇
     </h4>
 
     {/* Bonus Text */}
-    <h4 className="text-center text-[#480A62] text-lg md:text-xl font-medium mb-6">
-      To Unlock Bonuses Worth{" "}
-      <span className="text-[#F97316] font-bold">
-        ₹6,999 /-
-      </span>
-    </h4>
+    <h4 className="text-center text-[#111827] text-base sm:text-lg md:text-2xl lg:text-3xl font-extrabold mb-6 whitespace-nowrap">
+  To Unlock Bonuses Worth{" "}
+  <span className="text-[#F97316] font-extrabold">
+    ₹6,999/-
+  </span>
+</h4>
 
     {/* Countdown Timer */}
-    <div className="flex justify-center gap-3 md:gap-6">
+    <div className="flex justify-center gap-2 md:gap-6 ">
       {[
         { label: 'Days', value: timeLeft.days },
         { label: 'Hours', value: timeLeft.hours },
@@ -340,7 +340,7 @@ export default function HeroSection({ data, statsBar }) {
         { label: 'Secs', value: timeLeft.seconds },
       ].map((item) => (
         <div key={item.label} className="text-center">
-          <div className="bg-white rounded-xl shadow-md px-3 py-2 md:px-5 md:py-3 min-w-[70px] md:min-w-[90px] border border-[#F97316]/30">
+          <div className="bg-[#FFF7ED] rounded-xl shadow-md px-3 py-2 md:px-5 md:py-3 min-w-[70px] md:min-w-[90px] border border-[#F97316]/30">
             <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
               {String(item.value).padStart(2, '0')}
             </span>
@@ -366,26 +366,7 @@ export default function HeroSection({ data, statsBar }) {
           </motion.div>
         </div>
 
-        {/* ── 6. Stats Bar (Preserved) ──────────────────────────────── */}
-        {/* <div className="container-max mt-16 px-4">
-          <motion.div
-            className="rounded-2xl overflow-hidden grid grid-cols-2 md:grid-cols-4 gradient-bg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            {statsBar.map((stat, i) => (
-              <div key={i} className="stat-card !bg-transparent !border-0">
-                <p className="font-heading font-black text-2xl md:text-3xl text-[#F97316]">
-                  {stat.value}
-                </p>
-                <p className="font-body text-xs md:text-sm text-white/80 mt-1">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
-        </div> */}
+       
       </section>
     </>
   );

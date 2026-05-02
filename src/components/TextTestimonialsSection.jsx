@@ -194,16 +194,20 @@ export default function TextTestimonialsSection({ data }) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // If no data provided, return null
   if (!data) {
     return null;
   }
 
-  const title = data.title ?? data.headlineMr ?? 'Success Stories';
-  const items = data.items ?? [];
-
-  if (items.length === 0) {
+  // Auto-filter items that have text content
+  const textItems = data.items?.filter(item => item?.text && item.text.trim() !== '') ?? [];
+  
+  // If no text items found, return null
+  if (textItems.length === 0) {
     return null;
   }
+
+  const title = data.title ?? data.headlineMr ?? 'Success Stories';
 
   return (
     <section
@@ -232,18 +236,18 @@ export default function TextTestimonialsSection({ data }) {
           </motion.span>
 
           <motion.h2
-            variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#480A62] mb-3 leading-tight"
-          >
-            {title}
-          </motion.h2>
+                      variants={fadeUp}
+                      className="font-heading font-black text-4xl md:text-4xl text-[#1A1A1A] mb-2 leading-tight"
+                    >
+                      {title} <span className='text-[#EA6C0A]'>त्यांनी सांगितले</span> 
+                    </motion.h2>
         </motion.div>
 
         {/* Mobile Auto-Slider or Desktop Grid */}
         {isMobile ? (
-          <MobileTextSlider items={items} />
+          <MobileTextSlider items={textItems} />
         ) : (
-          <DesktopGridView items={items} />
+          <DesktopGridView items={textItems} />
         )}
 
         {/* CTA */}

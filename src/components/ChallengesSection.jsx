@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaTimesCircle, FaArrowRight } from 'react-icons/fa';
 import CountdownTimer from './CountdownTimer';
 import { CHECKOUT_LINK } from '../data/masterclassData';
+import CTAButton from './CTAButton';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -20,12 +21,12 @@ const stagger = {
 
 export default function ChallengesSection({ data }) {
   return (
-    <section className="section-padding" style={{ background: 'linear-gradient(135deg, #FFF7ED 0%, #FFE8D2 100%)' }}>
+    <section className="section-padding pt-10" style={{ background: 'linear-gradient(135deg, #FFF7ED 0%, #FFE8D2 100%)' }}>
       <div className="container-max">
 
         {/* ─────────────────────────── Heading ─────────────────────────── */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -43,12 +44,12 @@ export default function ChallengesSection({ data }) {
             Common Challenges
           </motion.span>
 
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
-          >
-            {data.title}
-          </motion.h2>
+         <motion.h2
+  variants={fadeUp}
+  className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
+>
+  {data.title} <span className='text-[#EA6C0A]'>Jewellery Business?</span>
+</motion.h2>
 
           {data.subText && (
             <motion.p
@@ -94,7 +95,7 @@ export default function ChallengesSection({ data }) {
                     <FaTimesCircle className="text-red-500 text-lg" />
                   </div>
                 </div>
-                <p className="font-heading font-semibold text-[#1A1A1A] text-sm leading-relaxed flex-1">
+                <p className="font-heading font-extrabold text-[#1A1A1A] text-xl leading-relaxed flex-1">
                   {point}
                 </p>
               </div>
@@ -104,28 +105,28 @@ export default function ChallengesSection({ data }) {
 
         {/* ───────────────────── Closing text with Card Design ───────────────────── */}
         <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div
-            className="inline-block rounded-2xl px-8 py-6 max-w-2xl"
-            style={{
-              background: 'linear-gradient(135deg, #fff, #FFF7ED)',
-              border: '1px solid rgba(249,115,22,0.2)',
-              boxShadow: '0 8px 25px rgba(249,115,22,0.1)'
-            }}
-          >
-            <p className="font-heading font-extrabold text-[#1A1A1A] text-base md:text-xl leading-relaxed">
-              जर या प्रश्नांचे उत्तर 
-              <span className="text-[#F97316] font-black mx-1"> हो </span>
-              असतील, तर 
-              <span className="text-[#F97316] font-black block md:inline mt-1 md:mt-0"> हा मास्टर क्लास तुमच्यासाठी आहे </span>
-            </p>
-          </div>
-        </motion.div>
+  className="text-center mb-10"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+>
+  <div
+    className="inline-block rounded-2xl px-4 py-4 max-w-2xl"
+    style={{
+      background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
+      border: '1px solid rgba(255,255,255,0.2)',
+      boxShadow: '0 8px 25px rgba(249,115,22,0.3)'
+    }}
+  >
+    <p className="font-heading font-extrabold text-white text-xl md:text-lg leading-relaxed">
+      जर या प्रश्नांचे उत्तर 
+      <span className="text-[#FFD700] font-black mx-1"> हो </span>
+      असतील, तर 
+      <span className="text-[#FFD700] font-black block md:inline mt-1 md:mt-0"> हा मास्टर क्लास तुमच्यासाठी आहे </span>
+    </p>
+  </div>
+</motion.div>
 
         {/* ───────────────────── Event Info with Icon ───────────────────── */}
         <motion.div variants={fadeUp} className="w-full mt-6 flex flex-col items-center">
@@ -151,32 +152,7 @@ export default function ChallengesSection({ data }) {
           variants={fadeUp}
           className="w-full mt-10 flex flex-col items-center"
         >
-          <motion.a
-            href={CHECKOUT_LINK}
-            className="group relative rounded-full font-heading font-black text-white text-lg md:text-xl px-10 md:px-12 py-4 md:py-5 w-full md:w-auto text-center overflow-hidden transition-all duration-300"
-            style={{
-              background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
-              boxShadow: '0 8px 25px rgba(249,115,22,0.4)'
-            }}
-            animate={{ scale: [1, 1.02, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            whileHover={{ scale: 1.05, boxShadow: '0 12px 35px rgba(249,115,22,0.5)' }}
-          >
-            {/* Shine effect */}
-            <span className="absolute inset-0 overflow-hidden rounded-full">
-              <span
-                className="absolute top-0 -left-[120%] h-full w-[40%]
-                           bg-white/30 skew-x-[-20deg]
-                           group-hover:left-[120%]
-                           transition-all duration-700 ease-in-out"
-              ></span>
-            </span>
-
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Register Now for ₹99/- Only
-              <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
-            </span>
-          </motion.a>
+          <CTAButton/>
         </motion.div>
 
       </div>

@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight, FaPlay, FaPause } from 'react-icons/fa';
 import { siteConfig } from '../data/landingPageData';
+import CTAButton from './CTAButton';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -22,9 +23,9 @@ const stagger = {
 
 function StarRow() {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-3">
       {[...Array(5)].map((_, i) => (
-        <FaStar key={i} className="text-yellow-400 text-xs" />
+        <FaStar key={i} className="text-yellow-400 text-3xl" />
       ))}
     </div>
   );
@@ -45,10 +46,13 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
   }, [isActive, isPlaying]);
 
   return (
-    <div className="relative w-full h-full bg-black rounded-xl overflow-hidden">
+    <div 
+      className="relative w-full bg-black rounded-xl overflow-hidden"
+      style={{ aspectRatio: '1/1' }}
+    >
       <video
         ref={videoRef}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover"  // Changed to object-cover for better fill
         playsInline
         loop
         muted={!isActive}
@@ -69,7 +73,6 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
         </button>
       )}
 
-      {/* Gradient Overlay for better visibility of controls */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
     </div>
   );
@@ -118,7 +121,7 @@ function MobileReelSlider({ items }) {
       {/* Reel Container */}
       <div 
         className="relative w-full rounded-xl overflow-hidden"
-        style={{ aspectRatio: '9/16', maxHeight: '500px' }}
+        style={{ aspectRatio: '1/1' }}  // Changed to match video ratio
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -174,13 +177,10 @@ function MobileReelSlider({ items }) {
       </div>
 
       {/* Minimal Info (Only name and rating) */}
-      <div className="text-center mt-2">
-        <p className="font-heading font-bold text-white text-xs bg-black/50 inline-block px-2 py-0.5 rounded-full backdrop-blur-sm">
+      <div className="text-center mt-6">
+        <p className="font-heading font-bold text-white text-xs bg-black/50 inline-block px-3 py-1 rounded-full backdrop-blur-sm">
           {items[currentIndex]?.name}
         </p>
-        <div className="flex justify-center mt-1">
-          <StarRow />
-        </div>
       </div>
     </div>
   );
@@ -195,11 +195,11 @@ function DesktopGridView({ items }) {
           key={i}
           variants={fadeUp}
           whileHover={{ y: -3, scale: 1.01 }}
-          className="relative rounded-xl overflow-hidden shadow-md"
-          style={{ aspectRatio: '9/16', maxHeight: '400px' }}
+          className="relative rounded-xl overflow-hidden shadow-md bg-black"
+          style={{ aspectRatio: '1/1' }}  // Changed to match video ratio
         >
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover"  // Changed to object-cover
             controls
             playsInline
             preload="metadata"
@@ -210,13 +210,10 @@ function DesktopGridView({ items }) {
           </video>
           
           {/* Name overlay at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
-            {/* <p className="font-heading font-bold text-white text-xs text-center">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+            <p className="font-heading font-bold text-white text-xs text-center">
               {item.name}
-            </p> */}
-            <div className="flex justify-center mt-0.5">
-              <StarRow />
-            </div>
+            </p>
           </div>
         </motion.div>
       ))}
@@ -274,10 +271,14 @@ export default function TestimonialsSection({ data }) {
 
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-2xl md:text-4xl text-[#480A62] mb-2 leading-tight"
+            className="font-heading font-black text-4xl md:text-4xl text-[#1A1A1A] mb-2 leading-tight"
           >
-            {title}
+            {title} <span className='text-[#EA6C0A]'>त्यांनी सांगितले</span> 
           </motion.h2>
+
+          <div className="flex justify-center mt-5">
+            <StarRow />
+          </div>
         </motion.div>
 
         {/* Mobile Reel Slider or Desktop Grid */}
@@ -288,22 +289,9 @@ export default function TestimonialsSection({ data }) {
         )}
 
         {/* CTA */}
-        <motion.div
-          className="text-center mt-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.a
-            href={siteConfig.checkoutLink}
-            className="primary-btn orange-glow text-sm px-6 py-2.5"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            {siteConfig.joinNowText}
-          </motion.a>
-        </motion.div>
+        <div className='pt-6 flex justify-center'>
+          <CTAButton />
+        </div>
       </div>
     </section>
   );

@@ -45,7 +45,7 @@ const GRADIENTS = [
 
 export default function WhatYouLearnSection({ data }) {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white pt-10">
       <div className="container-max">
 
         {/* Heading */}
@@ -64,17 +64,24 @@ export default function WhatYouLearnSection({ data }) {
   </motion.span>
 
   <motion.h2
-    variants={fadeUp}
-    className="font-heading font-black text-[2.2rem] md:text-[4rem] leading-[1.1] tracking-[-0.02em]"
+  variants={fadeUp}
+  className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
+>
+  <span className="text-[#1A1A1A]">
+    {data.title.split(' ').slice(0, -1).join(' ')}{' '}
+  </span>
+  <span 
+    className="text-[#EA6C0A] font-black" 
+    style={{ textShadow: '0 0 0px currentColor' }}
   >
-    <span className="gradient-text">
-      {data.title}
-    </span>
-  </motion.h2>
+    {data.title.split(' ').pop()}
+  </span>
+</motion.h2>
 
+  
   <motion.p
     variants={fadeUp}
-    className=" font-heading text-base md:text-lg max-w-2xl mx-auto font-medium mt-4"
+    className="font-heading text-base md:text-lg max-w-2xl mx-auto font-extrabold mt-4 p-4 md:p-6 bg-[#FFF7ED] rounded-xl border border-[#F97316]/20 shadow-md"
   >
     {data.subtitle}
   </motion.p>
@@ -106,11 +113,12 @@ export default function WhatYouLearnSection({ data }) {
         <CardImage
           src={card.image}
           alt={card.title}
+          objectFit="contain"
           gradient={GRADIENTS[i]}
         />
 
         {/* Card Content */}
-        <div className="p-5">
+        <div className="p-4">
           
           {/* Icon + Heading */}
           <div className="flex items-center gap-3 mb-3">
@@ -123,7 +131,7 @@ export default function WhatYouLearnSection({ data }) {
               {ICON_MAP[card.icon]}
             </div>
 
-            <h3 className="font-heading font-extrabold text-[#1A1A1A] text-base leading-snug">
+            <h3 className="font-heading font-extrabold text-[#1A1A1A] text-xl leading-snug">
               {card.title}
             </h3>
           </div>

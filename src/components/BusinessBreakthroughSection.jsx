@@ -11,7 +11,7 @@ const fadeUp = {
 
 export default function BusinessBreakthroughSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28">
+    <section className="relative overflow-hidden bg-white py-10 md:py-28">
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[380px] h-[140px] bg-[#F97316]/12 blur-[100px]" />
@@ -36,16 +36,16 @@ export default function BusinessBreakthroughSection() {
             className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
           >
             What Will Change{' '}
-            <span className="text-[var(--mangocolor)]">In Your Business?</span>
+            <span className="text-[#EA6C0A]">In Your Business?</span>
           </motion.h2>
 
           {/* ── DIAGRAM SVG ── */}
           {/* Colors: orange #F97316 lines/borders, purple #480A62 card tint, white text */}
-          <motion.div variants={fadeUp} className="mt-14 w-full flex justify-center">
+          <motion.div variants={fadeUp} className="mt-4 w-full flex justify-center">
             <svg
               viewBox="0 0 353 218"
               width="353"
-              height="218"
+              height="250"
               xmlns="http://www.w3.org/2000/svg"
               className="w-full max-w-[353px]"
               aria-hidden="true"
@@ -62,27 +62,27 @@ export default function BusinessBreakthroughSection() {
                 fill="#FFF7ED"
                 stroke="#F97316" strokeWidth="1.5" strokeDasharray="5 4" />
               <text x="176" y="28" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="600" fontSize="11">Right Psychology Of</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Right Psychology Of</text>
               <text x="176" y="44" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="600" fontSize="11">Running The Business</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Running The Business</text>
 
               {/* ── Left box — Right Systems ── */}
               <rect x="8" y="160" width="92" height="50" rx="14"
                 fill="#FFF7ED"
                 stroke="#F97316" strokeWidth="1.5" strokeDasharray="5 4" />
               <text x="54" y="181" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="600" fontSize="11">Right</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Right</text>
               <text x="54" y="197" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="600" fontSize="11">Systems</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Systems</text>
 
               {/* ── Right box — Right Strategies ── */}
               <rect x="253" y="160" width="92" height="50" rx="14"
                 fill="#FFF7ED"
                 stroke="#F97316" strokeWidth="1.5" strokeDasharray="5 4" />
               <text x="298" y="181" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="600" fontSize="11">Right</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Right</text>
               <text x="298" y="197" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="600" fontSize="11">Strategies</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Strategies</text>
 
               {/* ── Centre circle — orange gradient ── */}
               <defs>
@@ -92,13 +92,13 @@ export default function BusinessBreakthroughSection() {
                 </radialGradient>
               </defs>
               {/* Orange ring border */}
-              <circle cx="176" cy="179" r="38" fill="#F97316" fillOpacity="0.15" stroke="#F97316" strokeWidth="2" />
+              <circle cx="176" cy="150" r="58" fill="#F97316" fillOpacity="0.15" stroke="#F97316" strokeWidth="2" />
               {/* Orange fill */}
-              <circle cx="176" cy="179" r="30" fill="url(#orangeCircle)" />
-              <text x="176" y="174" textAnchor="middle" fill="#FFFFFF"
-                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="9.5">Business</text>
-              <text x="176" y="187" textAnchor="middle" fill="#FFFFFF"
-                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="9.5">Breakthrough</text>
+              <circle cx="176" cy="150" r="48" fill="url(#orangeCircle)" />
+              <text x="176" y="145" textAnchor="middle" fill="#FFFFFF"
+                fontFamily="Montserrat, sans-serif" fontWeight="900" fontSize="12">Business</text>
+              <text x="176" y="160" textAnchor="middle" fill="#FFFFFF"
+                fontFamily="Montserrat, sans-serif" fontWeight="900" fontSize="12">Breakthrough</text>
             </svg>
           </motion.div>
         <br />

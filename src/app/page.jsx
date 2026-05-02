@@ -66,7 +66,7 @@ export default function Home() {
       {/* 9. Testimonials */}
       <TestimonialsSection data={masterclassTestimonialsData} />
 
-      <TextTestimonialsSection/>
+      <TextTestimonialsSection data={masterclassTestimonialsData} />
 
       {/* 10. Mentor */}
       <MentorSection data={mentorSectionData} />

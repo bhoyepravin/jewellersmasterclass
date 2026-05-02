@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
 import CountdownTimer from './CountdownTimer';
 import { CHECKOUT_LINK, PRICE, EVENT_INFO } from '../data/masterclassData';
+import { FaTrophy, FaUsers, FaGlobe, FaMobileAlt, FaChartLine, FaStar } from 'react-icons/fa';
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 28 },
@@ -21,27 +22,46 @@ export default function MentorSection({ data }) {
   ];
 
   return (
-    <section className="section-padding" style={{ background: '#FFF7ED' }}>
+    <section className="section-padding pt-10" style={{ background: '#FFF7ED' }}>
       <div className="container-max">
 
         {/* Heading */}
         <motion.div
-          className="text-center mb-12"
-          initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-        >
-          <motion.span variants={fadeUp} className="section-label">Your Guide</motion.span>
-          <motion.h2
+  className="text-center mb-2"
+  initial="hidden" 
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={stagger}
+>
+  <motion.span variants={fadeUp} className="section-label">
+    Your Guide
+  </motion.span>
+  
+  <motion.h2
+    variants={fadeUp}
+    className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight"
+  >
+    {data.title} <span className='text-[#EA6C0A]'>Mentor</span>
+  </motion.h2>
+   {/* Single Orange Line - REMOVED the duplicate */}
+          <motion.div
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight"
+            className="flex justify-center mt-[-4]"
           >
-            {data.title}
-          </motion.h2>
-        </motion.div>
+            <div className="w-24 h-1 rounded-full" style={{ backgroundColor: '#F97316' }}></div>
+          </motion.div>
+  
+  {/* Or using motion with visible styles */}
+  <motion.div
+    variants={fadeUp}
+    className="flex justify-center mt-1"
+  >
+    <div className="w-24 h-1 rounded-full" style={{ backgroundColor: '#F97316' }}></div>
+  </motion.div>
+</motion.div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto pt-6">
 
           {/* Left – Mentor Image */}
           <motion.div
@@ -80,36 +100,54 @@ export default function MentorSection({ data }) {
             variants={stagger}
           >
             <motion.h3 variants={fadeUp} className="font-heading font-black text-2xl text-[#1A1A1A] mb-1">
-              {data.name}
+              {data.nametitle}
             </motion.h3>
-            <motion.p variants={fadeUp} className="font-body text-[#F97316] font-semibold text-sm mb-4">
+            <motion.p variants={fadeUp} className="font-heading text-[#F97316] font-semibold text-base mb-4">
               {data.designation}
             </motion.p>
-            <motion.p variants={fadeUp} className="font-body text-gray-600 leading-relaxed mb-6">
+            <motion.p variants={fadeUp} className="font-heading text-gray-800 font-semibold leading-relaxed mb-6">
               {data.content}
             </motion.p>
 
             {/* Points in Boxes - 2 columns grid on tablet/desktop, 1 column on mobile */}
-            <motion.div variants={stagger} className="grid grid-cols-2 sm:grid-cols-2 gap-4 mb-8">
-              {points.map((pt, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUp}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  className="rounded-xl p-4 transition-all"
-                  style={{
-                    background: 'white',
-                    border: '1px solid rgba(249,115,22,0.15)',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
-                  }}
-                >
-                  <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-[#F97316] text-lg flex-shrink-0 mt-0.5" />
-                    <p className="font-bold text-gray-700 text-sm leading-relaxed">{pt}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+  {[
+    { number: '10+', label: 'Years of Experience', subLabel: 'Helping Jewellers Automate', icon: <FaTrophy />, color: '#F97316' },
+    { number: '10,000+', label: 'Coaching Clients', subLabel: 'Happy Business Owners', icon: <FaUsers />, color: '#F97316' },
+    { number: '5', label: 'Countries', subLabel: 'Global Presence', icon: <FaGlobe />, color: '#F97316' },
+    { number: '11K+', label: 'Social Following', subLabel: 'Growing Community', icon: <FaMobileAlt />, color: '#F97316' },
+    { number: '✓', label: 'Proven Strategies', subLabel: 'Real Business Growth', icon: <FaChartLine />, color: '#F97316' },
+    { number: 'Arnav', label: 'Patil Sir', subLabel: 'Your Trusted Mentor', icon: <FaStar />, color: '#F97316' }
+  ].map((stat, idx) => (
+    <motion.div
+      key={idx}
+      variants={fadeUp}
+      whileHover={{ scale: 1.05, y: -5 }}
+      className="rounded-xl p-6 text-center transition-all duration-300 group"
+      style={{
+        background: 'linear-gradient(135deg, white, #FFF7ED)',
+        border: '1px solid rgba(249,115,22,0.2)',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.05)'
+      }}
+    >
+      {/* Icon */}
+      <div className="text-4xl mb-3 flex justify-center" style={{ color: stat.color }}>
+        {stat.icon}
+      </div>
+      
+      <div 
+        className="text-[#F97316] text-3xl md:text-5xl mb-2"
+        style={{ fontWeight: 900 }}
+      >
+        {stat.number}
+      </div>
+      <div className="text-gray-700 font-bold text-sm md:text-base">
+        {stat.label}
+      </div>
+      <div className="text-gray-500 text-xs mt-1">{stat.subLabel}</div>
+    </motion.div>
+  ))}
+</div>
 
           </motion.div>
 

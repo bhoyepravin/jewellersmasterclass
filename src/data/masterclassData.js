@@ -70,7 +70,7 @@ export const whoIsThisForData = {
 
 /* ── Challenges ─────────────────────────────────────────── */
 export const challengesData = {
-  title: 'Are you facing these challenges in your Jewellery Business?',
+  title: 'Are you facing these challenges in your',
   points: [
     'Customers येतात पण खरेदी करत नाही',
     'Competition तुफान वाढलीय',
@@ -84,7 +84,7 @@ export const challengesData = {
 
 /* ── Masterclass Benefits ───────────────────────────────── */
 export const masterclassBenefitsData = {
-  title: 'What you get in the Masterclass?',
+  title: 'What you get in the',
   image: '/images/benefits.jpg',
   items: [
     'Step by Step Jewellery Business Growth Blueprint',
@@ -139,7 +139,7 @@ export const bonusSectionData = {
 
 /* ── Testimonials (full, with images + videos) ──────────── */
 export const masterclassTestimonialsData = {
-  title: 'ज्यांनी अनुभवले, त्यांनी सांगितले',
+  title: 'ज्यांनी अनुभवले,',
   items: [
     {
       name:     'Mr. Divya Chaudhari',
@@ -189,11 +189,55 @@ export const masterclassTestimonialsData = {
   ],
 };
 
+/* ── Text Only Testimonials (No Videos) ────────────────── */
+export const textTestimonialsData = {
+  title: 'Success Stories',
+  headlineMr: 'यशोगाथा',
+  items: [
+    {
+      name: 'Mr. Sai Kharote',
+      location: 'Nagpur',
+      text: 'कुठेतरी जो कॉन्फिडन्स डाउन झाला होता तो पुन्हा एकदा जागा झाला आहे. आपल्या धंद्यात खूप पोटेन्शिअल आहे आणि आपण त्याचा योग्य वापर करून आपल्या ब्रांडला मोठं केलं पाहिजे हे आज मला शिकायला मिळाले',
+      gradientFrom: '#480A62',
+      gradientTo: '#6B1A8A',
+    },
+    {
+      name: 'Jewellers Masterclass Batch',
+      location: '',
+      text: 'आम्ही अर्णव सरांसोबत आमचे पिढीजात व्यवसाय Automation ला नेले. Sale दुपटीने वाढला आणि Brand मोठा करण्याचा confidence वाढला.',
+      gradientFrom: '#F97316',
+      gradientTo: '#EA6C0A',
+    },
+    {
+      name: 'Mr. Avinash Kharote',
+      location: 'Thane',
+      text: 'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला आणि आत्तापर्यंतचा सगळ्यात बेस्ट अनुभव होता हा माझा. सरांनी जे पॉईंट सांगितले हे खूप प्रॅक्टिकल आणि रियालिटीला धरून होते. One of the best investments of time and money.',
+      gradientFrom: '#2E063E',
+      gradientTo: '#480A62',
+    },
+    {
+      name: 'Mr. Divya Chaudhari',
+      location: 'Mumbai',
+      text: 'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
+      gradientFrom: '#F97316',
+      gradientTo: '#FF8040',
+    },
+    {
+      name: 'Mr. Rahul Dindorkar',
+      location: '',
+      text: "Connecting with Arnav Sir was the best decision of my life. I am soo excited to launch my new jewellery brand after attending Arnav sir's Masterclass. Thank You Arnav Sir!",
+      gradientFrom: '#480A62',
+      gradientTo: '#6B1A8A',
+    },
+  ],
+};
+
 /* ── Mentor ─────────────────────────────────────────────── */
 export const mentorSectionData = {
-  title:       'Meet your Mentor',
+  title:       'Meet your',
   image:       '/arnav_patil_sir.JPG',
   name:        'Mr. Arnav Patil',
+  nametitle:        'Arnav Patil',
   designation: `India's Leading International Business Coach, Strategist, Consultant and a Key-Note Speaker`,
   content:     'Mr. Arnav Patil is an Entrepreneur, Business Coach and Trainer helping Business Owners grow and scale their business.',
   points: [

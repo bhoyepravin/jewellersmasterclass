@@ -32,7 +32,7 @@ export default function WhoHelpsSection() {
   const GAPY = 10;
 
   return (
-    <section className="relative overflow-hidden bg-white py-19 md:py-28">
+    <section className="relative overflow-hidden bg-white py-19 pt-8 md:py-28">
       {/* Subtle orbs */}
       <div className="pointer-events-none absolute top-0 left-[-80px] w-[320px] h-[320px] bg-[#F97316]/8 blur-[100px]" />
       <div className="pointer-events-none absolute bottom-0 right-[-80px] w-[280px] h-[280px] bg-[#480A62]/8 blur-[90px]" />
@@ -54,6 +54,15 @@ export default function WhoHelpsSection() {
         >
           {/* Heading */}
           <motion.h2
+                      variants={fadeUp}
+                      className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
+                    >
+                      हा Masterclass{' '}
+                        <span className="text-[#EA6C0A] font-black" style={{ textShadow: '0 0 0px currentColor' }}>
+    कोणासाठी आहे ?
+  </span>
+                    </motion.h2>
+          {/* <motion.h2
             variants={fadeUp}
             className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
           >
@@ -61,7 +70,7 @@ export default function WhoHelpsSection() {
             <span className="text-[var(--mangocolor)]">
               कोणासाठी आहे ?
             </span>
-          </motion.h2>
+          </motion.h2> */}
 
           {/* SVG Section */}
           <motion.div

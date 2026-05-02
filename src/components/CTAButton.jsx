@@ -10,7 +10,7 @@ const CTAButton = ({
   return (
     <motion.a
       href={href}
-      className={`primary-btn font-heading orange-glow text-xl md:text-xl px-10 md:px-14 py-4 md:py-5 w-full md:w-auto text-center relative overflow-hidden group inline-flex items-center justify-center ${className}`}
+      className={`primary-btn font-heading orange-glow text-xl md:text-base px-6 md:px-6 py-4 md:py-2.5 w-full text-center relative overflow-hidden group inline-flex items-center justify-center ${className}`}
       animate={{
         scale: [1, 1.02, 1],
       }}
@@ -26,7 +26,7 @@ const CTAButton = ({
       </span>
 
       {/* Button Text */}
-      <span className="relative z-10">
+      <span className="relative z-10 whitespace-nowrap">
         {text}
       </span>
     </motion.a>

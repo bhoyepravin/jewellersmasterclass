@@ -102,21 +102,19 @@ export default function FinalCTASection({ offerData }) {
                 </span>
               </div>
 
+              {/* Updated Button from Bonus Section */}
               <motion.a
                 href={siteConfig.checkoutLink}
-                className="primary-btn orange-glow-lg text-xl px-12 py-5"
-                animate={{
-                  boxShadow: [
-                    '0 0 20px rgba(249,115,22,0.40)',
-                    '0 0 56px rgba(249,115,22,0.85)',
-                    '0 0 20px rgba(249,115,22,0.40)',
-                  ],
+                whileHover={{ scale: 1.03 }}
+                className="mt-2 w-full max-w-md relative rounded-[18px] px-6 py-4 text-center transition-all duration-300"
+                style={{
+                  background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
+                  boxShadow: '0 0 36px rgba(249,115,22,0.55), 0 6px 32px rgba(249,115,22,0.40)',
                 }}
-                transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
               >
-                {siteConfig.joinNowText}
+                <span className="relative block text-white font-heading font-black uppercase text-[1.4rem] md:text-[1.75rem] leading-tight">
+                  Register Now at ₹99/-&nbsp;Only
+                </span>
               </motion.a>
 
               <div

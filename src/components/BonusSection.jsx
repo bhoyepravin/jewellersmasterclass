@@ -128,7 +128,7 @@ export default function BonusSection({ data }) {
         </motion.div>
 
         {/* ── PRICING STRIP ── */}
-        <motion.div
+        {/* <motion.div
           initial="hidden" whileInView="visible"
           viewport={{ once: true }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
@@ -137,19 +137,19 @@ export default function BonusSection({ data }) {
         >
           <div className="px-6 py-8 flex flex-col items-center gap-3 text-center">
 
-            {/* Total value */}
+            
             <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-sm uppercase tracking-widest">
               Total Value :&nbsp;
               <span className="line-through text-gray-400">₹7,486/-</span>
             </motion.p>
 
-            {/* Regular price */}
+            
             <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-base">
               Regular Price :&nbsp;
               <span className="line-through">₹999/-</span>
             </motion.p>
 
-            {/* Today's price */}
+           
             <motion.p
               variants={fadeUp}
               className="font-heading font-black text-2xl md:text-[2.5rem] leading-tight"
@@ -163,7 +163,7 @@ export default function BonusSection({ data }) {
               Today&apos;s Price : ₹99/-
             </motion.p>
 
-            {/* CTA button */}
+           
             <motion.a
               variants={fadeUp}
               href={siteConfig.checkoutLink}
@@ -179,18 +179,18 @@ export default function BonusSection({ data }) {
               </span>
             </motion.a>
 
-            {/* Subtext */}
+            
             <motion.p variants={fadeUp} className="text-gray-800 font-body text-base leading-snug mt-1 max-w-sm">
               Reserve your seat before the timer ends to unlock bonuses worth ₹6,487/-
             </motion.p>
 
-            {/* Countdown */}
+            
             <motion.div variants={fadeUp} className="mt-4 w-full">
               <Countdown minutes={15} />
             </motion.div>
 
           </div>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

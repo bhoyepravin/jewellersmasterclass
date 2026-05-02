@@ -30,7 +30,7 @@ export default function MissionSection({ data }) {
           <motion.span variants={fadeUp} className="section-label">Our Mission</motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#480A62] leading-tight max-w-3xl mx-auto"
+            className="font-heading font-black text-xl md:text-5xl text-[#480A62] leading-tight max-w-3xl mx-auto"
           >
             {data.content}
           </motion.h2>

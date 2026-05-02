@@ -11,8 +11,17 @@ const fadeUp = {
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.10 } } };
 
 export default function MentorSection({ data }) {
+  // Specific points only
+  const points = [
+    '10+ years of experience in helping Jewellers automate their Jewellery Business',
+    '1000+ Coaching clients',
+    'Currently working in 5 different countries',
+    '11K+ Social Media Following',
+    'Provides Proven Strategies for Real Business Growth.',
+  ];
+
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding" style={{ background: '#FFF7ED' }}>
       <div className="container-max">
 
         {/* Heading */}
@@ -64,7 +73,7 @@ export default function MentorSection({ data }) {
             </div>
           </motion.div>
 
-          {/* Right – Bio + Points + Timer + CTA */}
+          {/* Right – Bio + Points in Boxes + Timer + CTA */}
           <motion.div
             initial="hidden" whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -80,35 +89,28 @@ export default function MentorSection({ data }) {
               {data.content}
             </motion.p>
 
-            {/* Bullet points */}
-            <motion.div variants={stagger} className="space-y-3 mb-8">
-              {data.points.map((pt, i) => (
-                <motion.div key={i} variants={fadeUp} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-[#F97316] text-lg flex-shrink-0 mt-0.5" />
-                  <p className="font-body text-gray-700 text-sm leading-relaxed">{pt}</p>
+            {/* Points in Boxes - 2 columns grid on tablet/desktop, 1 column on mobile */}
+            <motion.div variants={stagger} className="grid grid-cols-2 sm:grid-cols-2 gap-4 mb-8">
+              {points.map((pt, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="rounded-xl p-4 transition-all"
+                  style={{
+                    background: 'white',
+                    border: '1px solid rgba(249,115,22,0.15)',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                  }}
+                >
+                  <div className="flex items-start gap-3">
+                    <FaCheckCircle className="text-[#F97316] text-lg flex-shrink-0 mt-0.5" />
+                    <p className="font-bold text-gray-700 text-sm leading-relaxed">{pt}</p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
 
-            {/* Timer */}
-            <motion.div variants={fadeUp} className="mb-6">
-              <CountdownTimer label={`📅 ${EVENT_INFO.dateLabel} ${EVENT_INFO.timeLabel}`} />
-            </motion.div>
-
-            {/* Price + CTA */}
-            <motion.div variants={fadeUp} className="flex flex-col items-start gap-3">
-              <div className="flex items-center gap-3">
-                <span className="font-heading font-black text-3xl text-[#F97316]">{PRICE.offer}</span>
-                <span className="font-body text-xl text-gray-400 line-through">{PRICE.original}</span>
-              </div>
-              <motion.a
-                href={CHECKOUT_LINK}
-                className="primary-btn w-full md:w-auto justify-center"
-                whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-              >
-                Register for {PRICE.offer}
-              </motion.a>
-            </motion.div>
           </motion.div>
 
         </div>

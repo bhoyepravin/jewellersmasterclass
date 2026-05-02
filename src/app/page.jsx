@@ -29,6 +29,7 @@ import {
 import BusinessBreakthroughSection from '../components/BusinessBreakthroughSection';
 import WhoHelpsSection             from '../components/WhoHelpsSection';
 import TextTestimonialsSection from '../components/TextTestimonialsSection';
+import RegisterButton from '../components/RegisterButton';
 
 export default function Home() {
   return (
@@ -76,8 +77,12 @@ export default function Home() {
       {/* 12. FAQ */}
       <FAQSection data={faqSectionData} />
 
+
       {/* 13. Final CTA */}
-      <FinalCTASection offerData={offerData} />
+      {/* <FinalCTASection offerData={offerData} /> */}
+
+      <RegisterButton/>
+      
 
       {/* 14. Footer */}
       <Footer />

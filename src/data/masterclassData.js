@@ -256,7 +256,7 @@ export const missionData = {
     '/training_session_02.jpg',
     '/training_session.jpeg',
   ],
-  content: 'I am on a MISSION to Help 10 Lakh+ Jewellery Business Owners to upscale their Jewellery Business into a POWERFUL BRAND',
+  content: 'I am on a MISSION to Help 10 Lakh+ Jewellery Business Owners to upscale their Jewellery Business into a',
 };
 
 /* ── FAQ ────────────────────────────────────────────────── */

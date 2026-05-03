@@ -157,7 +157,7 @@ export default function HeroSection({ data, statsBar }) {
   <div className="grid grid-cols-2 items-end gap-3 md:gap-8">
 
     {/* Left Image */}
-    <div className="relative w-[150px] h-[300px] md:w-[260px] md:h-[320px] orange-glow rounded-2xl mb-4">
+    <div className="relative w-[150px] h-[250px] md:w-[260px] md:h-[320px] shadow-2xl rounded-2xl mb-4">
   <Image
     src="/arnav_patil_sir_stretch_img.png"
     alt="Coach Arnav Patil"
@@ -180,19 +180,22 @@ export default function HeroSection({ data, statsBar }) {
         Arnav Patil
       </h2>
 
-      {/* Subtitle */}
-      <p className="text-base md:text-2xl mt-2 leading-snug text-[#1A1A1A]">
-        India&apos;s Jewellery <br /> Business Coach
-      </p>
+      {/* Subtitle */} 
+      <div className="bg-[#FAF5FF] rounded-xl p-1 md:p-8 shadow-sm border border-purple-100 inline-block">
+  <p className="text-base md:text-2xl leading-snug text-[#1A1A1A] font-medium">
+    India&apos;s Leading Jewellery <br />
+    Business Coach
+  </p>
+</div>
 
       {/* Divider */}
       <div className="w-16 md:w-20 h-[2px] bg-[#F97316] mt-3 mb-3"></div>
 
       {/* Achievement */}
-      <p className="text-lg md:text-3xl font-semibold leading-tight text-[#1A1A1A]">
+      <p className="text-base md:text-3xl font-semibold leading-tight text-[#1A1A1A]">
   Trained over <br />
 
-  <span className="text-[var(--mangocolor)] font-bold">
+  <span className="text-[var(--mangocolor)] font-bold ">
     10,000+
   </span>{""}
   Jewellery <br />

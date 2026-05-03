@@ -236,11 +236,17 @@ export default function TextTestimonialsSection({ data }) {
           </motion.span>
 
           <motion.h2
-                      variants={fadeUp}
-                      className="font-heading font-black text-4xl md:text-4xl text-[#1A1A1A] mb-2 leading-tight"
-                    >
-                      {title} <span className='text-[#EA6C0A]'>त्यांनी सांगितले</span> 
-                    </motion.h2>
+  variants={fadeUp}
+  className="tiro-devanagari-marathi-regular !font-bold text-4xl md:text-4xl text-[#1A1A1A] mb-2 leading-tight"
+>
+  {title}{" "}
+  <span
+    className="text-[#EA6C0A] tiro-devanagari-marathi-regular !font-bold"
+    style={{ fontFamily: '"Tiro Devanagari Marathi", serif' }}
+  >
+    त्यांनी सांगितले
+  </span>
+</motion.h2>
         </motion.div>
 
         {/* Mobile Auto-Slider or Desktop Grid */}

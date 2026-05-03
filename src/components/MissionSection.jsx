@@ -34,7 +34,7 @@ export default function MissionSection({ data }) {
     variants={fadeUp}
     className="font-heading font-black text-xl md:text-5xl text-[#1A1A1A] leading-tight max-w-3xl mx-auto"
   >
-    I am on a MISSION to Help <span className='text-[#EA6C0A]'>10 Lakh+ Jewellery Business</span>  Owners to upscale their <span className='text-[#EA6C0A]'> Jewellery Business</span> into a POWERFUL BRAND <span className='text-[#EA6C0A]'>Powerful Brand</span>
+    I am on a MISSION to Help <span className='text-[#EA6C0A]'>10 Lakh+ Jewellery Business</span>  Owners to upscale their <span className='text-[#EA6C0A]'> Jewellery Business</span> into a  <span className='text-[#EA6C0A]'>Powerful Brand</span>
   </motion.h2>
   
   {/* Orange Underline */}

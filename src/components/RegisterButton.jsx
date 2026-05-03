@@ -116,7 +116,7 @@ export default function PricingCard({
   totalValue = "₹7,486/-",
   regularPrice = "₹999/-",
   offerPrice = "₹99/-",
-  bonusText = "Reserve your seat before the timer ends to unlock bonuses worth ₹6,487/-",
+  bonusText = "Reserve your seat before the timer ends to unlock bonuses worth ₹6,999/-",
   checkoutLink = siteConfig?.checkoutLink,
   countdownMinutes = 15,
   className = "",

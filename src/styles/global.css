@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap');
+
 /* ── Root Design Tokens ────────────────────────────────────── */
 :root {
   --orange:        #F97316; 
@@ -15,6 +17,12 @@
   --text:          #1A1A1A;
   --text-muted:    #6B7280;
   --white:         #FFFFFF;
+}
+
+.tiro-devanagari-marathi-regular {
+  font-family: "Tiro Devanagari Marathi", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* ── Base Reset ─────────────────────────────────────────────── */

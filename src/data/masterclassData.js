@@ -269,20 +269,14 @@ export const faqSectionData = {
     },
     {
       q: "How I'll get the bonus items?",
-      a: 'Bonuses will be distributed exclusively to participants who attend and successfully complete the workshop.',
+      a: 'Bonuses will be distributed exclusively to participants who attend and successfully complete the workshop On E-mail.',
     },
-    {
-      q: 'Why does this program cost only ₹99?',
-      a: 'The fee is just to make sure to get a commitment from you that you will be there. It is not the value of the program. Attend the program and understand the value yourself.',
-    },
+    
     {
       q: 'Will I get the recording of the program?',
       a: 'This is a live online workshop. So no recording will be provided.',
     },
-    {
-      q: 'Why is the training during business hours?',
-      a: 'This is an investment in your business — when you learn, you grow. I strongly believe every entrepreneur has a personal life and would want to make sure you are learning during business hours so you can implement what you learn directly in your business.',
-    },
+    
     {
       q: 'Who is this masterclass ideal for?',
       a: 'All types of Jewellery Business Owners — retail shop owners, family run businesses, wholesellers, manufacturers, franchise owners, showroom managers, and those who wish to start a jewellery business.',
@@ -295,22 +289,13 @@ export const faqSectionData = {
       q: `Can I attend this if I want to start a jewellery business but don't have one yet?`,
       a: 'Yes, you are welcome to attend. This Masterclass will give you clarity on the right foundation to build your jewellery business from day one.',
     },
-    {
-      q: 'What if I have questions about registration or attending?',
-      a: 'You can drop us a DM on Instagram or WhatsApp. We will be happy to help you.',
-    },
+    
     {
       q: 'If I miss attending this time, can I attend again?',
       a: 'Yes, you may attend a future batch. However, the ₹99 offer and the bonuses are only for this batch, so it is best to attend now.',
     },
-    {
-      q: 'What do I need to keep handy during the masterclass?',
-      a: 'Just an open mind and a notebook to make lots of notes.',
-    },
-    {
-      q: 'Can I attend this program along with my business partner(s)?',
-      a: 'Yes you can. It is preferred you attend with your partners so that you can learn and implement together.',
-    },
+    
+    
     {
       q: 'Is it a LIVE masterclass?',
       a: 'Yes, this is a fully LIVE Zoom session with Arnav Patil Sir. He will be live throughout the session to answer your questions.',

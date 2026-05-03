@@ -6,6 +6,7 @@ import { siteConfig } from '../data/landingPageData';
 import { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaClock } from 'react-icons/fa';
 import CTAButton from './CTAButton';
+import EventCountdown from './EventCountdown';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -227,38 +228,7 @@ export default function HeroSection({ data, statsBar }) {
     </div>
   </div>
 </div>
-
-{/* ── 5. Countdown Timer (Compact Blocks) ───────────── */}
-            {/* <motion.div
-              variants={fadeUp}
-              className="w-full mt-10"
-            >
-              <div className="bg-[#FFF7ED] rounded-2xl p-5 border border-[#F97316]/20">
-                <p className="text-center text-[#480A62] text-sm font-semibold mb-4">
-                  ⏰ Event Starts In:
-                </p>
-                <div className="flex justify-center gap-3 md:gap-6">
-                  {[
-                    { label: 'Days', value: timeLeft.days },
-                    { label: 'Hours', value: timeLeft.hours },
-                    { label: 'Mins', value: timeLeft.minutes },
-                    { label: 'Secs', value: timeLeft.seconds },
-                  ].map((item) => (
-                    <div key={item.label} className="text-center">
-                      <div className="bg-white rounded-xl shadow-md px-3 py-2 md:px-5 md:py-3 min-w-[70px] md:min-w-[90px] border border-[#F97316]/30">
-                        <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
-                          {String(item.value).padStart(2, '0')}
-                        </span>
-                      </div>
-                      <p className="text-[#6B7280] text-xs mt-2 font-medium">{item.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div> */}
-
-          {/* ── Event Date & Time ───────────────────────── */}
-                  {/* ── Event Info ───────────────────────── */}
+         {/* ── Event Date & Time ───────────────────────── */}
 <motion.div
   variants={fadeUp}
   className="w-full mt-8 flex flex-col items-center"
@@ -332,25 +302,7 @@ export default function HeroSection({ data, statsBar }) {
 </h4>
 
     {/* Countdown Timer */}
-    <div className="flex justify-center gap-2 md:gap-6 ">
-      {[
-        { label: 'Days', value: timeLeft.days },
-        { label: 'Hours', value: timeLeft.hours },
-        { label: 'Mins', value: timeLeft.minutes },
-        { label: 'Secs', value: timeLeft.seconds },
-      ].map((item) => (
-        <div key={item.label} className="text-center">
-          <div className="bg-[#FFF7ED] rounded-xl shadow-md px-3 py-2 md:px-5 md:py-3 min-w-[70px] md:min-w-[90px] border border-[#F97316]/30">
-            <span className="font-heading font-bold text-2xl md:text-3xl text-[#F97316]">
-              {String(item.value).padStart(2, '0')}
-            </span>
-          </div>
-          <p className="text-[#6B7280] text-xs mt-2 font-medium uppercase">
-            {item.label}
-          </p>
-        </div>
-      ))}
-    </div>
+    <EventCountdown/>
 
     {/* CTA Secondary */}
     {/* <p className="text-[#480A62] font-semibold text-xl mt-6 flex items-center justify-center gap-2">

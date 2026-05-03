@@ -74,14 +74,18 @@ export default function Home() {
       {/* 11. Mission */}
       <MissionSection data={missionData} />
 
+      
       {/* 12. FAQ */}
       <FAQSection data={faqSectionData} />
+
+      
 
 
       {/* 13. Final CTA */}
       {/* <FinalCTASection offerData={offerData} /> */}
 
-      <RegisterButton/>
+      {/* <RegisterButton/> */}
+      
       
 
       {/* 14. Footer */}

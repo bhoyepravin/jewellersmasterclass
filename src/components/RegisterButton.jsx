@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '../data/landingPageData';
+import EventCountdown from './EventCountdown';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -24,7 +25,7 @@ function Countdown({ minutes = 15 }) {
   const ss = String(left % 60).padStart(2, '0');
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4  ">
       {[{ val: mm, label: 'Minutes' }, { val: ss, label: 'Seconds' }].map(({ val, label }, i) => (
         <div key={label} className="flex items-center gap-4">
           <div
@@ -49,7 +50,7 @@ function FixedRegisterButton({
   href = siteConfig?.checkoutLink 
 }) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 md:p-4">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 md:p-4 ">
       <div className="container-max mx-auto">
         <motion.a
           href={href}
@@ -91,16 +92,16 @@ export default function PricingCard({
           className={`mt-14 max-w-xl mx-auto rounded-3xl overflow-hidden ${className}`}
           style={{ background: 'white', border: '1px solid rgba(249,115,22,0.2)', boxShadow: '0 4px 24px rgba(0,0,0,0.05)' }}
         >
-          <div className="px-6 py-8 flex flex-col items-center gap-3 text-center">
+          <div className="px-6 py-8 flex flex-col items-center gap-3 text-center bg-[#FFF7ED]">
 
             {/* Total value */}
-            <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-sm uppercase tracking-widest">
+            <motion.p variants={fadeUp} className="text-gray-800 font-heading font-semibold text-sm uppercase tracking-widest">
               Total Value :&nbsp;
-              <span className="line-through text-gray-400">{totalValue}</span>
+              <span className="line-through text-gray-800">{totalValue}</span>
             </motion.p>
 
             {/* Regular price */}
-            <motion.p variants={fadeUp} className="text-gray-500 font-heading font-semibold text-base">
+            <motion.p variants={fadeUp} className="text-gray-800 font-heading font-semibold text-base">
               Regular Price :&nbsp;
               <span className="line-through">{regularPrice}</span>
             </motion.p>
@@ -124,13 +125,13 @@ export default function PricingCard({
               variants={fadeUp}
               href={checkoutLink}
               whileHover={{ scale: 1.03 }}
-              className="mt-2 w-full relative rounded-[18px] px-6 py-4 text-center transition-all duration-300"
+              className="mt-2 w-100 relative rounded-[18px] px-8 py-2 text-center transition-all duration-300"
               style={{
                 background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
                 boxShadow: '0 0 36px rgba(249,115,22,0.55), 0 6px 32px rgba(249,115,22,0.40)',
               }}
             >
-              <span className="relative block text-white font-heading font-black uppercase text-[1.4rem] md:text-[1.75rem] leading-tight">
+              <span className="relative block text-white font-heading font-black uppercase text-[1.3rem] md:text-[1.75rem] leading-tight">
                 Register Now at {offerPrice}&nbsp;Only
               </span>
             </motion.a>
@@ -142,7 +143,8 @@ export default function PricingCard({
 
             {/* Countdown */}
             <motion.div variants={fadeUp} className="mt-4 w-full">
-              <Countdown minutes={countdownMinutes} />
+              {/* <Countdown minutes={countdownMinutes} /> */}
+              <EventCountdown/>
             </motion.div>
 
           </div>

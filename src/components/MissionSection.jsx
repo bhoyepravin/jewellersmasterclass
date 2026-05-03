@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion';
 import CountdownTimer from './CountdownTimer';
 import { CHECKOUT_LINK, PRICE, EVENT_INFO } from '../data/masterclassData';
+import CTAButton from './CTAButton';
+import RegisterButton from './RegisterButton';
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 28 },
@@ -22,19 +24,27 @@ export default function MissionSection({ data }) {
 
         {/* Heading */}
         <motion.div
-          className="text-center mb-12"
-          initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-        >
-          <motion.span variants={fadeUp} className="section-label">Our Mission</motion.span>
-          <motion.h2
-            variants={fadeUp}
-            className="font-heading font-black text-xl md:text-5xl text-[#480A62] leading-tight max-w-3xl mx-auto"
-          >
-            {data.content}
-          </motion.h2>
-        </motion.div>
+  className="text-center mb-12"
+  initial="hidden" whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={stagger}
+>
+  <motion.span variants={fadeUp} className="section-label">Our Mission</motion.span>
+  <motion.h2
+    variants={fadeUp}
+    className="font-heading font-black text-xl md:text-5xl text-[#1A1A1A] leading-tight max-w-3xl mx-auto"
+  >
+    I am on a MISSION to Help <span className='text-[#EA6C0A]'>10 Lakh+ Jewellery Business</span>  Owners to upscale their <span className='text-[#EA6C0A]'> Jewellery Business</span> into a POWERFUL BRAND <span className='text-[#EA6C0A]'>Powerful Brand</span>
+  </motion.h2>
+  
+  {/* Orange Underline */}
+  <motion.div
+    variants={fadeUp}
+    className="flex justify-center mt-4"
+  >
+    <div className="w-24 h-1 rounded-full" style={{ backgroundColor: '#F97316' }}></div>
+  </motion.div>
+</motion.div>
 
         {/* 3 Images Grid */}
         <motion.div
@@ -62,38 +72,17 @@ export default function MissionSection({ data }) {
                 loading="lazy"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <p className="font-heading font-black text-white/20 text-lg select-none">
-                  mission-{i + 1}.jpg
-                </p>
-              </div>
+              
             </motion.div>
           ))}
         </motion.div>
 
         {/* Timer + CTA */}
-        <motion.div
-          className="max-w-md mx-auto text-center space-y-5"
-          initial="hidden" whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-        >
-          <motion.div variants={fadeUp}>
-            <CountdownTimer label={`📅 ${EVENT_INFO.dateLabel} ${EVENT_INFO.timeLabel}`} />
-          </motion.div>
-          <motion.div variants={fadeUp} className="flex items-center justify-center gap-3">
-            <span className="font-heading font-black text-3xl text-[#F97316]">{PRICE.offer}</span>
-            <span className="font-body text-xl text-gray-400 line-through">{PRICE.original}</span>
-          </motion.div>
-          <motion.a
-            variants={fadeUp}
-            href={CHECKOUT_LINK}
-            className="primary-btn orange-glow w-full justify-center"
-            whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-          >
-            Register for {PRICE.offer}
-          </motion.a>
-        </motion.div>
+        <RegisterButton/>
+        {/* <CountdownTimer/>
+        <div className='pt-6'>
+        <CTAButton/>
+        </div> */}
 
       </div>
     </section>

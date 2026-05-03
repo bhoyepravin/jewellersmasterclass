@@ -43,15 +43,9 @@ export default function MentorSection({ data }) {
   >
     {data.title} <span className='text-[#EA6C0A]'>Mentor</span>
   </motion.h2>
-   {/* Single Orange Line - REMOVED the duplicate */}
-          <motion.div
-            variants={fadeUp}
-            className="flex justify-center mt-[-4]"
-          >
-            <div className="w-24 h-1 rounded-full" style={{ backgroundColor: '#F97316' }}></div>
-          </motion.div>
   
-  {/* Or using motion with visible styles */}
+  
+  
   <motion.div
     variants={fadeUp}
     className="flex justify-center mt-1"

@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '../data/landingPageData';
+import CTAButton from './CTAButton';
+import EventCountdown from './EventCountdown';
+import CountdownTimer from './CountdownTimer';
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 24 },
@@ -88,7 +91,7 @@ export default function FAQSection({ data }) {
           variants={fadeUp}
           className="font-heading font-black text-[#1A1A1A] text-[1.8rem] md:text-[2.8rem] leading-tight mb-5"
         >
-          Frequently Asked Questions:
+          Frequently Asked <span className='text-[#EA6C0A]'>Questions:</span> 
         </motion.h3>
 
         {/* ── DIVIDER ── */}
@@ -119,6 +122,14 @@ export default function FAQSection({ data }) {
             />
           ))}
         </motion.div>
+
+          <div className='pt-10'>
+        <CTAButton/>
+        </div>
+
+          <div className='pt-10'>
+        <CountdownTimer/>
+        </div>
 
       </div>
     </section>

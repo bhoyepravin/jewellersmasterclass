@@ -37,11 +37,7 @@ export default function WhoHelpsSection() {
       <div className="pointer-events-none absolute top-0 left-[-80px] w-[320px] h-[320px] bg-[#F97316]/8 blur-[100px]" />
       <div className="pointer-events-none absolute bottom-0 right-[-80px] w-[280px] h-[280px] bg-[#480A62]/8 blur-[90px]" />
 
-      {/* Hairlines */}
-      <div className="absolute top-0 left-0 w-full h-px bg-black/10" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-black/10" />
-
-      <div className="container-max relative z-10 px-4">
+<div className="container-max relative z-10 px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"

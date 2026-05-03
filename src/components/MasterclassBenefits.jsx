@@ -57,7 +57,7 @@ export default function MasterclassBenefits({ data }) {
         </div>
 
       </div>
-      <section className="py-8">
+      <section className="py-2">
   <div className="container-max text-center">
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}

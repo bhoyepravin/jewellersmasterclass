@@ -45,7 +45,7 @@ const GRADIENTS = [
 
 export default function WhatYouLearnSection({ data }) {
   return (
-    <section className="section-padding bg-white pt-10">
+    <section className="section-padding bg-white pt-1">
       <div className="container-max">
 
         {/* Heading */}

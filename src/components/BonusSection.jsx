@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '../data/landingPageData';
 import CTAButton from './CTAButton';
+import EventCountdown from './EventCountdown';
+import CountdownTimer from './CountdownTimer';
 
 const fadeUp = {
   hidden:  { opacity: 0, y: 24 },
@@ -28,7 +30,7 @@ function Countdown({ minutes = 15 }) {
   const ss = String(left % 60).padStart(2, '0');
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-4 ">
       {[{ val: mm, label: 'Minutes' }, { val: ss, label: 'Seconds' }].map(({ val, label }, i) => (
         <div key={label} className="flex items-center gap-4">
           <div
@@ -59,7 +61,7 @@ export default function BonusSection({ data }) {
 
   return (
     <section
-      className="relative overflow-hidden py-20 md:py-28"
+      className="relative overflow-hidden py-14 md:py-28"
       style={{ background: '#FFF7ED' }}
     >
       {/* Subtle orbs */}
@@ -127,7 +129,9 @@ export default function BonusSection({ data }) {
             </div>
           ))}
         </motion.div>
-
+        <div className='pt-10'>
+          <CountdownTimer/>
+        </div>
        
 
       </div>

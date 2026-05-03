@@ -17,11 +17,7 @@ export default function BusinessBreakthroughSection() {
       <div className="pointer-events-none absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[380px] h-[140px] bg-[#F97316]/12 blur-[100px]" />
       <div className="pointer-events-none absolute top-[-40px] right-[-60px] w-[260px] h-[200px] bg-[#480A62]/10 blur-[90px]" />
 
-      {/* Top / bottom hairlines */}
-      <div className="absolute top-0 left-0 w-full h-px bg-black/10" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-black/10" />
-
-      <div className="container-max relative z-10 px-4">
+<div className="container-max relative z-10 px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"

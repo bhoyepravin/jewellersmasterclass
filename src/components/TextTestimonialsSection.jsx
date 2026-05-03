@@ -113,7 +113,7 @@ function MobileTextSlider({ items }) {
   if (!items || items.length === 0) return null;
 
   return (
-    <div className="relative w-full max-w-md mx-auto px-4">
+    <div className="relative w-full max-w-md mx-auto px-4 pt-0 pb-6 ">
       {/* Slider Container */}
       <div className="relative">
         <AnimatePresence mode="wait">
@@ -211,7 +211,7 @@ export default function TextTestimonialsSection({ data }) {
 
   return (
     <section
-      className="relative overflow-hidden section-padding"
+      className="relative overflow-hidden section-padding pt-10"
       style={{ background: '#F9FAFB' }}
     >
       <div

@@ -75,7 +75,7 @@ export default function FAQSection({ data }) {
 
   return (
     <section
-      className="relative overflow-hidden py-20 md:py-28"
+      className="relative overflow-hidden py-20 md:py-28 pt-5"
       style={{ background: '#FFF7ED' }}
     >
       {/* Orbs */}

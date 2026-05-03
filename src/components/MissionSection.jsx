@@ -19,12 +19,12 @@ const IMG_GRADIENTS = [
 
 export default function MissionSection({ data }) {
   return (
-    <section className="section-padding" style={{ background: '#FAF5FF' }}>
+    <section className="section-padding pt-8" style={{ background: '#FAF5FF' }}>
       <div className="container-max">
 
         {/* Heading */}
         <motion.div
-  className="text-center mb-12"
+  className="text-center mb-12 pt-0"
   initial="hidden" whileInView="visible"
   viewport={{ once: true, amount: 0.3 }}
   variants={stagger}

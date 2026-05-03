@@ -104,7 +104,7 @@ export default function MentorSection({ data }) {
             </motion.p>
 
             {/* Points in Boxes - 2 columns grid on tablet/desktop, 1 column on mobile */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-1">
   {[
     { number: '10+', label: 'Years of Experience', subLabel: 'Helping Jewellers Automate', icon: <FaTrophy />, color: '#F97316' },
     { number: '10,000+', label: 'Coaching Clients', subLabel: 'Happy Business Owners', icon: <FaUsers />, color: '#F97316' },

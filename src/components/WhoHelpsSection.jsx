@@ -32,7 +32,7 @@ export default function WhoHelpsSection() {
   const GAPY = 10;
 
   return (
-    <section className="relative overflow-hidden bg-white pt-10 pb-0 md:pt-28 md:pb-8">
+    <section className="relative overflow-hidden bg-white py-10 pt-7 pb-0 md:pt-28 md:pb-8">
        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
       {/* Subtle orbs */}
       <div className="pointer-events-none absolute top-0 left-[-80px] w-[320px] h-[320px] bg-[#F97316]/8 blur-[100px]" />
@@ -75,11 +75,11 @@ export default function WhoHelpsSection() {
           {/* SVG Section */}
           <motion.div
             variants={fadeUp}
-            className="mt-4 w-full flex justify-center"
+            className="mt-0 w-full flex justify-center"
           >
             {/* Mobile: 1 Column */}
             <svg
-              viewBox={`0 0 360 ${items.length * 95}`}
+              viewBox={`0 0 360 ${items.length * 90}`}
               xmlns="http://www.w3.org/2000/svg"
               className="w-full max-w-[360px] md:hidden"
               aria-hidden="true"

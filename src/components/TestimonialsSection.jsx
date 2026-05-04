@@ -386,7 +386,7 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
 /* ── Mobile Reel Slider ── */
 function MobileReelSlider({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 

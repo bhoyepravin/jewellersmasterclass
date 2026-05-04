@@ -16,7 +16,7 @@ export default function MasterclassBenefits({ data }) {
 
         {/* Heading */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-6"
           initial="hidden" whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={stagger}
@@ -58,7 +58,7 @@ export default function MasterclassBenefits({ data }) {
         </div>
 
       </div>
-      <section className="py-2">
+      <section className="pt-4 pb-0">
   <div className="container-max text-center">
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
@@ -71,7 +71,7 @@ export default function MasterclassBenefits({ data }) {
         boxShadow: '0 10px 30px rgba(249,115,22,0.2)'
       }}
     >
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-0">
       </div>
       <h3 className="font-heading font-black text-2xl md:text-3xl text-[#1A1A1A] mb-2">
         Exclusive Bonuses

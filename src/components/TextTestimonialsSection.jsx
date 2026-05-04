@@ -333,7 +333,7 @@ function TextOnlyCard({ item }) {
         style={{ color: 'rgba(249,115,22,0.55)' }}
       />
 
-      <p className="font-body text-gray-700 text-sm leading-relaxed flex-1 mt-2">
+      <p className="font-body text-gray-700 text-sm leading-relaxed flex-1 mt-2 text-justify">
         {item.text || ''}
       </p>
 
@@ -395,7 +395,7 @@ function MobileTextSlider({ items }) {
   if (!items || items.length === 0) return null;
 
   return (
-    <div className="relative w-full max-w-md mx-auto px-4 pt-0 pb-6 ">
+    <div className="relative w-full max-w-md mx-auto px-4 pt-0 pb-2 ">
       {/* Slider Container */}
       <div className="relative">
         <AnimatePresence mode="wait">
@@ -427,7 +427,7 @@ function MobileTextSlider({ items }) {
       </div>
 
       {/* Progress Dots */}
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex justify-center gap-2 mt-4">
         {items.map((_, index) => (
           <button
             key={index}
@@ -493,7 +493,7 @@ export default function TextTestimonialsSection({ data = textTestimonialsData })
 
   return (
     <section
-      className="relative overflow-hidden section-padding pt-10"
+      className="relative overflow-hidden section-padding pt-10 pb-8"
       style={{ background: '#F9FAFB' }}
     >
       <div
@@ -507,7 +507,7 @@ export default function TextTestimonialsSection({ data = textTestimonialsData })
       <div className="container-max relative z-10">
         {/* Heading */}
         <motion.div
-          className="text-center mb-14"
+          className="text-center mb-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -540,7 +540,7 @@ export default function TextTestimonialsSection({ data = textTestimonialsData })
 
         {/* CTA */}
         <motion.div
-          className="text-center mt-14"
+          className="text-center mt-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

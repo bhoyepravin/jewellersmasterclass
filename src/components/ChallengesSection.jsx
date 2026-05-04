@@ -21,7 +21,7 @@ const stagger = {
 
 export default function ChallengesSection({ data }) {
   return (
-    <section className="section-padding pt-10" style={{ background: 'linear-gradient(135deg, #FFF7ED 0%, #FFE8D2 100%)' }}>
+    <section className="section-padding pt-10 pb-10" style={{ background: 'linear-gradient(135deg, #FFF7ED 0%, #FFE8D2 100%)' }}>
       <div className="container-max">
 
         {/* ─────────────────────────── Heading ─────────────────────────── */}

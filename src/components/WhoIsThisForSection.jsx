@@ -23,7 +23,7 @@ export default function WhoIsThisForSection({ data }) {
           <motion.span variants={fadeUp} className="section-label">This Is For You</motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight"
+            className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
           >
             {data.title}
           </motion.h2>

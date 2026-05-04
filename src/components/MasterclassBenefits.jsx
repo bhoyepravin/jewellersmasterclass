@@ -24,7 +24,7 @@ export default function MasterclassBenefits({ data }) {
           <motion.span variants={fadeUp} className="section-label">Inside The Masterclass</motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight"
+            className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
           >
             {data.title} <span className='text-[#EA6C0A]'>Masterclass?</span>
           </motion.h2>

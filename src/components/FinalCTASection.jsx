@@ -52,7 +52,7 @@ export default function FinalCTASection({ offerData }) {
             {/* Headline */}
             <motion.h2
               variants={fadeUp}
-              className="font-heading font-black text-3xl md:text-5xl lg:text-6xl text-white mb-5 leading-tight"
+              className="font-heading font-black text-2xl md:text-5xl text-white leading-tight mb-3"
             >
               Don&apos;t Miss This{' '}
               <span style={{ color: '#F97316' }}>Opportunity</span>

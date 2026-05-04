@@ -75,7 +75,7 @@ export default function BonusSection({ data }) {
           initial="hidden" whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="text-center font-heading font-black text-[#1A1A1A] text-2xl md:text-[4rem] leading-[1.1] tracking-[-0.02em] mb-14"
+          className="text-center font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
         >
           Bonuses If You Register{' '}
           <span style={{

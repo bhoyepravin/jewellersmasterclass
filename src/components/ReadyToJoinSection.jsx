@@ -24,7 +24,7 @@ export default function ReadyToJoinSection() {
         >
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-white mb-4 leading-tight"
+            className="font-heading font-black text-2xl md:text-5xl text-white leading-tight mb-3"
           >
             Ready to Join?
           </motion.h2>

@@ -67,7 +67,7 @@ export default function WhatYouLearnSection({ data }) {
 
   <motion.h2
   variants={fadeUp}
-  className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-2xl md:text-[4rem] pt-4"
+  className="text-center font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
 >
   <span className="text-[#1A1A1A]">
     {data.title.split(' ').slice(0, -1).join(' ')}{' '}

@@ -38,7 +38,7 @@ export default function BenefitsSection({ data }) {
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#480A62] mb-3 leading-tight"
+            className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
           >
             {data.headlineMr}
           </motion.h2>

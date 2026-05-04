@@ -46,7 +46,7 @@ export default function ProofSection({ data }) {
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] mb-3 leading-tight"
+            className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
           >
             {data.headline}
           </motion.h2>

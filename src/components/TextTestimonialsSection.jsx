@@ -518,7 +518,7 @@ export default function TextTestimonialsSection({ data = textTestimonialsData })
 
           <motion.h2
             variants={fadeUp}
-            className="tiro-devanagari-marathi-regular !font-bold text-3xl md:text-4xl text-[#1A1A1A] mb-2 leading-tight"
+            className="tiro-devanagari-marathi-regular !font-bold text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
           >
             {title}{" "}
             <span

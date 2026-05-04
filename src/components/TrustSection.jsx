@@ -43,7 +43,7 @@ export default function TrustSection({ painPoints, audience }) {
             </motion.span>
             <motion.h2
               variants={fadeUp}
-              className="font-heading font-black text-3xl md:text-5xl text-white leading-tight"
+              className="font-heading font-black text-2xl md:text-5xl text-white leading-tight mb-3"
             >
               {painPoints.headline}
             </motion.h2>
@@ -132,7 +132,7 @@ export default function TrustSection({ painPoints, audience }) {
             </motion.span>
             <motion.h2
               variants={fadeUp}
-              className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] mb-3 leading-tight"
+              className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
             >
               {audience.headlineMr}
             </motion.h2>

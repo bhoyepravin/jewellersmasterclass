@@ -243,7 +243,7 @@ export default function HeroSection({ data, statsBar }) {
 
   {/* Date + Time */}
   <h3 className="text-center font-bold leading-snug">
-    <span className="text-[#111827] text-2xl md:text-3xl">
+    <span className="text-[#111827] text-xl md:text-3xl">
       STARTS ON 6th May 2026
     </span>
     <br />

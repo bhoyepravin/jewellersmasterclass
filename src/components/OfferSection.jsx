@@ -111,7 +111,7 @@ export default function OfferSection({ data }) {
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-white mb-8 leading-tight"
+            className="font-heading font-black text-2xl md:text-5xl text-white leading-tight mb-3"
           >
             {data.urgencyText}
           </motion.h2>

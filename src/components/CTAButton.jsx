@@ -58,16 +58,21 @@ const CTAButton = ({
           '0 0 0px rgba(255,115,0,0.2)',
         ],
       }}
+      whileHover={{
+        scale: 1.02,
+        boxShadow: '0 0 12px rgba(255,115,0,0.25)',
+      }}
+      whileTap={{
+        scale: 0.98,
+      }}
       transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: 'easeInOut',
+        duration: 0.2,
       }}
     >
       {/* Mirror Shine Effect */}
       <span className="absolute inset-0 z-0 overflow-hidden rounded-full">
         <motion.span
-          className="absolute top-0 -right-[120%] h-full w-[35%] bg-white/30 skew-x-[-20deg]"
+          className="absolute top-0 -right-[120%] h-full w-[12%] bg-white/10 skew-x-[-20deg]"
           animate={{
             left: ['-120%', '140%'],
           }}

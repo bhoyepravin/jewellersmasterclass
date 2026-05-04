@@ -87,7 +87,7 @@ const CTAButton = ({
 
       {/* Button Text */}
       <span className="relative z-10 whitespace-nowrap">
-        {text}
+        {/* {text} */}Register Now for ₹99/- Only
       </span>
     </motion.a>
   );

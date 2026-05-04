@@ -284,6 +284,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { siteConfig } from '../data/landingPageData';
 import { textTestimonialsData } from '../data/masterclassData';
+import CTAButton from './CTAButton';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -545,14 +546,15 @@ export default function TextTestimonialsSection({ data = textTestimonialsData })
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <motion.a
+          <CTAButton/>
+          {/* <motion.a
             href={siteConfig.checkoutLink}
             className="primary-btn orange-glow"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
             {siteConfig.joinNowText}
-          </motion.a>
+          </motion.a> */}
         </motion.div>
       </div>
     </section>

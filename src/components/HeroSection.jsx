@@ -195,13 +195,13 @@ export default function HeroSection({ data, statsBar }) {
       <p className="text-base md:text-3xl font-semibold leading-tight text-[#1A1A1A]">
   Trained over <br />
 
-  <span className="text-[var(--mangocolor)] font-bold ">
+  <span className="text-[#EA6C0A] font-bold ">
     10,000+
   </span>{""}
   Jewellery <br />
 
   Business Owners in{" "}
-  <span className="text-[var(--mangocolor)] font-bold">
+  <span className="text-[#EA6C0A] font-bold">
     Last 6 Years
   </span>
 </p>

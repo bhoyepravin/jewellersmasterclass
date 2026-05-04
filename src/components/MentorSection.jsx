@@ -96,10 +96,10 @@ export default function MentorSection({ data }) {
             <motion.h3 variants={fadeUp} className="font-heading font-black text-2xl text-[#1A1A1A] mb-1">
               {data.nametitle}
             </motion.h3>
-            <motion.p variants={fadeUp} className="font-heading text-[#F97316] font-semibold text-base mb-4">
+            <motion.p variants={fadeUp} className="font-heading text-[#F97316] font-semibold text-base mb-4 text-justify">
               {data.designation}
             </motion.p>
-            <motion.p variants={fadeUp} className="font-heading text-gray-800 font-semibold leading-relaxed mb-6">
+            <motion.p variants={fadeUp} className="font-heading text-gray-800 font-semibold leading-relaxed mb-6 text-justify">
               {data.content}
             </motion.p>
 

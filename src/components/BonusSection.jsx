@@ -61,7 +61,7 @@ export default function BonusSection({ data }) {
 
   return (
     <section
-      className="relative overflow-hidden py-14 md:py-28"
+      className="relative overflow-hidden py-10 md:py-28"
       style={{ background: '#FFF7ED' }}
     >
       {/* Subtle orbs */}
@@ -75,7 +75,7 @@ export default function BonusSection({ data }) {
           initial="hidden" whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="text-center font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
+          className="text-center font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-10"
         >
           Bonuses If You Register{' '}
           <span style={{

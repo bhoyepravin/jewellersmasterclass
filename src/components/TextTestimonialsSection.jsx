@@ -304,10 +304,15 @@ const stagger = {
 
 function getInitials(name) {
   if (!name) return '?';
-  const parts = name.trim().split(' ');
+
+  // Remove Mr., Ms., Mrs.
+  const cleanedName = name.replace(/^(Mr\.|Ms\.|Mrs\.)\s+/i, '');
+
+  const parts = cleanedName.trim().split(' ');
+
   return parts.length >= 2
     ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
-    : name.slice(0, 2).toUpperCase();
+    : cleanedName.slice(0, 2).toUpperCase();
 }
 
 function StarRow() {

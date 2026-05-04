@@ -67,7 +67,7 @@ export default function HeroSection({ data, statsBar }) {
 
       <section className="relative overflow-hidden pb-10 md:pb-28 bg-white">
         {/* Floating blur orbs - your brand colors */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none blur-orb-orange" />
+        {/* <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none blur-orb-orange" /> */}
         <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
         
         <div className="container-max px-4">
@@ -83,7 +83,7 @@ export default function HeroSection({ data, statsBar }) {
               {/* Floating Orange Workshop Badge - positioned to overlap halfway down */}
               <div className="relative max-w-md mx-auto font-heading">
   {/* Main White Card */}
-  <div className="relative bg-[#FFF7ED] rounded-[28px] pt-12 pb-12 px-12 shadow-md ">
+  <div className="relative bg-[#f9efe2] rounded-[28px] pt-12 pb-12 px-12 shadow-xl ">
     
     {/* Workshop Banner */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-20">
@@ -135,7 +135,7 @@ export default function HeroSection({ data, statsBar }) {
   </span>
 </h2>
 
-  <div className="w-24 h-[2px] bg-gray-200 mx-auto my-6" />
+  <div className="w-24 h-[2px] bg-gray-400 mx-auto my-6" />
 
   <p className="text-xl text-gray-800">
     Before its too late...
@@ -151,18 +151,18 @@ export default function HeroSection({ data, statsBar }) {
            <div className="w-full max-w-4xl mx-auto mt-2">
   
   {/* Coach Content - 2 Column Layout */}
- <div className="w-full max-w-4xl mx-auto mt-8">
+ <div className="w-full max-w-4xl mx-auto mt-6">
 
   {/* Main Coach Section */}
   <div className="grid grid-cols-2 items-end gap-3 md:gap-8">
 
     {/* Left Image */}
-    <div className="relative w-[150px] h-[250px] md:w-[260px] md:h-[320px] shadow-2xl rounded-2xl mb-4">
+    <div className="relative w-[150px] h-[250px] md:w-[260px] md:h-[320px] shadow-2xl rounded-2xl mb-9">
   <Image
-    src="/arnav_patil_sir_stretch_img.png"
+    src="/arnav_patil_sirji.png"
     alt="Coach Arnav Patil"
     fill
-    className="object-fit object-top rounded-2xl"
+    className="object-contain object-top rounded-2xl"
     priority
   />
 </div>

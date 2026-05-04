@@ -63,45 +63,50 @@ export default function ChallengesSection({ data }) {
 
         {/* ───────────────────── Challenge Points - New Design ───────────────────── */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          variants={stagger}
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto mb-12"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.15 }}
+  variants={stagger}
+>
+  {data.points.map((point, i) => (
+    <motion.div
+      key={i}
+      variants={fadeUp}
+      whileHover={{ scale: 1.03, y: -4 }}
+      className="group relative rounded-2xl p-5 transition-all duration-300 overflow-hidden"
+      style={{
+        background: 'white',
+        border: '1px solid rgba(249,115,22,0.15)',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
+      }}
+    >
+      {/* Gradient overlay on hover */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          background:
+            'linear-gradient(135deg, rgba(249,115,22,0.05), rgba(234,108,10,0.08))',
+        }}
+      />
+
+      <div className="relative z-10 flex items-start gap-3">
+        <div className="flex-shrink-0">
+          <div className="w-8 h-8 rounded-full flex items-center justify-center bg-red-50">
+            <FaTimesCircle className="text-red-500 text-lg" />
+          </div>
+        </div>
+
+        <p
+          className="font-heading font-extrabold text-[#1A1A1A] text-xl leading-relaxed flex-1"
+          style={{ fontFamily: '"Tiro Devanagari Marathi", serif' }}
         >
-          {data.points.map((point, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              whileHover={{ scale: 1.03, y: -4 }}
-              className="group relative rounded-2xl p-5 transition-all duration-300 overflow-hidden"
-              style={{
-                background: 'white',
-                border: '1px solid rgba(249,115,22,0.15)',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.05)'
-              }}
-            >
-              {/* Gradient overlay on hover */}
-              <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(249,115,22,0.05), rgba(234,108,10,0.08))'
-                }}
-              />
-              
-              <div className="relative z-10 flex items-start gap-3">
-                <div className="flex-shrink-0">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center bg-red-50">
-                    <FaTimesCircle className="text-red-500 text-lg" />
-                  </div>
-                </div>
-                <p className="font-heading font-extrabold text-[#1A1A1A] text-xl leading-relaxed flex-1">
-                  {point}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+          {point}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
 
         {/* ───────────────────── Closing text with Card Design ───────────────────── */}
         <motion.div
@@ -116,20 +121,26 @@ export default function ChallengesSection({ data }) {
     style={{
       background: 'linear-gradient(135deg, #F97316, #EA6C0A)',
       border: '1px solid rgba(255,255,255,0.2)',
-      boxShadow: '0 8px 25px rgba(249,115,22,0.3)'
+      boxShadow: '0 8px 25px rgba(249,115,22,0.3)',
     }}
   >
-    <p className="font-heading font-extrabold text-white text-xl md:text-lg leading-relaxed">
-      जर या प्रश्नांचे उत्तर 
+    <p
+      className="font-heading font-extrabold text-white text-xl md:text-lg leading-relaxed"
+      style={{ fontFamily: '"Tiro Devanagari Marathi", serif' }}
+    >
+      जर या प्रश्नांचे उत्तर
       <span className="text-[#FFD700] font-black mx-1"> हो </span>
-      असतील, तर 
-      <span className="text-[#FFD700] font-black block md:inline mt-1 md:mt-0"> हा मास्टर क्लास तुमच्यासाठी आहे </span>
+      असतील, तर
+      <span className="text-[#FFD700] font-black block md:inline mt-1 md:mt-0">
+        {' '}
+        हा मास्टर क्लास तुमच्यासाठी आहे.
+      </span>
     </p>
   </div>
 </motion.div>
 
         {/* ───────────────────── Event Info with Icon ───────────────────── */}
-        <motion.div variants={fadeUp} className="w-full mt-6 flex flex-col items-center">
+        <motion.div variants={fadeUp} className="w-full mt-8 flex flex-col items-center">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-1 h-6 rounded-full" style={{ background: 'linear-gradient(135deg, #F97316, #EA6C0A)' }} />
             <span className="text-[#F97316] text-sm font-semibold uppercase tracking-wide">Event Details</span>
@@ -150,7 +161,7 @@ export default function ChallengesSection({ data }) {
         {/* ───────────────────── Enhanced CTA Button ───────────────────── */}
         <motion.div
           variants={fadeUp}
-          className="w-full mt-10 flex flex-col items-center"
+          className="w-full mt-4 flex flex-col items-center"
         >
           <CTAButton/>
         </motion.div>

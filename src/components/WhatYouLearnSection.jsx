@@ -67,14 +67,14 @@ export default function WhatYouLearnSection({ data }) {
 
   <motion.h2
   variants={fadeUp}
-  className="text-center font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
+  className="text-center font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
 >
   <span className="text-[#1A1A1A]">
     {data.title.split(' ').slice(0, -1).join(' ')}{' '}
   </span>
 
   <span
-    className="text-[#EA6C0A] tiro-devanagari-marathi-regular !font-bold"
+    className="text-[#EA6C0A] tiro-devanagari-marathi-regular !font-extrabold"
     style={{
       textShadow: '0 0 0px currentColor',
       fontFamily: '"Tiro Devanagari Marathi", serif'

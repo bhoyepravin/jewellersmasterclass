@@ -9,7 +9,7 @@ export default function CountdownTimer({
   label      = '⏰Starts on 26th April 2026',
   date = '(11:00 am to 2:00 pm):',
   className  = '',
-  startFromMinutes = '', // New prop: set to 15 to start from 15 minutes
+  startFromMinutes = '15', // New prop: set to 15 to start from 15 minutes
 }) {
   const [mounted, setMounted] = useState(false);
   const [time, setTime]       = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });

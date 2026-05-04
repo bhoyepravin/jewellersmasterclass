@@ -19,7 +19,7 @@ const IMG_GRADIENTS = [
 
 export default function MissionSection({ data }) {
   return (
-    <section className="section-padding pt-8" style={{ background: '#FAF5FF' }}>
+    <section className="section-padding py-10" style={{ background: '#FAF5FF' }}>
       <div className="container-max">
 
         {/* Heading */}

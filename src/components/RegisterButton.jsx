@@ -58,10 +58,10 @@ function FixedRegisterButton({
           <div className="flex flex-col min-w-0 flex-1">
             <div className="flex items-center gap-2">
               <span className="text-orange-600 line-through font-bold text-xl md:text-2xl leading-none">
-                ₹1299
+                ₹1,299
               </span>
 
-              <span className="text-gray-900 font-black text-2xl md:text-3xl leading-none">
+              <span className="text-gray-900 font-extrabold text-2xl md:text-3xl leading-none">
                 ₹99
               </span>
             </div>
@@ -114,7 +114,7 @@ function FixedRegisterButton({
 
 export default function PricingCard({
   totalValue = "₹7,486/-",
-  regularPrice = "₹999/-",
+  regularPrice = "₹1,299/-",
   offerPrice = "₹99/-",
   bonusText = "Reserve your seat before the timer ends to unlock bonuses worth ₹6,999/-",
   checkoutLink = siteConfig?.checkoutLink,

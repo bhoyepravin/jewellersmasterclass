@@ -32,7 +32,7 @@ export default function WhoHelpsSection() {
   const GAPY = 10;
 
   return (
-    <section className="relative overflow-hidden bg-white py-19 pt-8 md:py-28">
+    <section className="relative overflow-hidden bg-white pt-10 pb-0 md:pt-28 md:pb-8">
        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
       {/* Subtle orbs */}
       <div className="pointer-events-none absolute top-0 left-[-80px] w-[320px] h-[320px] bg-[#F97316]/8 blur-[100px]" />
@@ -52,11 +52,11 @@ export default function WhoHelpsSection() {
           {/* Heading */}
           <motion.h2
   variants={fadeUp}
-  className="text-center font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
+  className="text-center font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight mb-3"
 >
   हा Masterclass <br />
   <span
-    className="text-[#EA6C0A] tiro-devanagari-marathi-regular !font-bold"
+    className="text-[#EA6C0A] tiro-devanagari-marathi-regular !font-extrabold"
     style={{ fontFamily: '"Tiro Devanagari Marathi", serif' }}
   >
     कोणासाठी आहे ?

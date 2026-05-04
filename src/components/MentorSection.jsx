@@ -22,7 +22,7 @@ export default function MentorSection({ data }) {
   ];
 
   return (
-    <section className="section-padding pt-10" style={{ background: '#FFF7ED' }}>
+    <section className="section-padding py-10" style={{ background: '#FFF7ED' }}>
       <div className="container-max">
 
         {/* Heading */}

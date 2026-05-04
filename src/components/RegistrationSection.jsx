@@ -51,7 +51,7 @@ export default function RegistrationSection() {
           {/* CTA Button */}
           <motion.div
   variants={fadeUp}
-  className="w-full mt-10 flex justify-center"
+  className="w-full mt-4 flex justify-center"
 >
   <div className="inline-block">
     <CTAButton />

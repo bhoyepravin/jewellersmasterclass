@@ -45,12 +45,14 @@ const GRADIENTS = [
 
 export default function WhatYouLearnSection({ data }) {
   return (
-    <section className="section-padding bg-white pt-1">
+    <section className="section-padding bg-white pt-10">
+      
       <div className="container-max">
+         <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
 
         {/* Heading */}
         <motion.div
-  className="text-center mb-12"
+  className="text-center mb-8"
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.3 }}
@@ -65,26 +67,32 @@ export default function WhatYouLearnSection({ data }) {
 
   <motion.h2
   variants={fadeUp}
-  className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
+  className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-2xl md:text-[4rem] pt-4"
 >
   <span className="text-[#1A1A1A]">
     {data.title.split(' ').slice(0, -1).join(' ')}{' '}
   </span>
-  <span 
-    className="text-[#EA6C0A] font-black" 
-    style={{ textShadow: '0 0 0px currentColor' }}
+
+  <span
+    className="text-[#EA6C0A] tiro-devanagari-marathi-regular !font-bold"
+    style={{
+      textShadow: '0 0 0px currentColor',
+      fontFamily: '"Tiro Devanagari Marathi", serif'
+    }}
   >
     {data.title.split(' ').pop()}
   </span>
 </motion.h2>
 
   
+  <div className="pt-6 md:pt-10">
   <motion.p
     variants={fadeUp}
-    className="font-heading text-base md:text-lg max-w-2xl mx-auto font-extrabold mt-4 p-4 md:p-6 bg-[#FFF7ED] rounded-xl border border-[#F97316]/20 shadow-md"
+    className="font-heading text-base md:text-lg max-w-2xl mx-auto font-extrabold p-4 md:p-6 bg-[#FFF7ED] rounded-xl border border-[#F97316]/20 shadow-md"
   >
     {data.subtitle}
   </motion.p>
+</div>
 </motion.div>
 
         {/* Cards Grid */}
@@ -131,9 +139,12 @@ export default function WhatYouLearnSection({ data }) {
               {ICON_MAP[card.icon]}
             </div>
 
-            <h3 className="font-heading font-extrabold text-[#1A1A1A] text-xl leading-snug">
-              {card.title}
-            </h3>
+            <h3
+  className="font-heading font-extrabold text-[#1A1A1A] text-2xl leading-snug"
+  style={{ fontFamily: '"Tiro Devanagari Marathi", serif' }}
+>
+  {card.title}
+</h3>
           </div>
 
           {/* Description */}

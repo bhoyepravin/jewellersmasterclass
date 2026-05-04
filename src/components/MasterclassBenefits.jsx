@@ -11,6 +11,7 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.10 } }
 export default function MasterclassBenefits({ data }) {
   return (
     <section className="section-padding bg-white">
+       <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
       <div className="container-max">
 
         {/* Heading */}
@@ -23,7 +24,7 @@ export default function MasterclassBenefits({ data }) {
           <motion.span variants={fadeUp} className="section-label">Inside The Masterclass</motion.span>
           <motion.h2
             variants={fadeUp}
-            className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight"
+            className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight"
           >
             {data.title} <span className='text-[#EA6C0A]'>Masterclass?</span>
           </motion.h2>

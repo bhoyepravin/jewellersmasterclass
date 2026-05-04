@@ -13,6 +13,9 @@ export default function BusinessBreakthroughSection() {
   return (
     <section className="relative overflow-hidden bg-white py-10 md:py-28">
 
+      {/* <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none blur-orb-orange" /> */}
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
+
       {/* Ambient glow */}
       <div className="pointer-events-none absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[380px] h-[140px] bg-[#F97316]/12 blur-[100px]" />
       <div className="pointer-events-none absolute top-[-40px] right-[-60px] w-[260px] h-[200px] bg-[#480A62]/10 blur-[90px]" />
@@ -29,7 +32,7 @@ export default function BusinessBreakthroughSection() {
           {/* ── HEADING ── */}
           <motion.h2
             variants={fadeUp}
-            className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
+            className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-2xl md:text-[4rem] leading-tight"
           >
             What Will Change{' '}
             <span className="text-[#EA6C0A]">In Your Business?</span>

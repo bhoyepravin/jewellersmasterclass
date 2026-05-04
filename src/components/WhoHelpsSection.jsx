@@ -33,6 +33,7 @@ export default function WhoHelpsSection() {
 
   return (
     <section className="relative overflow-hidden bg-white py-19 pt-8 md:py-28">
+       <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
       {/* Subtle orbs */}
       <div className="pointer-events-none absolute top-0 left-[-80px] w-[320px] h-[320px] bg-[#F97316]/8 blur-[100px]" />
       <div className="pointer-events-none absolute bottom-0 right-[-80px] w-[280px] h-[280px] bg-[#480A62]/8 blur-[90px]" />
@@ -50,14 +51,17 @@ export default function WhoHelpsSection() {
         >
           {/* Heading */}
           <motion.h2
-                      variants={fadeUp}
-                      className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"
-                    >
-                      हा Masterclass{' '}
-                        <span className="text-[#EA6C0A] font-black" style={{ textShadow: '0 0 0px currentColor' }}>
+  variants={fadeUp}
+  className="text-center font-heading font-black leading-tight tracking-[-0.02em] text-[#1A1A1A] text-3xl md:text-[4rem]"
+>
+  हा Masterclass <br />
+  <span
+    className="text-[#EA6C0A] tiro-devanagari-marathi-regular !font-bold"
+    style={{ fontFamily: '"Tiro Devanagari Marathi", serif' }}
+  >
     कोणासाठी आहे ?
   </span>
-                    </motion.h2>
+</motion.h2>
           {/* <motion.h2
             variants={fadeUp}
             className="text-center font-heading font-black leading-[1.1] tracking-[-0.02em] text-[#1A1A1A] text-[2.2rem] md:text-[4rem]"

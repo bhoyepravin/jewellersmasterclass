@@ -35,11 +35,11 @@ export default function RegistrationSection() {
           {/* Event Info */}
           <motion.div
             variants={fadeUp}
-            className="w-full mt-2 flex flex-col items-center"
+            className="w-full mt-[-2] flex flex-col items-center"
           >
             <h3 className="text-center font-bold leading-snug">
-              <span className="text-[#111827] text-2xl md:text-3xl">
-                {EVENT_INFO.dateLabel}
+              <span className="text-[#111827] text-xl md:text-3xl">
+                {/* {EVENT_INFO.dateLabel} */} STARTS ON 6th May 2026
               </span>
               <br />
               <span className="text-[#374151] text-lg md:text-xl font-medium">

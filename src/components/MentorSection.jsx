@@ -39,7 +39,7 @@ export default function MentorSection({ data }) {
   
   <motion.h2
     variants={fadeUp}
-    className="font-heading font-black text-3xl md:text-5xl text-[#1A1A1A] leading-tight"
+    className="font-heading font-black text-2xl md:text-5xl text-[#1A1A1A] leading-tight"
   >
     {data.title} <span className='text-[#EA6C0A]'>Mentor</span>
   </motion.h2>

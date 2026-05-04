@@ -89,7 +89,7 @@ export default function FAQSection({ data }) {
           initial="hidden" whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="font-heading font-black text-[#1A1A1A] text-[1.8rem] md:text-[2.8rem] leading-tight mb-5"
+          className="font-heading font-black text-[#1A1A1A] text-2xl md:text-[2.8rem] leading-tight mb-5"
         >
           Frequently Asked <span className='text-[#EA6C0A]'>Questions:</span> 
         </motion.h3>

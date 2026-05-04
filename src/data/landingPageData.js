@@ -176,51 +176,51 @@ export const mentorData = {
   tag: 'Provides Proven Strategies for Real Business Growth',
 };
 
-export const testimonialsData = {
-  headlineMr: 'ज्यांनी अनुभवले, त्यांनी सांगितले',
-  headlineEn: 'Those who experienced, have spoken',
-  items: [
-    {
-      name: 'Mr. Aakash Maid',
-      location: 'Mumbai',
-      quote:
-        'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
-      quoteEn:
-        'The changes expected with time, which we should make in ourselves and business, I understood from this masterclass.',
-    },
-    {
-      name: 'Ms. Divya Choudhari',
-      location: '',
-      quote:
-        "Connecting with Arnav Sir was the best decision of my life. I am soo excited to launch my new jewellery brand after attending Arnav sir's Masterclass. Thank You Arnav Sir!",
-      quoteEn: '',
-    },
-    {
-      name: 'Mr. Akshay Shahane',
-      location: 'Thane',
-      quote:
-        'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला आणि आत्तापर्यंतचा सगळ्यात बेस्ट अनुभव होता हा माझा. सरांनी जे पॉईंट सांगितले हे खूप प्रॅक्टिकल आणि रियालिटीला धरून होते. One of the best investments of time and money.',
-      quoteEn:
-        "I've attended many programs, but this is the first specific jewelry business program like Jewellers Masterclass, and it's been my best experience so far. The points sir mentioned were very practical and reality-based. One of the best investments of time and money.",
-    },
-    {
-      name: 'Mr. Sai Kharote',
-      location: 'Nagpur',
-      quote:
-        'कुठेतरी जो कॉन्फिडन्स डाउन झाला होता तो पुन्हा एकदा जागा झाला आहे. आपल्या धंद्यात खूप पोटेन्शिअल आहे आणि आपण त्याचा योग्य वापर करून आपल्या ब्रांडला मोठं केलं पाहिजे हे आज मला शिकायला मिळाले',
-      quoteEn:
-        'The confidence that was lost somewhere has awakened again. I learned today that there is a lot of potential in your business and you should use it properly to grow your brand.',
-    },
-    {
-      name: 'Jewellers Masterclass Batch',
-      location: '',
-      quote:
-        'आम्ही अर्णव सरांसोबत आमचे पिढीजात व्यवसाय Automation ला नेले. Sale दुपटीने वाढला आणि Brand मोठा करण्याचा confidence वाढला.',
-      quoteEn:
-        'We took our generational business to automation with Arnav sir. Sales doubled and confidence to grow the brand increased.',
-    },
-  ],
-};
+// export const testimonialsData = {
+//   headlineMr: 'ज्यांनी अनुभवले, त्यांनी सांगितले',
+//   headlineEn: 'Those who experienced, have spoken',
+//   items: [
+//     {
+//       name: 'Mr. Aakash Maid',
+//       location: 'Mumbai',
+//       quote:
+//         'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
+//       quoteEn:
+//         'The changes expected with time, which we should make in ourselves and business, I understood from this masterclass.',
+//     },
+//     {
+//       name: 'Ms. Divya Choudhari',
+//       location: '',
+//       quote:
+//         "Connecting with Arnav Sir was the best decision of my life. I am soo excited to launch my new jewellery brand after attending Arnav sir's Masterclass. Thank You Arnav Sir!",
+//       quoteEn: '',
+//     },
+//     {
+//       name: 'Mr. Akshay Shahane',
+//       location: 'Thane',
+//       quote:
+//         'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला आणि आत्तापर्यंतचा सगळ्यात बेस्ट अनुभव होता हा माझा. सरांनी जे पॉईंट सांगितले हे खूप प्रॅक्टिकल आणि रियालिटीला धरून होते. One of the best investments of time and money.',
+//       quoteEn:
+//         "I've attended many programs, but this is the first specific jewelry business program like Jewellers Masterclass, and it's been my best experience so far. The points sir mentioned were very practical and reality-based. One of the best investments of time and money.",
+//     },
+//     {
+//       name: 'Mr. Sai Kharote',
+//       location: 'Nagpur',
+//       quote:
+//         'कुठेतरी जो कॉन्फिडन्स डाउन झाला होता तो पुन्हा एकदा जागा झाला आहे. आपल्या धंद्यात खूप पोटेन्शिअल आहे आणि आपण त्याचा योग्य वापर करून आपल्या ब्रांडला मोठं केलं पाहिजे हे आज मला शिकायला मिळाले',
+//       quoteEn:
+//         'The confidence that was lost somewhere has awakened again. I learned today that there is a lot of potential in your business and you should use it properly to grow your brand.',
+//     },
+//     {
+//       name: 'Jewellers Masterclass Batch',
+//       location: '',
+//       quote:
+//         'आम्ही अर्णव सरांसोबत आमचे पिढीजात व्यवसाय Automation ला नेले. Sale दुपटीने वाढला आणि Brand मोठा करण्याचा confidence वाढला.',
+//       quoteEn:
+//         'We took our generational business to automation with Arnav sir. Sales doubled and confidence to grow the brand increased.',
+//     },
+//   ],
+// };
 
 export const offerData = {
   headline: 'Limited spots! Grab yours now!',

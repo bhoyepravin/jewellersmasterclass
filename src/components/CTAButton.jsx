@@ -40,7 +40,7 @@
 import { motion } from 'framer-motion';
 
 const CTAButton = ({
-  href,
+  href = '#',
   text = 'Register Now for ₹99/- Only',
   className = '',
 }) => {

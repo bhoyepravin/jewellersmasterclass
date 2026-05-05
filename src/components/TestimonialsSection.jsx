@@ -306,7 +306,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight, FaPlay, FaPause } from 'react-icons/fa';
+import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight, FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { siteConfig } from '../data/landingPageData';
 import CTAButton from './CTAButton';
 
@@ -341,6 +341,8 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
   const videoRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
 
   useEffect(() => {
     // Reset loading state when video source changes
@@ -364,7 +366,16 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
       
       // Auto-play if active and playing
       if (isActive && isPlaying) {
-        videoElement.play().catch(e => console.log('Play error:', e));
+        const playPromise = videoElement.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(e => {
+            console.log('Play error:', e);
+            // On mobile, autoplay might be blocked, so we need user interaction
+            if (e.name === 'NotAllowedError') {
+              setHasUserInteracted(true);
+            }
+          });
+        }
       }
     };
 
@@ -388,16 +399,42 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
     if (!videoElement) return;
     
     if (isActive && isPlaying && hasLoaded) {
-      videoElement.play().catch(e => console.log('Play error:', e));
+      const playPromise = videoElement.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(e => console.log('Play error:', e));
+      }
     } else {
       videoElement.pause();
     }
   }, [isActive, isPlaying, hasLoaded]);
 
+  const toggleMute = (e) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const handleVideoClick = () => {
+    // On mobile, we need user interaction to unmute and play
+    if (isMuted && !hasUserInteracted) {
+      setHasUserInteracted(true);
+      if (videoRef.current) {
+        videoRef.current.muted = false;
+        setIsMuted(false);
+        videoRef.current.play().catch(e => console.log('Play error:', e));
+      }
+    } else if (!isPlaying) {
+      onPlayPause();
+    }
+  };
+
   return (
     <div 
-      className="relative w-full bg-black rounded-xl overflow-hidden"
+      className="relative w-full bg-black rounded-xl overflow-hidden cursor-pointer"
       style={{ aspectRatio: '9/16', maxWidth: '280px', margin: '0 auto' }}
+      onClick={handleVideoClick}
     >
       {/* Loader/Skeleton overlay - shown while video buffers */}
       {isLoading && (
@@ -411,20 +448,40 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
         className={`w-full h-full object-contain transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         playsInline
         loop
-        muted
         preload="auto"
+        muted={isMuted}
       >
         <source src={item.video} type="video/mp4" />
       </video>
 
-      {/* Play/Pause Overlay Button - only show when video is loaded */}
+      {/* Play/Pause Overlay Button */}
       {isActive && !isLoading && (
-        <button
-          onClick={onPlayPause}
-          className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-20"
-        >
-          {isPlaying ? <FaPause className="text-white text-xs" /> : <FaPlay className="text-white text-xs ml-0.5" />}
-        </button>
+        <>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onPlayPause();
+            }}
+            className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-20"
+          >
+            {isPlaying ? <FaPause className="text-white text-xs" /> : <FaPlay className="text-white text-xs ml-0.5" />}
+          </button>
+
+          {/* Sound Mute/Unmute Button */}
+          <button
+            onClick={toggleMute}
+            className="absolute bottom-3 left-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-20"
+          >
+            {isMuted ? <FaVolumeMute className="text-white text-xs" /> : <FaVolumeUp className="text-white text-xs" />}
+          </button>
+        </>
+      )}
+
+      {/* Instruction overlay for muted videos on mobile */}
+      {isActive && isMuted && !isLoading && (
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full z-20 pointer-events-none">
+          Tap to unmute
+        </div>
       )}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -548,7 +605,7 @@ function MobileReelSlider({ items }) {
   );
 }
 
-/* ── Desktop Grid View (No Text) ── */
+/* ── Desktop Grid View (With Sound Controls) ── */
 function DesktopGridView({ items }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">

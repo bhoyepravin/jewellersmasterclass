@@ -40,7 +40,7 @@
 import { motion } from 'framer-motion';
 
 const CTAButton = ({
-  href = '#',
+  href = 'https://academy.arnavpatil.com/l/5e461d92b5',
   text = 'Register Now for ₹99/- Only',
   className = '',
 }) => {

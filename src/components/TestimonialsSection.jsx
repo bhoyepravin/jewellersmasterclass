@@ -336,40 +336,89 @@ function StarRow() {
   );
 }
 
-/* ── Testimonial Card (Reel Style - No Text) ── */
+/* ── Testimonial Card (Reel Style - No Text, No Poster) ── */
 function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
   const videoRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
+    // Reset loading state when video source changes
+    setIsLoading(true);
+    setHasLoaded(false);
+    
+    // Force reload the video element
     if (videoRef.current) {
-      if (isActive && isPlaying) {
-        videoRef.current.play().catch(e => console.log('Play error:', e));
-      } else {
-        videoRef.current.pause();
-      }
+      videoRef.current.load();
     }
-  }, [isActive, isPlaying]);
+  }, [item.video]);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    
+    if (!videoElement) return;
+
+    const handleCanPlay = () => {
+      setIsLoading(false);
+      setHasLoaded(true);
+      
+      // Auto-play if active and playing
+      if (isActive && isPlaying) {
+        videoElement.play().catch(e => console.log('Play error:', e));
+      }
+    };
+
+    const handlePlaying = () => {
+      setIsLoading(false);
+      setHasLoaded(true);
+    };
+
+    videoElement.addEventListener('canplay', handleCanPlay);
+    videoElement.addEventListener('playing', handlePlaying);
+    
+    return () => {
+      videoElement.removeEventListener('canplay', handleCanPlay);
+      videoElement.removeEventListener('playing', handlePlaying);
+    };
+  }, [item.video, isActive, isPlaying]);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    
+    if (!videoElement) return;
+    
+    if (isActive && isPlaying && hasLoaded) {
+      videoElement.play().catch(e => console.log('Play error:', e));
+    } else {
+      videoElement.pause();
+    }
+  }, [isActive, isPlaying, hasLoaded]);
 
   return (
     <div 
       className="relative w-full bg-black rounded-xl overflow-hidden"
       style={{ aspectRatio: '9/16', maxWidth: '280px', margin: '0 auto' }}
     >
+      {/* Loader/Skeleton overlay - shown while video buffers */}
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black z-10">
+          <div className="w-8 h-8 border-3 border-white/30 border-t-[#F97316] rounded-full animate-spin" />
+        </div>
+      )}
+
       <video
         ref={videoRef}
-        className="w-full h-full object-contain"  // Changed to object-contain
+        className={`w-full h-full object-contain transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         playsInline
         loop
-        muted={!isActive}
-        poster={item.image}
-        preload="metadata"
+        muted
+        preload="auto"
       >
         <source src={item.video} type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
 
-      {/* Play/Pause Overlay Button */}
-      {isActive && (
+      {/* Play/Pause Overlay Button - only show when video is loaded */}
+      {isActive && !isLoading && (
         <button
           onClick={onPlayPause}
           className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-20"
@@ -453,6 +502,7 @@ function MobileReelSlider({ items }) {
         <button
           onClick={prevSlide}
           className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-10"
+          aria-label="Previous testimonial"
         >
           <FaChevronLeft className="text-sm" />
         </button>
@@ -460,6 +510,7 @@ function MobileReelSlider({ items }) {
         <button
           onClick={nextSlide}
           className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-10"
+          aria-label="Next testimonial"
         >
           <FaChevronRight className="text-sm" />
         </button>
@@ -477,6 +528,7 @@ function MobileReelSlider({ items }) {
             className={`h-1.5 rounded-full transition-all duration-300 ${
               index === currentIndex ? 'w-6 bg-[#F97316]' : 'w-1.5 bg-gray-400'
             }`}
+            aria-label={`Go to testimonial ${index + 1}`}
           />
         ))}
       </div>
@@ -509,11 +561,10 @@ function DesktopGridView({ items }) {
           style={{ aspectRatio: '9/16', maxWidth: '260px', width: '100%' }}
         >
           <video
-            className="w-full h-full object-contain"  // Changed to object-contain
+            className="w-full h-full object-contain"
             controls
             playsInline
-            preload="metadata"
-            poster={item.image}
+            preload="auto"
           >
             <source src={item.video} type="video/mp4" />
             Your browser does not support the video tag.
@@ -617,3 +668,6 @@ export default function TestimonialsSection({ data }) {
     </section>
   );
 }
+
+
+

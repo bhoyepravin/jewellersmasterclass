@@ -12,14 +12,14 @@ const fadeUp = {
 };
 
 const items = [
-  'Retail Jewellery\nShop Owners',
   'Family Run\nJewellery Businesses',
+  'Retail Jewellery\nShop Owners',
   'Jewellery\nWholesellers',
   'Manufacturers',
   'Jewellery\nFranchise Owners',
-  'Showroom\nManagers',
-  'All types of Jewellery\nBusiness Owners',
-  'Aspiring Jewellery\nBusiness Owners',
+  ' Jewellery Showroom\nManagers',  
+  'Planning to start a New\nJewellery Business',     
+  'Artificial Jewellery\nShowroom Owners',  
 ];
 
 export default function WhoHelpsSection() {
@@ -102,7 +102,14 @@ export default function WhoHelpsSection() {
                 const y = 10 + i * 85;
                 const cx = x + 20;
                 const cy = y + 35;
-                const lines = label.split('\n');
+                const words = label.replace(/\n/g, ' ').split(' ');
+const lines =
+  label.length > 28
+    ? [
+        words.slice(0, Math.ceil(words.length / 2)).join(' '),
+        words.slice(Math.ceil(words.length / 2)).join(' '),
+      ]
+    : [label.replace(/\n/g, ' ')];
 
                 return (
                   <g key={i}>
@@ -110,8 +117,8 @@ export default function WhoHelpsSection() {
                     <rect
                       x={x}
                       y={y}
-                      width="340"
-                      height="70"
+                      width="345"
+                      height="65"
                       rx="14"
                       fill="#FFF7ED"
                       stroke="#F97316"

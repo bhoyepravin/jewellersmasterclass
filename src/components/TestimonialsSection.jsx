@@ -303,6 +303,8 @@
 //   );
 // }
 
+
+
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -417,16 +419,18 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
   };
 
   const handleVideoClick = () => {
-    // On mobile, we need user interaction to unmute and play
+    // Toggle play/pause when clicking on video
+    if (hasLoaded) {
+      onPlayPause();
+    }
+    
+    // Also unmute on first interaction if needed
     if (isMuted && !hasUserInteracted) {
       setHasUserInteracted(true);
       if (videoRef.current) {
         videoRef.current.muted = false;
         setIsMuted(false);
-        videoRef.current.play().catch(e => console.log('Play error:', e));
       }
-    } else if (!isPlaying) {
-      onPlayPause();
     }
   };
 
@@ -454,35 +458,31 @@ function TestimonialCard({ item, isActive, isPlaying, onPlayPause }) {
         <source src={item.video} type="video/mp4" />
       </video>
 
-      {/* Play/Pause Overlay Button */}
+      {/* Sound Mute/Unmute Button Only */}
       {isActive && !isLoading && (
-        <>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onPlayPause();
-            }}
-            className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-20"
-          >
-            {isPlaying ? <FaPause className="text-white text-xs" /> : <FaPlay className="text-white text-xs ml-0.5" />}
-          </button>
+        <button
+          onClick={toggleMute}
+          className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-20"
+        >
+          {isMuted ? <FaVolumeMute className="text-white text-xs" /> : <FaVolumeUp className="text-white text-xs" />}
+        </button>
+      )}
 
-          {/* Sound Mute/Unmute Button */}
-          <button
-            onClick={toggleMute}
-            className="absolute bottom-3 left-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-all z-20"
-          >
-            {isMuted ? <FaVolumeMute className="text-white text-xs" /> : <FaVolumeUp className="text-white text-xs" />}
-          </button>
-        </>
+      {/* Play/Pause Indicator - Shows briefly when toggling */}
+      {isActive && !isLoading && !isPlaying && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30 z-10 pointer-events-none transition-opacity duration-300">
+          <div className="w-12 h-12 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center">
+            <FaPlay className="text-white text-xl ml-1" />
+          </div>
+        </div>
       )}
 
       {/* Instruction overlay for muted videos on mobile */}
-      {isActive && isMuted && !isLoading && (
+      {/* {isActive && isMuted && !isLoading && hasLoaded && (
         <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full z-20 pointer-events-none">
-          Tap to unmute
+          Tap video to play & unmute
         </div>
-      )}
+      )} */}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
     </div>
@@ -592,12 +592,12 @@ function MobileReelSlider({ items }) {
 
       {/* Name and Info */}
       <div className="text-center mt-4">
-        <p className="font-heading font-bold text-gray-800 text-sm">
+        <p className="font-heading font-bold text-gray-800 text-base">
           {items[currentIndex]?.name}
         </p>
         {items[currentIndex]?.location && (
           <p className="font-body text-gray-500 text-xs mt-1">
-            {items[currentIndex]?.location}
+            {/* {items[currentIndex]?.location} */}
           </p>
         )}
       </div>

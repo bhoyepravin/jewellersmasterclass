@@ -68,7 +68,7 @@ export default function HeroSection({ data, statsBar }) {
       <section className="relative overflow-hidden pb-10 md:pb-28 bg-white">
         {/* Floating blur orbs - your brand colors */}
         {/* <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none blur-orb-orange" /> */}
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
+        {/* <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" /> */}
         
         <div className="container-max px-4">
           <motion.div
@@ -83,7 +83,7 @@ export default function HeroSection({ data, statsBar }) {
               {/* Floating Orange Workshop Badge - positioned to overlap halfway down */}
               <div className="relative max-w-md mx-auto font-heading">
   {/* Main White Card */}
-  <div className="relative bg-[#f9efe2] rounded-[28px] pt-12 pb-12 px-12 shadow-xl ">
+  <div className="relative bg-[#f9efe2] rounded-[28px] pt-12 pb-12 px-8 shadow-xl ">
     
     {/* Workshop Banner */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-20">
@@ -103,42 +103,37 @@ export default function HeroSection({ data, statsBar }) {
 
       {/* Orange Box */}
       <div className="bg-[#EA6C0A] rounded-b-[18px] px-6 py-4 text-center min-w-[275px] md:min-w-[420px] shadow-lg">
-        <p className="text-white font-extrabold text-sm md:text-xl uppercase leading-tight">
+         <p className="text-white font-extrabold text-2xl md:text-xl uppercase leading-tight">
+          Jeweller's Masterclass
+        </p>
+        {/* <p className="text-white font-extrabold text-sm md:text-xl uppercase leading-tight">
           4 Hour Online Workshop
-        </p>
-        <p className="text-white font-bold text-base md:text-xl uppercase leading-tight">
+        </p> */}
+        {/* <p className="text-white font-bold text-base md:text-xl uppercase leading-tight">
           On {data.eventDate}
-        </p>
-        <p className="text-white font-bold text-base md:text-xl uppercase leading-tight">
+        </p> */}
+        {/* <p className="text-white font-bold text-base md:text-xl uppercase leading-tight">
           ({data.eventTime} IST)
-        </p>
+        </p> */}
       </div>
     </div>
 
     {/* Main Content */}
     <div className="text-center mt-6 pt-10 font-heading">
-  <h2 className="text-xl md:text-3xl font-semibold leading-[1.5] text-black">
-  Join and Become Like <br />
+  <h2 className="text-xl md:text-3xl font-extrabold leading-[1.5] text-black">
+   Unlock Proven Systems<br /> and Strategies to 
 
   <span className="whitespace-nowrap">
-    <span className="font-black">The Top 1%</span>&nbsp;Successful
+    <span className="font-black text-[#EA6C0A]"> Autopilot & Grow <br />your Jewellery </span>Business
   </span>
   <br />
-
-  <span className="font-black">
-    Business Owners &
-  </span>
-  <br />
-
-  <span className="font-black">
-    Entrepreneurs
-  </span>
+  
 </h2>
 
   <div className="w-24 h-[2px] bg-gray-400 mx-auto my-6" />
 
-  <p className="text-xl text-gray-800">
-    Before its too late...
+  <p className="font-medium text-gray-800">
+    Join Now before its too late...
   </p>
 </div>
 </div>
@@ -172,16 +167,16 @@ export default function HeroSection({ data, statsBar }) {
 
       {/* Intro */}
       <p className="text-sm md:text-xl leading-tight text-[#1A1A1A]">
-        I will be your  coach for 4 hours
+        I will be your  coach for 3 hours
       </p>
 
       {/* Name */}
-      <h2 className="text-3xl md:text-5xl font-heading font-bold mt-2 leading-tight text-[var(--orange-dark)]">
+      <h2 className="text-3xl md:text-5xl font-heading font-bold mt-2 leading-tight text-[var(--orange-dark)] ">
         Arnav Patil
       </h2>
 
       {/* Subtitle */} 
-      <div className="bg-[#FAF5FF] rounded-xl p-1 md:p-8 shadow-sm border border-purple-100 inline-block">
+      <div className="mt-2 bg-[#FAF5FF] rounded-xl p-1 md:p-8 shadow-sm border border-purple-100 inline-block">
   <p className="text-base md:text-2xl leading-snug text-[#1A1A1A] font-medium">
     India&apos;s Leading Jewellery <br />
     Business Coach
@@ -192,12 +187,12 @@ export default function HeroSection({ data, statsBar }) {
       <div className="w-16 md:w-20 h-[2px] bg-[#F97316] mt-3 mb-3"></div>
 
       {/* Achievement */}
-      <p className="text-base md:text-3xl font-semibold leading-tight text-[#1A1A1A]">
+      <p className="text-sm md:text-xl font-semibold leading-tight text-[#1A1A1A]">
   Trained over <br />
 
-  <span className="text-[#EA6C0A] font-bold ">
+  <span className="text-[#EA6C0A] font-bold">
     10,000+
-  </span>{""}
+  </span>{" "}
   Jewellery <br />
 
   Business Owners in{" "}
@@ -215,20 +210,25 @@ export default function HeroSection({ data, statsBar }) {
 
   {/* Rating Card */}
   <div className="mt-[-1] flex justify-center">
-    <div className="rounded-2xl px-4 py-4 md:px-8 md:py-6 w-full max-w-xl flex items-center gap-4 md:gap-6 bg-[#FFF7ED] border border-[#F97316]/20 shadow-md">
-      {/* Stars */}
-      <div className="text-xs md:text-3xl tracking-wide text-[#F97316]">
-        ⭐⭐⭐⭐⭐
-      </div>
+    
+    <div className="rounded-2xl px-4 py-4 md:px-8 md:py-6 w-full max-w-xl flex flex-col items-center text-center gap-3 bg-[#FFF7ED] border border-[#F97316]/20 shadow-md">
+  
+  {/* Stars */}
+  <div className="text-xl md:text-3xl tracking-wide text-[#F97316]">
+    ⭐⭐⭐⭐⭐
+  </div>
 
-      {/* Rating Text */}
-       <div>
-    <h4 className="text-base md:text-2xl font-heading font-medium leading-snug text-[#1A1A1A]">
-      <span className="font-bold">70,000+</span> People Rated My Programs <br />
-      with <span className="font-bold">4.96</span> Star
+  {/* Rating Text */}
+  <div>
+    <h4 className="text-xs md:text-2xl font-heading font-medium leading-snug text-[#1A1A1A]">
+      <span className="font-bold">1000+</span> Jeweller&apos;s experienced
+      <br />
+      the transformative benefits of{" "}
+      <span className="font-bold">this Masterclass. Now, it&apos;s YOUR TURN!</span>
     </h4>
   </div>
-    </div>
+
+</div>
   </div>
 </div>
          {/* ── Event Date & Time ───────────────────────── */}
@@ -237,7 +237,7 @@ export default function HeroSection({ data, statsBar }) {
   className="w-full mt-8 flex flex-col items-center"
 >
   {/* Language */}
-  <h4 className="text-gray-500 text-lg md:text-xl font-normal mb-3">
+  <h4 className="text-gray-800 text-lg md:text-xl font-normal mb-3">
     Language - Basic Marathi
   </h4>
 

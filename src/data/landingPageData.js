@@ -33,7 +33,7 @@ export const benefitsData = {
       titleMr: 'ज्वेलरी बिझनेस मध्ये Systems कश्या लावायच्या?',
       titleEn: 'How to implement Systems in Jewellery Business?',
       description:
-        'Learn the proven systems that grows your Jewellery shop into a Jewellery Showroom.',
+        'Learn the proven systems that grows your Jewellery Shop into a Jewellery Showroom.',
     },
     {
       icon: 'FaStore',
@@ -83,7 +83,7 @@ export const painPointsData = {
       en: 'Customers come but don\'t purchase',
     },
     {
-      mr: 'Competition तुफान वाढलीय',
+      mr: 'Competition खूप वाढली आहे',
       en: 'Competition has increased tremendously',
     },
     {

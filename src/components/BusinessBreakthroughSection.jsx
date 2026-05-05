@@ -61,9 +61,10 @@ export default function BusinessBreakthroughSection() {
                 fill="#FFF7ED"
                 stroke="#F97316" strokeWidth="1.5" strokeDasharray="5 4" />
               <text x="176" y="28" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Right Psychology Of</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">
+Right Mindset </text>
               <text x="176" y="44" textAnchor="middle" fill="#1A1A1A"
-                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">Running The Business</text>
+                fontFamily="Montserrat, sans-serif" fontWeight="800" fontSize="12">to grow a Brand</text>
 
               {/* ── Left box — Right Systems ── */}
               <rect x="8" y="160" width="92" height="50" rx="14"

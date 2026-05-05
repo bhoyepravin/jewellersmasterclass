@@ -49,7 +49,7 @@ export default function MasterclassBenefits({ data }) {
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F97316] flex items-center justify-center">
                   <span className="text-white font-bold text-sm">{i + 1}</span>
                 </div>
-                <p className="font-heading font-bold text-[#1A1A1A] text-xl md:text-base leading-snug">
+                <p className="font-heading font-bold text-[#1A1A1A] text-base md:text-base leading-snug">
                   {item}
                 </p>
               </motion.div>

@@ -23,13 +23,13 @@ export const PRICE = {
 /* ── What You Will Learn ────────────────────────────────── */
 export const whatYouLearnData = {
   title:    'या Masterclass मध्ये तुम्ही काय शिकणार?',
-  subtitle: 'Learn the proven systems that grows your Jewellery shop into a Jewellery Showroom.',
+  subtitle: 'Learn the proven systems that grows your Jewellery Shop into a Jewellery Showroom.',
   cards: [
     {
       image:       '/what_we_learn.jpg',
       icon:        'FaCog',
       title:       'ज्वेलरी बिझनेस मध्ये Systems कश्या लावायच्या ?',
-      description: 'Learn the proven systems that grows your Jewellery shop into a Jewellery Showroom.',
+      description: 'Learn the proven systems that grows your Jewellery Shop into a Jewellery Showroom.',
     },
     {
       image:       '/people_footfalls.jpg',
@@ -72,11 +72,11 @@ export const whoIsThisForData = {
 export const challengesData = {
   title: 'Are you facing these challenges in your',
   points: [
-    'Customers येतात पण खरेदी करत नाही',
-    'Competition तुफान वाढलीय',
-    'Marketing करतो पण results येत नाही',
-    'Team आहे पण पण त्यांना proper ट्रेनिंग नाही',
-    'Business ची growth कुठेतरी stuck झालीय',
+    'Customers येतात पण खरेदी करत नाही.',
+    'Competition खूप वाढली आहे.',
+    'Marketing करतो पण results येत नाही.',
+    'Team आहे पण पण त्यांना proper ट्रेनिंग नाही.',
+    'Business ची growth कुठेतरी stuck झालीय.',
   ],
   closingText:
   'जर या प्रश्नांचे उत्तर हो <span class="text-mangocolor font-extrabold">असतील</span>, तर हा मास्टर क्लास तुमच्यासाठी आहे',
@@ -151,7 +151,7 @@ export const masterclassTestimonialsData = {
       gradientTo: '#6B1A8A',
     },
     {
-      name: 'Mr. Rahul Dindorkar',  // Added missing testimonial
+      name: 'Mr. Aakash Maid',  // Added missing testimonial
       location: 'Mumbai',
       text: 'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
       image: '/images/testimonial-2.jpg',
@@ -160,7 +160,7 @@ export const masterclassTestimonialsData = {
       gradientTo: '#EA6C0A',
     },
     {
-      name: 'Mr. Avinash Kharote',
+      name: 'Mr. Akshay Shahane',
       location: 'Thane',
       text: 'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला आणि आत्तापर्यंतचा सगळ्यात बेस्ट अनुभव होता हा माझा. सरांनी जे पॉईंट सांगितले हे खूप प्रॅक्टिकल आणि रियालिटीला धरून होते. One of the best investments of time and money.',
       image: '/images/testimonial-3.jpg',
@@ -181,7 +181,7 @@ export const masterclassTestimonialsData = {
       name: 'Jewellers Masterclass Batch',
       location: '',
       text: 'आम्ही अर्णव सरांसोबत आमचे पिढीजात व्यवसाय Automation ला नेले. Sale दुपटीने वाढला आणि Brand मोठा करण्याचा confidence वाढला.',
-      image: '/images/testimonial-5.jpg',
+      image: '/training_session_01.jpg',
       video: null,
       gradientFrom: '#F97316',
       gradientTo: '#480A62',

@@ -326,11 +326,22 @@ function StarRow() {
 }
 
 /* ── Text Only Testimonial Card (No Video) ── */
-function TextOnlyCard({ item }) {
+function TextOnlyCard({ item, isLast = false }) {
   if (!item) return null;
   
   return (
     <div className="testimonial-card h-full flex flex-col">
+      {/* Featured Image - Only show on last card AND if image exists */}
+      {isLast && item.image && (
+        <div className="w-full h-48 rounded-2xl overflow-hidden mb-4">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+      
       <StarRow />
 
       <FaQuoteLeft
@@ -375,6 +386,7 @@ function TextOnlyCard({ item }) {
 /* ── Mobile Auto-Slider (Text Only) ── */
 function MobileTextSlider({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const totalItems = items.length;
 
   // Auto-slide every 4 seconds
   useEffect(() => {
@@ -411,7 +423,10 @@ function MobileTextSlider({ items }) {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.4 }}
           >
-            <TextOnlyCard item={items[currentIndex]} />
+            <TextOnlyCard 
+              item={items[currentIndex]} 
+              isLast={currentIndex === totalItems - 1}
+            />
           </motion.div>
         </AnimatePresence>
 
@@ -452,6 +467,7 @@ function MobileTextSlider({ items }) {
 /* ── Desktop Grid View (Text Only) ── */
 function DesktopGridView({ items }) {
   if (!items || items.length === 0) return null;
+  const totalItems = items.length;
   
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -461,7 +477,10 @@ function DesktopGridView({ items }) {
           variants={fadeUp}
           whileHover={{ y: -5, boxShadow: '0 14px 44px rgba(0,0,0,0.10)' }}
         >
-          <TextOnlyCard item={item} />
+          <TextOnlyCard 
+            item={item} 
+            isLast={i === totalItems - 1}
+          />
         </motion.div>
       ))}
     </div>
@@ -552,14 +571,6 @@ export default function TextTestimonialsSection({ data = textTestimonialsData })
           transition={{ duration: 0.5 }}
         >
           <CTAButton/>
-          {/* <motion.a
-            href={siteConfig.checkoutLink}
-            className="primary-btn orange-glow"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            {siteConfig.joinNowText}
-          </motion.a> */}
         </motion.div>
       </div>
     </section>

@@ -94,24 +94,67 @@ export default function MentorSection({ data }) {
             variants={stagger}
           >
             <motion.h3 variants={fadeUp} className="font-heading font-black text-2xl text-[#1A1A1A] mb-1">
-              {data.nametitle}
-            </motion.h3>
+              {/* {data.nametitle} */} Arnav Patil
+             </motion.h3>
             <motion.p variants={fadeUp} className="font-heading text-[#F97316] font-semibold text-base mb-4 text-justify">
-              {data.designation}
+             Business Coach | Strategist | Consultant
             </motion.p>
-            <motion.p variants={fadeUp} className="font-heading text-gray-800 font-semibold leading-relaxed mb-6 text-justify">
+            {/* <motion.p variants={fadeUp} className="font-heading text-gray-800 font-semibold leading-relaxed mb-6 text-justify">
               {data.content}
-            </motion.p>
+            </motion.p> */}
 
             {/* Points in Boxes - 2 columns grid on tablet/desktop, 1 column on mobile */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-1">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-1 px-1">
   {[
-    { number: '10+', label: 'Years of Experience', subLabel: 'Helping Jewellers Automate', icon: <FaTrophy />, color: '#F97316' },
-    { number: '10,000+', label: 'Coaching Clients', subLabel: 'Happy Business Owners', icon: <FaUsers />, color: '#F97316' },
-    { number: '5', label: 'Countries', subLabel: 'Global Presence', icon: <FaGlobe />, color: '#F97316' },
-    { number: '11K+', label: 'Social Following', subLabel: 'Growing Community', icon: <FaMobileAlt />, color: '#F97316' },
-    { number: '✓', label: 'Proven Strategies', subLabel: 'Real Business Growth', icon: <FaChartLine />, color: '#F97316' },
-    { number: 'Arnav', label: 'Patil Sir', subLabel: 'Your Trusted Mentor', icon: <FaStar />, color: '#F97316' }
+    {
+  number: '10+',
+  label: 'Years of Experience',
+  subLabel: 'Business Development & Coaching',
+  icon: <FaTrophy />,
+  color: '#F97316'
+},
+{
+  number: '1,00,000+',
+  label: 'Entrepreneurs Reached',
+  subLabel: 'In the Last 6 Years',
+  icon: <FaUsers />,
+  color: '#F97316'
+},
+{
+  number: '5',
+  label: 'Business Clients',
+  subLabel: 'Across 5+ Countries',
+  icon: <FaGlobe />,
+  color: '#F97316'
+},
+{
+  number: '15K+',
+  label: 'Social Media Following',
+  subLabel: 'Growing Community',
+  icon: <FaMobileAlt />,
+  color: '#F97316'
+},
+{
+  number: '300+',
+  label: 'Seminars & Workshops',
+  subLabel: 'Online & Offline Conducted',
+  icon: <FaChartLine />,
+  color: '#F97316'
+},
+{
+  number: '10,000+',
+  label: 'Coaching Clients',
+  subLabel: 'Trusted Business Owners',
+  icon: <FaStar />,
+  color: '#F97316'
+},
+{
+  number: '25K+',
+  label: 'Live Entrepreneur Community',
+  subLabel: 'Active & Growing Network',
+  icon: <FaUsers />,
+  color: '#F97316'
+}
   ].map((stat, idx) => (
     <motion.div
       key={idx}
@@ -130,7 +173,7 @@ export default function MentorSection({ data }) {
       </div>
       
       <div 
-        className="text-[#F97316] text-3xl md:text-5xl mb-2"
+        className="text-[#F97316] text-2xl md:text-5xl mb-2"
         style={{ fontWeight: 900 }}
       >
         {stat.number}

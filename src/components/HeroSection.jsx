@@ -104,7 +104,7 @@ export default function HeroSection({ data, statsBar }) {
       {/* Orange Box */}
       <div className="bg-[#EA6C0A] rounded-b-[18px] px-6 py-4 text-center min-w-[275px] md:min-w-[420px] shadow-lg">
          <p className="text-white font-extrabold text-2xl md:text-xl uppercase leading-tight">
-          Jeweller's Masterclass
+          Jeweller&apos;s Masterclass
         </p>
         {/* <p className="text-white font-extrabold text-sm md:text-xl uppercase leading-tight">
           4 Hour Online Workshop

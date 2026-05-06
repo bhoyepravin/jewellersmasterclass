@@ -22,6 +22,7 @@ import {
   masterclassBenefitsData,
   bonusSectionData,
   masterclassTestimonialsData,
+  textTestimonialsData,
   mentorSectionData,
   missionData,
   faqSectionData,
@@ -66,7 +67,7 @@ export default function Home() {
       {/* 9. Testimonials */}
       <TestimonialsSection data={masterclassTestimonialsData} />
 
-      <TextTestimonialsSection data={masterclassTestimonialsData} />
+      <TextTestimonialsSection data={textTestimonialsData} />
 
       {/* 10. Mentor */}
       <MentorSection data={mentorSectionData} />

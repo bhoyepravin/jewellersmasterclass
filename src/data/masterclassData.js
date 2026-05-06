@@ -151,7 +151,7 @@ export const masterclassTestimonialsData = {
       gradientTo: '#6B1A8A',
     },
     {
-      name: 'Mr. Aakash Maid',  // Added missing testimonial
+      name: 'Mr. Rahul Dindorkar',  // Added missing testimonial
       location: 'Mumbai',
       text: 'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
       image: '/images/testimonial-2.jpg',
@@ -160,7 +160,7 @@ export const masterclassTestimonialsData = {
       gradientTo: '#EA6C0A',
     },
     {
-      name: 'Mr. Akshay Shahane',
+      name: 'Mr. Avinash Kharote',
       location: 'Thane',
       text: 'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला आणि आत्तापर्यंतचा सगळ्यात बेस्ट अनुभव होता हा माझा. सरांनी जे पॉईंट सांगितले हे खूप प्रॅक्टिकल आणि रियालिटीला धरून होते. One of the best investments of time and money.',
       image: '/images/testimonial-3.jpg',

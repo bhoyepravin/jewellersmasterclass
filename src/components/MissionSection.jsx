@@ -15,6 +15,8 @@ const IMG_GRADIENTS = [
   ['#F97316', '#EA6C0A'],
   ['#480A62', '#6B1A8A'],
   ['#2E063E', '#480A62'],
+  ['#EA6C0A', '#F97316'],
+  ['#6B1A8A', '#2E063E'],
 ];
 
 export default function MissionSection({ data }) {

@@ -154,7 +154,7 @@ export default function HeroSection({ data, statsBar }) {
     {/* Left Image */}
     <div className="relative w-[150px] h-[250px] md:w-[260px] md:h-[320px] shadow-2xl rounded-2xl mb-9">
   <Image
-    src="/arnav_patil_sirji.png"
+    src="/arnav_patil_new.jpeg"
     alt="Coach Arnav Patil"
     fill
     className="object-contain object-top rounded-2xl"

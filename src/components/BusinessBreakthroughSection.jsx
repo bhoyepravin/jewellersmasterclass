@@ -14,7 +14,7 @@ export default function BusinessBreakthroughSection() {
     <section className="relative overflow-hidden bg-white py-10 md:py-28">
 
       {/* <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none blur-orb-orange" /> */}
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
+        {/* <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" /> */}
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[380px] h-[140px] bg-[#F97316]/12 blur-[100px]" />

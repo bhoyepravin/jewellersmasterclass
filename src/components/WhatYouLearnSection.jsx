@@ -48,7 +48,7 @@ export default function WhatYouLearnSection({ data }) {
     <section className="section-padding bg-white pt-10">
       
       <div className="container-max">
-         <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
+         {/* <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" /> */}
 
         {/* Heading */}
         <motion.div

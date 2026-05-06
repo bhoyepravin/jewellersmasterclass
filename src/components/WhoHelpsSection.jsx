@@ -33,7 +33,7 @@ export default function WhoHelpsSection() {
 
   return (
     <section className="relative overflow-hidden bg-white py-10 pt-7 pb-0 md:pt-28 md:pb-8">
-       <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
+       {/* <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" /> */}
       {/* Subtle orbs */}
       <div className="pointer-events-none absolute top-0 left-[-80px] w-[320px] h-[320px] bg-[#F97316]/8 blur-[100px]" />
       <div className="pointer-events-none absolute bottom-0 right-[-80px] w-[280px] h-[280px] bg-[#480A62]/8 blur-[90px]" />

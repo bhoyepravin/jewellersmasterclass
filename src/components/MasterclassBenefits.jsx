@@ -11,7 +11,7 @@ const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.10 } }
 export default function MasterclassBenefits({ data }) {
   return (
     <section className="section-padding bg-white py-10">
-       <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" />
+       {/* <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none blur-orb-purple" /> */}
       <div className="container-max">
 
         {/* Heading */}

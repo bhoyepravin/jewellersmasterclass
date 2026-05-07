@@ -142,20 +142,20 @@ export const masterclassTestimonialsData = {
   title: 'ज्यांनी अनुभवले,',
   items: [
     {
-      name: 'Ms. Divya Choudhari',  // Fixed: Changed from Mr. Divya Chaudhari
+      name: 'Ms. Divya Choudhari',
       location: 'Mumbai',
       text: 'Connecting with Arnav Sir was the best decision of my life. I am soo excited to launch my new jewellery brand after attending Arnav sir\'s Masterclass. Thank You Arnav Sir!',
-      image: '/images/testimonial-1.jpg',
+      image: '/divya_choudhari.jpg',
       video: '/testimonials/miss_divya_chaudhari.mp4',
       gradientFrom: '#480A62',
       gradientTo: '#6B1A8A',
     },
     {
-      name: 'Mr. Rahul Dindorkar',  // Added missing testimonial
+      name: 'Mr. Rahul Dindorkar',
       location: 'Mumbai',
       text: 'काळानुसार आपल्यामध्ये जो बदल अपेक्षित आहे, जो बदल आपल्याला स्वतःमध्ये आणि व्यवसायामध्ये करायला पाहिजे, ते मला या मास्टरक्लास मधून समजले.',
-      image: '/images/testimonial-2.jpg',
-      video: '/testimonials/mr_rahul_dindorkar.mp4', // Update with actual video path
+      image: null,
+      video: '/testimonials/mr_rahul_dindorkar.mp4',
       gradientFrom: '#F97316',
       gradientTo: '#EA6C0A',
     },
@@ -163,7 +163,7 @@ export const masterclassTestimonialsData = {
       name: 'Mr. Avinash Kharote',
       location: 'Thane',
       text: 'मी आजपर्यंत बरेच प्रोग्राम अटेंड केले आहेत, पण ज्वेलर्स मास्टर क्लास सारखा हा स्पेसिफिक ज्वेलरी बिझनेस प्रोग्रॅम मी पहिल्यांदाच अटेंड केला आणि आत्तापर्यंतचा सगळ्यात बेस्ट अनुभव होता हा माझा. सरांनी जे पॉईंट सांगितले हे खूप प्रॅक्टिकल आणि रियालिटीला धरून होते. One of the best investments of time and money.',
-      image: '/images/testimonial-3.jpg',
+      image: null,
       video: '/testimonials/mr_avinash_kharote.mp4',
       gradientFrom: '#2E063E',
       gradientTo: '#480A62',
@@ -172,7 +172,7 @@ export const masterclassTestimonialsData = {
       name: 'Mr. Sai Kharote',
       location: 'Nagpur',
       text: 'कुठेतरी जो कॉन्फिडन्स डाउन झाला होता तो पुन्हा एकदा जागा झाला आहे. आपल्या धंद्यात खूप पोटेन्शिअल आहे आणि आपण त्याचा योग्य वापर करून आपल्या ब्रांडला मोठं केलं पाहिजे हे आज मला शिकायला मिळाले',
-      image: '/images/testimonial-4.jpg',
+      image: null,
       video: null,
       gradientFrom: '#480A62',
       gradientTo: '#6B1A8A',
